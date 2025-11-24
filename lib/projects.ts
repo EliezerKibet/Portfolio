@@ -112,7 +112,7 @@ const projects: Project[] = [
     demoUrl: "https://github.com/EliezerKibet",
     githubUrl: "https://github.com/EliezerKibet",
     featured: false,
-    date: "2024-03-18",
+    date: "2025-03-18",
   },
   {
     id: "4",
@@ -122,8 +122,8 @@ const projects: Project[] = [
       "A fully-featured e-commerce platform with product management, cart functionality, checkout process, and order management.",
     image: "/projects/ecommercemainpage.jpg",
     additionalImages: [
-      "/images/projects/ecommerce-product.jpg",
-      "/images/projects/ecommerce-cart.jpg",
+      "/projects/ecommerceproductpage.jpg",
+      "/projects/ecommerce-cart.jpg",
     ],
     technologies: [
       "React",
@@ -145,7 +145,7 @@ const projects: Project[] = [
     demoUrl: "https://github.com/EliezerKibet",
     githubUrl: "https://github.com/EliezerKibet/ecommerce-platform",
     featured: false,
-    date: "2024-01-25",
+    date: "2025-01-25",
   },
   {
     id: "5",
@@ -177,6 +177,32 @@ const projects: Project[] = [
       "Creating a seamless user experience from browsing to checkout while handling various edge cases (inventory changes, session management) required careful state management and optimistic UI updates.",
     demoUrl: "https://github.com/EliezerKibet",
     githubUrl: "https://github.com/EliezerKibet/EventTicketingPlatform",
+    featured: false,
+    date: "2024-01-25",
+  },
+  {
+    id: "6",
+    slug: "garage-management-system",
+    title: "AI auto garage management system",
+    description:
+      "An automated garage management system that leverages AI to optimize operations, manage inventory, and enhance customer experience.",
+    image: "/projects/AImainpage.jpg",
+    additionalImages: [
+      "/projects/AImainpage.jpg",
+      "/images/projects/ecommerce-cart.jpg",
+    ],
+    technologies: ["React", "Boostrap", "C#", ".NET", "Stripe", "MySQL"],
+    features: [
+      "AI powered inventory management",
+      "Invoice generation and tracking",
+      "Inventory alerts and notifications",
+      "Role-based access control",
+      "Notfication system for maintenance schedules",
+    ],
+    challenges:
+      "Creating responses for chatbot AI to handle diverse customer queries while ensuring accurate and context-aware interactions required extensive training data and fine-tuning of the language model.",
+    demoUrl: "https://github.com/EliezerKibet",
+    githubUrl: "https://github.com/EliezerKibet/AI_based_garage",
     featured: false,
     date: "2024-01-25",
   },
