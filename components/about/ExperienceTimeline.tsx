@@ -13,19 +13,19 @@ const experiences: Experience[] = [
     {
         company: 'Freelance',
         position: 'Full-Stack Developer',
-        duration: '2022 - Present',
+        duration: '2023 - Present',
         description: 'Working with clients globally to design and implement full-stack web applications using React, Next.js, TypeScript, and .NET. Projects range from e-commerce platforms to enterprise integration systems.'
     },
     {
         company: 'TechCorp',
         position: 'Senior Frontend Developer',
-        duration: '2020 - 2022',
+        duration: '2022 - 2023',
         description: 'Led the development of responsive, user-friendly web interfaces using React and TypeScript. Collaborated with UX/UI designers and backend developers to create seamless digital experiences.'
     },
     {
         company: 'WebSolutions',
         position: 'Software Developer',
-        duration: '2018 - 2020',
+        duration: '2021 - 2022',
         description: 'Developed and maintained web applications using JavaScript, React, and .NET technologies. Worked in an agile team environment to deliver high-quality software solutions.'
     }
 ];

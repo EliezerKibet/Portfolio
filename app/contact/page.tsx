@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
     return (
         <div className="container-custom section-padding animate-fade-in">
+
             <div className="text-center mb-12">
                 <h1 className="mb-4">Get In Touch</h1>
                 <p className="text-lg max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
@@ -18,10 +19,10 @@ export default function ContactPage() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-0 lg:grid-cols-1 gap-12">
                 <div>
-                    <h2 className="mb-6">Send Me a Message</h2>
-                    <ContactForm />
+                    {/*<h2 className="mb-6">Send Me a Message</h2>*/}
+                    {/*<ContactForm />*/}
                 </div>
 
                 <div>

@@ -8,26 +8,8 @@ export default function AboutPreview() {
     return (
         <section className="py-16 bg-gray-50 dark:bg-gray-900">
             <div className="container-custom">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                        className="relative"
-                    >
-                        <div className="aspect-square rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 opacity-20 absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-4/5 h-4/5"></div>
-                        <div className="relative z-10 bg-white dark:bg-gray-800 border-8 border-white dark:border-gray-700 rounded-xl shadow-xl overflow-hidden">
-                            <div className="aspect-[4/3] relative">
-                                <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="w-16 h-16 text-gray-400 dark:text-gray-500">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
+                <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 items-center">
+
 
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}

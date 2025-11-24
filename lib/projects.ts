@@ -21,9 +21,9 @@ const projects: Project[] = [
     title: "REDFACE Cybersecurity Platform",
     description:
       "A comprehensive cybersecurity company website with complex animations and video backgrounds, showcasing services and solutions for enterprise clients.",
-    image: "/images/projects/redface-preview.jpg",
+    image: "/projects/redfacemainpage.png",
     additionalImages: [
-      "/images/projects/redface-dashboard.jpg",
+      "/projects/redfacemainpage.png",
       "/images/projects/redface-mobile.jpg",
     ],
     technologies: [
@@ -42,8 +42,8 @@ const projects: Project[] = [
     ],
     challenges:
       "The main challenge was implementing complex animations while maintaining performance. I utilized Framer Motion with optimized configurations and lazy-loaded video backgrounds to ensure smooth performance across devices.",
-    demoUrl: "https://redface-demo.vercel.app",
-    githubUrl: "https://github.com/EliezerKibet/redface",
+    demoUrl: "https://redfacers.com/",
+    githubUrl: "https://github.com/EliezerKibet",
     featured: true,
     date: "2024-07-15",
   },
@@ -53,7 +53,7 @@ const projects: Project[] = [
     title: "FlowLenz Ticket Management System",
     description:
       "A comprehensive ticket management system that integrates Jira and Azure DevOps API scrapers with a React frontend and .NET backend.",
-    image: "/images/projects/flowlenz-preview.jpg",
+    image: "/projects/flowlenzmainpage.png",
     additionalImages: [
       "/images/projects/flowlenz-board.jpg",
       "/images/projects/flowlenz-analytics.jpg",
@@ -76,8 +76,8 @@ const projects: Project[] = [
     ],
     challenges:
       "Integrating with different API structures (Jira and Azure DevOps) required creating a unified data model while preserving platform-specific features. I implemented adapter patterns and a robust caching system to ensure seamless operations.",
-    demoUrl: "https://flowlenz-demo.vercel.app",
-    githubUrl: "https://github.com/EliezerKibet/flowlenz-poc",
+    demoUrl: "https://github.com/EliezerKibet",
+    githubUrl: "https://github.com/EliezerKibet",
     featured: true,
     date: "2024-05-02",
   },
@@ -87,7 +87,7 @@ const projects: Project[] = [
     title: "Fintech Dashboard Platform",
     description:
       "A modern financial technology dashboard that displays real-time data visualizations, transaction history, and account management features.",
-    image: "/images/projects/fintech-preview.jpg",
+    image: "/projects/fintechmainpage.png",
     additionalImages: [
       "/images/projects/fintech-transactions.jpg",
       "/images/projects/fintech-settings.jpg",
@@ -109,8 +109,8 @@ const projects: Project[] = [
     ],
     challenges:
       "Ensuring data accuracy and real-time updates while maintaining security was crucial. I implemented WebSockets for live data and JWT authentication with refresh token rotation for enhanced security.",
-    demoUrl: "https://fintech-dashboard-demo.vercel.app",
-    githubUrl: "https://github.com/EliezerKibet/fintech-dashboard",
+    demoUrl: "https://github.com/EliezerKibet",
+    githubUrl: "https://github.com/EliezerKibet",
     featured: false,
     date: "2024-03-18",
   },
@@ -120,7 +120,7 @@ const projects: Project[] = [
     title: "Modern E-Commerce Platform",
     description:
       "A fully-featured e-commerce platform with product management, cart functionality, checkout process, and order management.",
-    image: "/images/projects/ecommerce-preview.jpg",
+    image: "/projects/ecommercemainpage.jpg",
     additionalImages: [
       "/images/projects/ecommerce-product.jpg",
       "/images/projects/ecommerce-cart.jpg",
@@ -142,8 +142,41 @@ const projects: Project[] = [
     ],
     challenges:
       "Creating a seamless user experience from browsing to checkout while handling various edge cases (inventory changes, session management) required careful state management and optimistic UI updates.",
-    demoUrl: "https://ecommerce-demo.vercel.app",
+    demoUrl: "https://github.com/EliezerKibet",
     githubUrl: "https://github.com/EliezerKibet/ecommerce-platform",
+    featured: false,
+    date: "2024-01-25",
+  },
+  {
+    id: "5",
+    slug: "event-ticket-system",
+    title: "Modern Event Ticketing Platform",
+    description:
+      "A fully-featured event ticketing platform with event management, ticket purchasing, checkout process, and order management.",
+    image: "/projects/eventticket.jpg",
+    additionalImages: [
+      "/images/projects/ecommerce-product.jpg",
+      "/images/projects/ecommerce-cart.jpg",
+    ],
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Stripe",
+      "PostgreSQL",
+    ],
+    features: [
+      "Responsive product catalog with filtering",
+      "User authentication and profiles",
+      "Shopping cart with persistent storage",
+      "Secure checkout process",
+      "Order tracking and history",
+    ],
+    challenges:
+      "Creating a seamless user experience from browsing to checkout while handling various edge cases (inventory changes, session management) required careful state management and optimistic UI updates.",
+    demoUrl: "https://github.com/EliezerKibet",
+    githubUrl: "https://github.com/EliezerKibet/EventTicketingPlatform",
     featured: false,
     date: "2024-01-25",
   },

@@ -11,11 +11,13 @@ export const metadata: Metadata = {
 export default function AboutPage() {
     return (
         <div className="container-custom section-padding animate-fade-in">
+            {/* Subtle grid background */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                 <div className="lg:col-span-1 flex flex-col items-center lg:items-start">
                     <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-primary-500 mb-6">
                         <Image
-                            src="/images/profile.jpg"
+                            src="/profile/profile.jpg"
                             alt="Profile picture"
                             fill
                             className="object-cover"
@@ -49,7 +51,7 @@ export default function AboutPage() {
                     <div className="prose dark:prose-invert max-w-none mb-12">
                         <p>
                             I'm a passionate Full-Stack Developer with expertise in modern web technologies
-                            including React, Next.js, TypeScript, and .NET. With a strong focus on building
+                            including React, Next.js, TypeScript, Node.js and .NET. With a strong focus on building
                             responsive, user-friendly web applications, I bring a problem-solving mindset
                             and attention to detail to every project.
                         </p>
@@ -65,13 +67,15 @@ export default function AboutPage() {
                         </p>
                     </div>
 
-                    <h2 className="mb-6">Professional Experience</h2>
-                    <ExperienceTimeline />
 
-                    <h2 className="mt-12 mb-6">Education & Certifications</h2>
-                    <EducationSection />
                 </div>
             </div>
         </div>
     );
 }
+
+/*   <h2 className="mb-6">Professional Experience</h2>
+                    <ExperienceTimeline />
+
+                    <h2 className="mt-12 mb-6">Education & Certifications</h2>
+                    <EducationSection /> */

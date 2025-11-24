@@ -43,7 +43,7 @@ export default function Navbar() {
             <div className="container-custom">
                 <div className="flex items-center justify-between">
                     <Link href="/" className="text-2xl font-bold">
-                        <span className="text-primary-600">Dev</span>ShowCase
+                        <span className="text-primary-600">Eliezer</span>
                     </Link>
 
                     {/* Desktop Navigation */}
