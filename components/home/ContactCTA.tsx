@@ -12,7 +12,7 @@ export default function ContactCTA() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl shadow-xl overflow-hidden"
+                    className="bg-gradient-to-r from-primary-600 to-blue-900 rounded-2xl shadow-xl overflow-hidden"
                 >
                     <div className="px-6 py-12 md:p-12 text-center text-white">
                         <h2 className="text-3xl font-bold mb-4">Let's Work Together</h2>
