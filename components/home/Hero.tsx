@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+
 export default function Hero() {
     const typedTextRef = useRef<HTMLSpanElement>(null);
 
@@ -32,21 +33,19 @@ export default function Hero() {
 
             if (!isDeleting && currentCharIndex === currentText.length) {
                 isDeleting = true;
-                typingSpeed = 1500; // Pause before deleting
+                typingSpeed = 1500;
             } else if (isDeleting && currentCharIndex === 0) {
                 isDeleting = false;
                 currentTextIndex = (currentTextIndex + 1) % texts.length;
-                typingSpeed = 500; // Pause before typing next text
+                typingSpeed = 500;
             }
 
             setTimeout(type, typingSpeed);
         }
 
-        setTimeout(type, 1000); // Start typing after 1 second
+        setTimeout(type, 1000);
 
-        return () => {
-            // Cleanup function
-        };
+        return () => { };
     }, []);
 
     const fadeIn = {
@@ -75,14 +74,20 @@ export default function Hero() {
                             custom={0}
                             className="space-y-6"
                         >
+                            {/* SEO IMPROVEMENT: Better H1 with name and location */}
                             <h1 className="text-4xl md:text-5xl font-bold">
-                                Hello, I'm a <br />
+                                Hi, I'm Eliezer Kibet<br />
                                 <span ref={typedTextRef} className="text-primary-600"></span>
+                                <span className="block text-2xl md:text-3xl mt-2 text-gray-600 dark:text-gray-400">
+                                    Based in Berlin, Germany
+                                </span>
                             </h1>
 
+                            {/* SEO IMPROVEMENT: More descriptive paragraph with keywords */}
                             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-lg">
-                                I build responsive, user-friendly web applications using modern technologies.
-                                Specializing in React, Next.js, TypeScript and .NET to create seamless digital experiences.
+                                Freelance full-stack developer specializing in React, Next.js, TypeScript, and .NET.
+                                I create responsive, user-friendly web applications for clients across Europe.
+                                100% Job Success Score on Upwork with 4+ years of experience.
                             </p>
 
                             <div className="flex flex-wrap gap-4">
@@ -96,8 +101,19 @@ export default function Hero() {
                                     href="/contact"
                                     className="px-6 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-200 text-center"
                                 >
-                                    Contact Me
+                                    Hire Me
                                 </Link>
+                            </div>
+
+                            {/* SEO IMPROVEMENT: Added "Available for Hire" badge */}
+                            <div className="flex items-center gap-3 pt-2">
+                                <span className="flex h-3 w-3 relative">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                                </span>
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    Available for freelance projects
+                                </span>
                             </div>
 
                             <div className="flex items-center pt-4 space-x-4">
@@ -122,10 +138,10 @@ export default function Hero() {
                         <div className="relative z-10 bg-gray-100 dark:bg-gray-800 border-8 border-white dark:border-gray-700 rounded-3xl shadow-xl overflow-hidden flex items-center justify-center">
                             <Image
                                 src="/profile/profile.jpeg"
-                                alt="Eliezer Kibet - Full Stack Developer"
+                                alt="Eliezer Kibet - Full Stack Developer in Berlin"
                                 width={800}
-                                height={1}
-                                className="w-full h-full"
+                                height={800}
+                                className="w-full h-full object-cover"
                                 priority
                             />
                         </div>

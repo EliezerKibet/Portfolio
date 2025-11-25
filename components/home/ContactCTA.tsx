@@ -15,10 +15,15 @@ export default function ContactCTA() {
                     className="bg-gradient-to-r from-primary-600 to-blue-900 rounded-2xl shadow-xl overflow-hidden"
                 >
                     <div className="px-6 py-12 md:p-12 text-center text-white">
-                        <h2 className="text-3xl font-bold mb-4">Let's Work Together</h2>
+                        {/* SEO IMPROVEMENT: Better CTA heading with keywords */}
+                        <h2 className="text-3xl font-bold mb-4">
+                            Hire a Freelance Full-Stack Developer
+                        </h2>
+                        {/* SEO IMPROVEMENT: More specific, keyword-rich description */}
                         <p className="text-lg max-w-2xl mx-auto opacity-90 mb-8">
-                            Ready to start your next project? I'm available for freelance work
-                            and would love to hear about your ideas. Let's build something amazing together.
+                            Looking for a React, Next.js, or .NET developer for your project?
+                            I'm available for freelance work in Berlin and across Europe.
+                            Let's discuss your web development needs and build something amazing together.
                         </p>
 
                         <div className="flex flex-wrap justify-center gap-4">
@@ -26,14 +31,24 @@ export default function ContactCTA() {
                                 href="/contact"
                                 className="px-6 py-3 bg-white text-primary-600 font-medium rounded-md hover:bg-gray-100 transition duration-200"
                             >
-                                Contact Me
+                                Get in Touch
                             </Link>
                             <Link
                                 href="/projects"
                                 className="px-6 py-3 bg-transparent border border-white text-white font-medium rounded-md hover:bg-white/10 transition duration-200"
                             >
-                                View My Work
+                                View Portfolio
                             </Link>
+                        </div>
+
+                        {/* SEO IMPROVEMENT: Add credibility indicators */}
+                        <div className="mt-8 pt-6 border-t border-white/20">
+                            <p className="text-sm opacity-75 mb-3">Trusted by clients worldwide</p>
+                            <div className="flex justify-center gap-6 text-sm">
+                                <span>✓ 100% Job Success</span>
+                                <span>✓ Rising Talent</span>
+                                <span>✓ Fast Response</span>
+                            </div>
                         </div>
                     </div>
                 </motion.div>

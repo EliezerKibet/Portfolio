@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         description: 'Freelance Full-Stack Developer in Berlin specializing in React, Next.js, TypeScript, and .NET. 100% Job Success Score on Upwork.',
         images: [
             {
-                url: '/og-image.jpg', // Create this image (1200x630px recommended)
+                url: '/og-image.png', // Create this image (1200x630px recommended)
                 width: 1200,
                 height: 630,
                 alt: 'Eliezer Kibet - Full-Stack Developer'
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Eliezer Kibet - Full-Stack Developer',
         description: 'Freelance Full-Stack Developer in Berlin specializing in React, Next.js, TypeScript, and .NET',
-        images: ['/og-image.jpg']
+        images: ['/og-image.png']
     },
     robots: {
         index: true,
