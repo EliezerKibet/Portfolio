@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function AboutPreview() {
     return (
-        <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <section className="py-16 bg-white dark:bg-black transition-colors duration-200">
             <div className="container-custom">
                 <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 items-center">
                     <motion.div
@@ -16,12 +16,12 @@ export default function AboutPreview() {
                         className="space-y-6"
                     >
                         {/* SEO IMPROVEMENT: Better heading with context */}
-                        <h2 className="text-3xl font-bold">
+                        <h2 className="text-3xl text-black dark:text-white/90 font-bold">
                             About Eliezer Kibet - Freelance Developer
                         </h2>
 
                         {/* SEO IMPROVEMENT: More keyword-rich content */}
-                        <div className="prose dark:prose-invert max-w-none">
+                        <div className="prose dark:prose-invert text-black dark:text-white/90 max-w-none">
                             <p>
                                 I'm a freelance full-stack developer based in Berlin, Germany, with expertise in modern web technologies
                                 including React, Next.js, TypeScript, and .NET. With a focus on building
@@ -31,7 +31,7 @@ export default function AboutPreview() {
                             <p>
                                 My 4+ years of software development experience includes working on diverse projects - from
                                 complex enterprise integrations and embassy websites to fintech platforms and cybersecurity applications.
-                                As a Rising Talent on Upwork with a 100% Job Success Score, I specialize in delivering
+                                As a Top Rated on Upwork with a 100% Job Success Score, I specialize in delivering
                                 high-quality code and meeting tight deadlines for clients across Europe.
                             </p>
                             <p>
@@ -61,7 +61,7 @@ export default function AboutPreview() {
                             <div>
                                 <p className="text-2xl font-bold text-primary-600">$4,000+</p>
                                 <p className="text-gray-600 dark:text-gray-300">Earned on Upwork</p>
-                                <p className="text-xs text-gray-500 dark:text-gray-400">Rising Talent</p>
+                                <p className="text-xs text-gray-500 dark:text-gray-400">Top Rated</p>
                             </div>
                         </div>
 

@@ -84,19 +84,19 @@ export default function ContactInfo() {
                             </div>
                         </div>
                         <div>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">{contact.label}</p>
+                            <p className="text-sm text-gray-900 dark:text-gray-400">{contact.label}</p>
                             {contact.link ? (
                                 <a
                                     href={contact.link}
                                     target={contact.link.startsWith('mailto:') ? undefined : '_blank'}
                                     rel="noopener noreferrer"
-                                    className="text-lg font-medium hover:text-primary-600 transition-colors"
+                                    className="text-lg font-medium hover:text-gray-400  text-gray-900 dark:text-gray-400 transition-colors"
                                     onClick={() => handleContactClick(contact.eventName, contact.label)}
                                 >
                                     {contact.value}
                                 </a>
                             ) : (
-                                <p className="text-lg font-medium">{contact.value}</p>
+                                <p className="text-lg  hover:text-gray-400  text-gray-900 font-medium">{contact.value}</p>
                             )}
                         </div>
                     </motion.div>

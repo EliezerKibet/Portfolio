@@ -4,12 +4,48 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useScroll, useTransform, useSpring } from 'framer-motion';
 
 export default function Hero() {
     const typedTextRef = useRef<HTMLSpanElement>(null);
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.3,
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: {
+            opacity: 0,
+            y: 30,
+            rotate: -2,
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            rotate: 0,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+            }
+        }
+    };
+    const { scrollY } = useScroll();
+    const y1 = useTransform(scrollY, [0, 500], [0, 150]);
+    const y2 = useTransform(scrollY, [0, 500], [0, 80]);
+    const smoothY1 = useSpring(y1, { stiffness: 100, damping: 30 });
+    const smoothY2 = useSpring(y2, { stiffness: 100, damping: 30 });
+
     useEffect(() => {
         if (!typedTextRef.current) return;
+
 
         const textElement = typedTextRef.current;
         const texts = ['Full-Stack Developer', 'React Specialist', 'Next.js Expert', 'TypeScript Enthusiast', '.NET Developer'];
@@ -61,52 +97,38 @@ export default function Hero() {
     };
 
     return (
-        <section className="pt-32 pb-24 md:pt-40 md:pb-32">
+        <section className="pt-32 pb-24 md:pt-40 md:pb-32
+        bg-white dark:bg-black transition-colors duration-200">
             <div className="container-custom">
                 {/* Subtle grid background */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+                <div className="absolute inset-0 
+                bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] 
+                dark:bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)]
+                bg-[size:24px_24px]" />
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <motion.div
-                            variants={fadeIn}
+                            variants={containerVariants}
                             initial="hidden"
                             animate="visible"
-                            custom={0}
                             className="space-y-6"
                         >
-                            {/* SEO IMPROVEMENT: Better H1 with name and location */}
-                            <h1 className="text-4xl md:text-5xl font-bold">
+                            <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-black dark:text-white">
                                 Hi, I'm Eliezer Kibet<br />
                                 <span ref={typedTextRef} className="text-primary-600"></span>
                                 <span className="block text-2xl md:text-3xl mt-2 text-gray-600 dark:text-gray-400">
                                     Based in Berlin, Germany
                                 </span>
-                            </h1>
+                            </motion.h1>
 
-                            {/* SEO IMPROVEMENT: More descriptive paragraph with keywords */}
-                            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-lg">
+                            <motion.p variants={itemVariants} className="text-lg text-gray-600 dark:text-gray-300 max-w-lg">
                                 Freelance full-stack developer specializing in React, Next.js, TypeScript, and .NET.
                                 I create responsive, user-friendly web applications for clients across Europe.
                                 100% Job Success Score on Upwork with 4+ years of experience.
-                            </p>
-
-                            <div className="flex flex-wrap gap-4">
-                                <Link
-                                    href="/projects"
-                                    className="px-6 py-3 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition duration-200 text-center"
-                                >
-                                    View My Work
-                                </Link>
-                                <Link
-                                    href="/contact"
-                                    className="px-6 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-200 text-center"
-                                >
-                                    Hire Me
-                                </Link>
-                            </div>
+                            </motion.p>
 
                             {/* SEO IMPROVEMENT: Added "Available for Hire" badge */}
-                            <div className="flex items-center gap-3 pt-2">
+                            <motion.div variants={itemVariants} className="flex items-center gap-3 pt-2">
                                 <span className="flex h-3 w-3 relative">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
@@ -114,17 +136,8 @@ export default function Hero() {
                                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                                     Available for freelance projects
                                 </span>
-                            </div>
+                            </motion.div>
 
-                            <div className="flex items-center pt-4 space-x-4">
-                                <p className="text-gray-500 dark:text-gray-400">Tech Stack:</p>
-                                <div className="flex space-x-3">
-                                    <span className="px-2 py-1 text-xs rounded-md bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100">React</span>
-                                    <span className="px-2 py-1 text-xs rounded-md bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-100">Next.js</span>
-                                    <span className="px-2 py-1 text-xs rounded-md bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100">TypeScript</span>
-                                    <span className="px-2 py-1 text-xs rounded-md bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-100">.NET</span>
-                                </div>
-                            </div>
                         </motion.div>
                     </div>
 

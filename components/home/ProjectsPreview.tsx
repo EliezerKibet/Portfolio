@@ -10,7 +10,7 @@ export default function ProjectsPreview() {
     const projects = getFeaturedProjects();
 
     return (
-        <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <section className="py-11 bg-white dark:bg-black">
             <div className="container-custom">
                 <div className="text-center mb-12">
                     <motion.h2
@@ -18,7 +18,7 @@ export default function ProjectsPreview() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
-                        className="text-3xl font-bold mb-4"
+                        className="text-3xl font-bold text-black dark:text-white mb-4"
                     >
                         Featured Projects
                     </motion.h2>
@@ -53,7 +53,7 @@ export default function ProjectsPreview() {
                             </div>
 
                             <div className="p-6">
-                                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                                <h3 className="text-xl font-bold text-black dark:text-white/90 mb-2">{project.title}</h3>
 
                                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                                     {truncateText(project.description, 120)}

@@ -32,6 +32,7 @@ import {
     SiPostman,
 } from 'react-icons/si';
 import { IconType } from 'react-icons';
+import { useState } from 'react';
 
 // Map skill names to their icons
 const iconMap: { [key: string]: IconType } = {
@@ -66,11 +67,14 @@ const iconMap: { [key: string]: IconType } = {
     'RESTful APIs': SiNodedotjs, // Placeholder
 };
 
+
+
 export default function SkillsSectionWithIcons() {
     const skillCategories = getSkillsByCategory();
 
+
     return (
-        <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+        <section className="py-24 relative overflow-hidden bg-white dark:bg-black transition-colors duration-200">
             <div className="container-custom relative z-10">
                 {/* Header */}
                 <motion.div
@@ -100,7 +104,7 @@ export default function SkillsSectionWithIcons() {
                         >
                             {/* Category Title */}
                             <div className="mb-8">
-                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                                <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
                                     {category.name}
                                 </h3>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -130,11 +134,11 @@ export default function SkillsSectionWithIcons() {
                                             className="group"
                                         >
                                             {/* Card - exactly like your example */}
-                                            <div className="relative h-32 p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center">
+                                            <div className="relative h-16 p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center">
                                                 {/* Icon */}
                                                 {Icon && (
                                                     <div className="mb-3 text-gray-700 dark:text-gray-300 group-hover:scale-110 transition-transform duration-300">
-                                                        <Icon size={40} />
+                                                        <Icon size={20} />
                                                     </div>
                                                 )}
 
@@ -188,4 +192,8 @@ export default function SkillsSectionWithIcons() {
             </div>
         </section>
     );
+}
+
+function useRef<T>(arg0: null) {
+    throw new Error('Function not implemented.');
 }

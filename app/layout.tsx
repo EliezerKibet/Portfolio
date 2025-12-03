@@ -5,6 +5,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { ThemeProvider } from '@/app/contexts/ThemeContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,56 +15,7 @@ export const metadata: Metadata = {
         template: '%s | Eliezer Kibet'
     },
     description: 'Freelance Full-Stack Developer in Berlin specializing in React, Next.js, TypeScript, and .NET. 100% Job Success Score on Upwork. Available for web development projects across Europe.',
-    keywords: [
-        'freelance web developer Berlin',
-        'full-stack developer Germany',
-        'React developer Berlin',
-        'Next.js developer',
-        'TypeScript developer',
-        '.NET developer',
-        'Node.js developer',
-        'freelance developer Europe',
-        'web development services',
-        'Eliezer Kibet'
-    ],
-    authors: [{ name: 'Eliezer Kibet' }],
-    creator: 'Eliezer Kibet',
-    openGraph: {
-        type: 'website',
-        locale: 'en_US',
-        url: 'https://eliezerkibet.vercel.app/',
-        siteName: 'Eliezer Kibet - Full-Stack Developer',
-        title: 'Eliezer Kibet - Full-Stack Developer | React, Next.js, TypeScript, .NET',
-        description: 'Freelance Full-Stack Developer in Berlin specializing in React, Next.js, TypeScript, and .NET. 100% Job Success Score on Upwork.',
-        images: [
-            {
-                url: '/og-image.png', // Create this image (1200x630px recommended)
-                width: 1200,
-                height: 630,
-                alt: 'Eliezer Kibet - Full-Stack Developer'
-            }
-        ]
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Eliezer Kibet - Full-Stack Developer',
-        description: 'Freelance Full-Stack Developer in Berlin specializing in React, Next.js, TypeScript, and .NET',
-        images: ['/og-image.png']
-    },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
-        },
-    },
-    verification: {
-        google: 'your-google-verification-code', // Add this after setting up Google Search Console
-    },
+    // ... rest of your metadata
 };
 
 export default function RootLayout({
@@ -72,11 +24,27 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" className="scroll-smooth">
+        <html lang="en" className="scroll-smooth" suppressHydrationWarning>
             <head>
                 <meta name="google-site-verification" content="5fnk1OjhtBhyhZgMMgs7e_1MsIiJBLEqYe5RFSixHS0" />
 
-                {/* JSON-LD Schema for Person */}
+                {/* Add this script to prevent FOUC (Flash of Unstyled Content) */}
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            try {
+                                const theme = localStorage.getItem('theme');
+                                const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                                const activeTheme = theme || systemPreference;
+                                if (activeTheme === 'dark') {
+                                    document.documentElement.classList.add('dark');
+                                }
+                            } catch (e) {}
+                        `,
+                    }}
+                />
+
+                {/* JSON-LD Schema */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
@@ -109,12 +77,14 @@ export default function RootLayout({
                     }}
                 />
             </head>
-            <body className={inter.className}>
+            <body className={`${inter.className} transition-colors duration-200`}>
                 <Analytics />
                 <SpeedInsights />
-                <Navbar />
-                <main>{children}</main>
-                <Footer />
+                <ThemeProvider>
+                    <Navbar />
+                    <main>{children}</main>
+                    <Footer />
+                </ThemeProvider>
             </body>
         </html>
     );

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import ThemeToggle from '@/components/ui/ThemeToggle';
 
 type NavItem = {
     label: string;
@@ -71,6 +72,10 @@ export default function Navbar() {
                         >
                             GitHub
                         </a>
+                        {/* Right side: Theme Toggle + Mobile Menu */}
+                        <div className="flex items-center space-x-4">
+                            <ThemeToggle />
+                        </div>
                     </nav>
 
                     {/* Mobile Menu Button */}

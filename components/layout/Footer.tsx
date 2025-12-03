@@ -4,13 +4,10 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-gray-100 dark:bg-gray-900">
+        <footer className="bg-white dark:bg-black transition-colors duration-200">
             <div className="container-custom py-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div>
-                        <h3 className="text-lg font-bold mb-4">
-                            <span className="text-primary-600">Dev</span>Portfolio
-                        </h3>
                         <p className="text-gray-600 dark:text-gray-300 mb-4">
                             Professional full-stack developer specializing in React, Next.js, TypeScript, and .NET.
                         </p>
@@ -94,7 +91,7 @@ export default function Footer() {
 
                 <div className="border-t border-gray-200 dark:border-gray-800 mt-12 pt-6 text-center">
                     <p className="text-gray-600 dark:text-gray-300">
-                        © {currentYear} DevPortfolio. All rights reserved.
+                        © {currentYear} . All rights reserved.
                     </p>
                 </div>
             </div>

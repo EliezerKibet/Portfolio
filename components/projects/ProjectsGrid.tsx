@@ -30,8 +30,8 @@ export default function ProjectsGrid({ projects }: Props) {
                 <button
                     onClick={() => setFilter('all')}
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${filter === 'all'
-                            ? 'bg-primary-600 text-white'
-                            : 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700'
+                        ? 'bg-primary-600 text-white'
+                        : 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700'
                         }`}
                 >
                     All Projects
@@ -42,8 +42,8 @@ export default function ProjectsGrid({ projects }: Props) {
                         key={tech}
                         onClick={() => setFilter(tech)}
                         className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${filter === tech
-                                ? 'bg-primary-600 text-white'
-                                : 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700'
+                            ? 'bg-primary-600 text-white'
+                            : 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700'
                             }`}
                     >
                         {tech}
@@ -51,7 +51,7 @@ export default function ProjectsGrid({ projects }: Props) {
                 ))}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-5">
                 {filteredProjects.map((project, index) => (
                     <motion.div
                         key={project.id}
