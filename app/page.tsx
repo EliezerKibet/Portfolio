@@ -60,8 +60,22 @@ export default function Home() {
                             address: {
                                 '@type': 'PostalAddress',
                                 addressLocality: 'Berlin',
-                                addressCountry: 'Germany'
+                                addressCountry: 'DE'
                             },
+                            areaServed: [
+                                {
+                                    "@type": "City",
+                                    name: "Berlin"
+                                },
+                                {
+                                    "@type": "Country",
+                                    name: "Germany"
+                                },
+                                {
+                                    "@type": "Continent",
+                                    name: "Europe"
+                                }
+                            ],
                             email: 'elieserkibet@gmail.com',
                             worksFor: {
                                 '@type': 'Organization',
@@ -84,6 +98,12 @@ export default function Home() {
                                     'Web Development'
                                 ]
                             },
+                            serviceType: [
+                                "Web Development",
+                                "Full-Stack Development",
+                                "React Development",
+                                "Next.js Development"
+                            ],
                             sameAs: [
                                 'https://github.com/EliezerKibet',
                                 'https://www.linkedin.com/in/eliezer-kibet-80217a301/',
