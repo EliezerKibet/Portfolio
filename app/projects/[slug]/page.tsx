@@ -82,7 +82,7 @@ export default function ProjectPage() {
                                         className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                                     >
                                         <ExternalLink size={20} />
-                                        View Live Demo
+                                        View Site
                                     </a>
                                 )}
                                 {project.githubUrl && (
@@ -90,7 +90,7 @@ export default function ProjectPage() {
                                         href={project.githubUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-300 dark:border-gray-700 hover:border-primary-600 dark:hover:border-primary-400 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
+                                        className="inline-flex items-center gap-2 px-6 py-3 border-2 text-gray-900 border-gray-300 dark:border-gray-700 hover:border-primary-600 dark:hover:border-primary-400 dark:text-white rounded-xl font-semibold transition-all duration-300 hover:scale-105"
                                     >
                                         <Github size={20} />
                                         View Source Code
@@ -122,7 +122,7 @@ export default function ProjectPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
-                            className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700"
+                            className="bg-white dark:bg-gray-800 rounded-2xl text-gray-900 dark:text-white p-8 shadow-lg border border-gray-200 dark:border-gray-700"
                         >
                             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
                                 <div className="w-1 h-6 bg-gradient-to-b from-primary-500 to-primary-600 rounded-full" />
@@ -153,7 +153,7 @@ export default function ProjectPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.4 }}
-                            className="bg-gradient-to-br from-primary-50 to-purple-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl p-8 border border-primary-100 dark:border-gray-700"
+                            className="bg-gradient-to-br from-primary-50 to-purple-50 dark:from-gray-800 dark:to-gray-800  text-gray-900 dark:text-white rounded-2xl p-8 border border-primary-100 dark:border-gray-700"
                         >
                             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
                                 <div className="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-600 rounded-full" />
@@ -172,7 +172,7 @@ export default function ProjectPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
-                            className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 sticky top-24"
+                            className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg dark:text-white text-gray-900 border border-gray-200 dark:border-gray-700 sticky top-24"
                         >
                             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                                 <Tag size={20} className="text-primary-600 dark:text-primary-400" />

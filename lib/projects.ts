@@ -20,7 +20,7 @@ const projects: Project[] = [
     slug: "redface-cybersecurity",
     title: "REDFACE Cybersecurity Platform",
     description:
-      "A comprehensive cybersecurity company website with complex animations and video backgrounds, showcasing services and solutions for enterprise clients.",
+      "A comprehensive cybersecurity company website with complex animations and video backgrounds, showcasing services and solutions for enterprise clients. This Website was derived from a Figma design and implemented to Next version 15.5.4 ",
     image: "/projects/redfacemainpage.png",
     additionalImages: [
       "/projects/redfacemainpage.png",
@@ -32,6 +32,10 @@ const projects: Project[] = [
       "TypeScript",
       "Framer Motion",
       "Tailwind CSS",
+      "Stripe",
+      "Gsap",
+      "lenis",
+      "Recharts",
     ],
     features: [
       "Responsive design with fluid animations",
@@ -39,9 +43,15 @@ const projects: Project[] = [
       "Dynamic video backgrounds with fallback options",
       "Client testimonials carousel",
       "Contact form with form validation",
+      "Stat cards for all employees of the company detailed with a score card for their best attributes",
+      "Payment Integrations for Atome and Stripe",
+      "Music background player that is pausable",
+      "Scroll behavior with background animation for the landing page",
+      "Admin issue of pdf certificates to users with certificates stored in Supabase Storage (certificates bucket)",
+      "Custom app upload of profile pictures for personalization that are stored in 2MB image files each",
     ],
     challenges:
-      "The main challenge was implementing complex animations while maintaining performance. I utilized Framer Motion with optimized configurations and lazy-loaded video backgrounds to ensure smooth performance across devices.",
+      "The main challenge was implementing complex animations while maintaining performance. I utilized Framer Motion with optimized configurations and lazy-loaded video backgrounds to ensure smooth performance across devices. ",
     demoUrl: "https://redfacers.com/",
     githubUrl: "https://github.com/EliezerKibet",
     featured: true,

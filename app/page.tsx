@@ -62,6 +62,7 @@ export default function Home() {
                                 addressLocality: 'Berlin',
                                 addressCountry: 'Germany'
                             },
+                            email: 'elieserkibet@gmail.com',
                             worksFor: {
                                 '@type': 'Organization',
                                 name: 'Freelance'
@@ -97,7 +98,10 @@ export default function Home() {
                                 'Web Development',
                                 'API Development',
                                 'Frontend Development',
-                                'Backend Development'
+                                'Backend Development',
+                                'Database Development',
+                                'MySQL database',
+                                'PostgreSQL Database',
                             ]
                         }
                     })
