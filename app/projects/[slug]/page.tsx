@@ -49,7 +49,7 @@ export default function ProjectPage() {
                             <div className="flex items-center gap-3 mb-4">
                                 {project.featured && (
                                     <span className="px-3 py-1 bg-gradient-to-r from-primary-500 to-primary-600 text-white text-xs font-semibold rounded-full shadow-lg">
-                                        ⭐ Featured
+                                        Featured
                                     </span>
                                 )}
                                 <span className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">

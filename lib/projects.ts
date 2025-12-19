@@ -62,7 +62,7 @@ const projects: Project[] = [
     slug: "flowlenz-ticket-management",
     title: "FlowLenz Ticket Management System",
     description:
-      "A comprehensive ticket management system that integrates Jira and Azure DevOps API scrapers with a React frontend and .NET backend.",
+      "A comprehensive ticket management system that integrates Jira and Azure DevOps API scrapers with a React frontend and .NET backend. Utilises the Postgresql to store the tickets.",
     image: "/projects/flowlenzmainpage.png",
     additionalImages: [
       "/images/projects/flowlenz-board.jpg",
@@ -78,11 +78,13 @@ const projects: Project[] = [
       "Jira API",
     ],
     features: [
-      "Unified dashboard for Jira and Azure DevOps tickets",
-      "Real-time synchronization with external systems",
-      "Advanced filtering and search capabilities",
-      "Custom reporting and analytics",
-      "User role management and permissions",
+      "Unified dashboard for Jira and Azure DevOps tickets . This was scraping each all tickets based on project name and inserting it into one table in a PostgreSQL database.",
+      "Real-time synchronization with external systems , the system scrapes the tickets after every 30 seconds based off the API .",
+      "Frontend design utilized the interface to showcase each tickets with further details shown when clicked on. The details included the project name, assignee , creator , ticket name , ticket details as well as date issued .",
+      "Pagination of the tickets on the frontend design allowed a custom number of tickets to be shown per page. The options were 10  , 20 , or 30 tickets per page",
+      "Incorporates an AI tool to suggest the best assignee based on the ticket data.",
+      "Ability to choose which project to scrape based on the project code",
+      "The frontend design adapted to device screen sizes as needed. Whether mobile , desktop or tablet",
     ],
     challenges:
       "Integrating with different API structures (Jira and Azure DevOps) required creating a unified data model while preserving platform-specific features. I implemented adapter patterns and a robust caching system to ensure seamless operations.",
