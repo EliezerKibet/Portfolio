@@ -73,7 +73,9 @@ const projects: Project[] = [
       "TypeScript",
       ".NET",
       "PostgreSQL",
+      "Javascript",
       "Docker",
+      "C#",
       "Azure DevOps API",
       "Jira API",
     ],
@@ -87,7 +89,7 @@ const projects: Project[] = [
       "The frontend design adapted to device screen sizes as needed. Whether mobile , desktop or tablet",
     ],
     challenges:
-      "Integrating with different API structures (Jira and Azure DevOps) required creating a unified data model while preserving platform-specific features. I implemented adapter patterns and a robust caching system to ensure seamless operations.",
+      "Integrating with different API structures (Jira and Azure DevOps) required creating a unified data model while preserving platform-specific features. I implemented adapter patterns and a robust caching system to ensure seamless operations.At first the Jira and Azure API were working as intended. After some time the Jira API was deprecated and could only scrape 100 tickets instead of the full ticket amount. ",
     demoUrl: "https://github.com/EliezerKibet",
     githubUrl: "https://github.com/EliezerKibet",
     featured: true,
