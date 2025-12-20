@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useScroll, useTransform, useSpring } from 'framer-motion';
@@ -40,8 +39,6 @@ export default function Hero() {
     const { scrollY } = useScroll();
     const y1 = useTransform(scrollY, [0, 500], [0, 150]);
     const y2 = useTransform(scrollY, [0, 500], [0, 80]);
-    const smoothY1 = useSpring(y1, { stiffness: 100, damping: 30 });
-    const smoothY2 = useSpring(y2, { stiffness: 100, damping: 30 });
 
     useEffect(() => {
         if (!typedTextRef.current) return;
@@ -97,7 +94,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="pt-32 pb-24 md:pt-40 md:pb-32
+        <section className="pt-11 pb-14 md:pt-14 md:pb-20
         bg-white dark:bg-black transition-colors duration-200">
             <div className="container-custom">
                 {/* Subtle grid background */}
@@ -123,18 +120,14 @@ export default function Hero() {
 
                             <motion.p variants={itemVariants} className="text-lg text-gray-600 dark:text-gray-300 max-w-lg">
                                 Freelance full-stack developer specializing in React, Next.js, TypeScript, and .NET.
-                                I create responsive, user-friendly web applications for clients across Europe.
-                                100% Job Success Score on Upwork with 4+ years of experience.
+                                I create responsive, user-friendly web applications. Expect clean and well functioning applications tailored specifically to your requirements.
                             </motion.p>
 
                             {/* SEO IMPROVEMENT: Added "Available for Hire" badge */}
                             <motion.div variants={itemVariants} className="flex items-center gap-3 pt-2">
-                                <span className="flex h-3 w-3 relative">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                                </span>
+
                                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                    Available for freelance projects
+                                    Available for projects
                                 </span>
                             </motion.div>
 

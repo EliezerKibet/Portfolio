@@ -24,15 +24,16 @@ export default function AboutPreview() {
                         <div className="prose dark:prose-invert text-black dark:text-white/90 max-w-none">
                             <p>
                                 I'm a freelance full-stack developer based in Berlin, Germany, with expertise in modern web technologies
-                                including React, Next.js, TypeScript, and .NET. With a focus on building
+                                including React, Next.js, Node.js, C#, .NET framework, Angular, Tailwind CSS, TypeScript, and .NET. With a focus on building
                                 responsive, user-friendly web applications, I bring a problem-solving mindset
-                                and attention to detail to every project.
+                                and attention to detail to every project. My goal is to deliver pin point results based on the requirements set out.
                             </p>
                             <p>
                                 My 4+ years of software development experience includes working on diverse projects - from
                                 complex enterprise integrations and embassy websites to fintech platforms and cybersecurity applications.
                                 As a Top Rated on Upwork with a 100% Job Success Score, I specialize in delivering
-                                high-quality code and meeting tight deadlines for clients across Europe.
+                                high-quality code and meeting tight deadlines for clients across Europe and the world. Also , I offer direction and suggestion to your as a
+                                client that are subject to your approval. Suggestions that will help to fully deliver on use cases in the most efficient way with clean lean code practices
                             </p>
                             <p>
                                 I'm currently accepting new freelance projects and contract work. Whether you need a full-stack developer
