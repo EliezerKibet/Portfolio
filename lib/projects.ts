@@ -115,11 +115,10 @@ const projects: Project[] = [
       "Stripe API",
     ],
     features: [
-      "Real-time financial data visualization",
-      "Transaction history with advanced filtering",
-      "Secure account management",
-      "Budget planning tools",
-      "Payment processing with Stripe integration",
+      "Portfolio summary with breakdown of the total value in preferred currency",
+      "Total P&L value with green for gains and red for losses",
+      "Number of holdings available as of the time of logging in",
+      "Transaction breakdown of the type, symbol, quantity, price and date. With actions to delete from the current transactions table modal. Including a dynamic search where you can filter the transactions based on type and also manual addition of transactions not automatically traced by the application",
     ],
     challenges:
       "Ensuring data accuracy and real-time updates while maintaining security was crucial. I implemented WebSockets for live data and JWT authentication with refresh token rotation for enhanced security.",
@@ -219,6 +218,29 @@ const projects: Project[] = [
     githubUrl: "https://github.com/EliezerKibet/AI_based_garage",
     featured: false,
     date: "2024-01-25",
+  },
+  {
+    id: "7",
+    slug: "embassy-of-kenya-website",
+    title: "Embassy of Kenya Website",
+    description:
+      "A large-scale official embassy website for the Embassy of Kenya, featuring 60 front-end pages, an appointment booking system, a media management backend, and secure multi-user access with two-factor authentication.",
+    image: "/projects/embassy_website_kenya.png",
+    additionalImages: ["/projects/embassy_website_kenya.png"],
+    technologies: ["React", "C#", "Tailwind CSS", "SendGrid", ".NET"],
+    features: [
+      "60 fully responsive front-end pages covering embassy services, news, and information",
+      "Appointment booking system allowing users to schedule embassy visits and consular services",
+      "Media management backend enabling admins to upload, update, and remove media content across the site",
+      "Multi-user backend access with role-based permissions for embassy staff",
+      "Two-factor authentication (2FA) for secure admin and staff login",
+      "SendGrid webhook integration for automated email notifications to users upon booking confirmation and updates",
+    ],
+    challenges:
+      "Managing a large number of pages while keeping content consistent and maintainable required a well-structured component architecture. Implementing 2FA alongside multi-user role management added complexity to the authentication flow, which was resolved using a layered middleware approach in the .NET backend.",
+    demoUrl: "https://embassydemo.netlify.app/",
+    featured: true,
+    date: "2026-03-08",
   },
 ];
 
