@@ -64,6 +64,61 @@ html {
   }
 }
 
+  .blog-content h2 {
+    @apply text-2xl font-bold text-gray-900 mt-10 mb-4;
+  }
+  .dark .blog-content h2 {
+    @apply text-white;
+  }
+  .blog-content h3 {
+    @apply text-xl font-bold text-gray-900 mt-8 mb-3;
+  }
+  .dark .blog-content h3 {
+    @apply text-white;
+  }
+  .blog-content p {
+    @apply text-gray-600 leading-relaxed mb-5 text-lg;
+  }
+  .dark .blog-content p {
+    @apply text-gray-300;
+  }
+  .blog-content ul, .blog-content ol {
+    @apply text-gray-600 mb-5 pl-6 space-y-2 text-lg;
+  }
+  .dark .blog-content ul, .dark .blog-content ol {
+    @apply text-gray-300;
+  }
+  .blog-content ul {
+    @apply list-disc;
+  }
+  .blog-content ol {
+    @apply list-decimal;
+  }
+  .blog-content li {
+    @apply leading-relaxed;
+  }
+  .blog-content a {
+    @apply text-primary-600 hover:underline;
+  }
+  .blog-content strong {
+    @apply font-semibold text-gray-900;
+  }
+  .dark .blog-content strong {
+    @apply text-white;
+  }
+  .blog-content blockquote {
+    @apply border-l-4 border-primary-600 pl-4 italic text-gray-600 my-6;
+  }
+  .dark .blog-content blockquote {
+    @apply text-gray-300;
+  }
+  .blog-content code {
+    @apply bg-gray-100 text-primary-600 px-1 rounded text-sm;
+  }
+  .dark .blog-content code {
+    @apply bg-gray-800 text-primary-400;
+  }
+
 @layer utilities {
   .perspective-1000 {
     perspective: 1000px;

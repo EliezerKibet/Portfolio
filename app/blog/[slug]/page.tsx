@@ -1,0 +1,157 @@
+import { getAllBlogPosts, getBlogPostBySlug } from '@/lib/blog';
+import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
+import Link from 'next/link';
+
+const baseUrl = 'https://eliezerkibet.dev';
+
+export async function generateStaticParams() {
+    const posts = getAllBlogPosts();
+    return posts.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata(
+    { params }: { params: { slug: string } }
+): Promise<Metadata> {
+    const post = getBlogPostBySlug(params.slug);
+    if (!post) return {};
+
+    return {
+        title: `${post.title} | Eliezer Kibet`,
+        description: post.excerpt,
+        keywords: post.tags,
+        alternates: {
+            canonical: `${baseUrl}/blog/${post.slug}`,
+        },
+        openGraph: {
+            title: post.title,
+            description: post.excerpt,
+            url: `${baseUrl}/blog/${post.slug}`,
+            type: 'article',
+            publishedTime: post.date,
+            authors: ['Eliezer Kibet'],
+            tags: post.tags,
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: post.title,
+            description: post.excerpt,
+        },
+    };
+}
+
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+    const post = getBlogPostBySlug(params.slug);
+    if (!post) notFound();
+
+    const allPosts = getAllBlogPosts();
+    const otherPosts = allPosts.filter((p) => p.slug !== post!.slug).slice(0, 2);
+
+    return (
+        <div className="min-h-screen bg-white dark:bg-gray-900">
+            {/* Header */}
+            <section className="relative bg-gradient-to-b from-white via-gray-50/30 to-white dark:from-gray-900 dark:via-gray-900/95 dark:to-gray-900 pt-24 pb-12 md:pt-32 md:pb-16">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] opacity-40" />
+                <div className="container-custom relative z-10">
+                    <div className="max-w-3xl mx-auto">
+                        <Link
+                            href="/blog"
+                            className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-primary-600 transition-colors mb-6"
+                        >
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                            </svg>
+                            Back to Blog
+                        </Link>
+
+                        <div className="flex flex-wrap gap-2 mb-4">
+                            {post!.tags.map((tag) => (
+                                <span
+                                    key={tag}
+                                    className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs font-medium rounded"
+                                >
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                            {post!.title}
+                        </h1>
+
+                        <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                            <span>Eliezer Kibet</span>
+                            <span>·</span>
+                            <time dateTime={post!.date}>
+                                {new Date(post!.date).toLocaleDateString('en-US', {
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric',
+                                })}
+                            </time>
+                            <span>·</span>
+                            <span>{post!.readTime}</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Content */}
+            <section className="py-12 md:py-16">
+                <div className="container-custom">
+                    <div className="max-w-3xl mx-auto">
+                        <div
+                            className="blog-content"
+                            dangerouslySetInnerHTML={{ __html: post!.content }}
+                        />
+                    </div>
+                </div>
+            </section>
+
+            {/* Author card */}
+            <section className="py-12 border-t border-gray-200 dark:border-gray-700">
+                <div className="container-custom">
+                    <div className="max-w-3xl mx-auto">
+                        <div className="flex items-start gap-4 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
+                            <div className="flex-1">
+                                <p className="font-bold text-gray-900 dark:text-white mb-1">Eliezer Kibet</p>
+                                <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+                                    Freelance Full-Stack Developer specializing in React, Next.js, TypeScript, and .NET. Building web applications, booking systems, fintech platforms, and cybersecurity tools.
+                                </p>
+                                <Link
+                                    href="/contact"
+                                    className="inline-flex items-center gap-1 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
+                                >
+                                    Work with me →
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* More posts */}
+            {otherPosts.length > 0 && (
+                <section className="py-12 bg-gray-50 dark:bg-gray-800/30">
+                    <div className="container-custom">
+                        <div className="max-w-3xl mx-auto">
+                            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">More Articles</h2>
+                            <div className="space-y-4">
+                                {otherPosts.map((p) => (
+                                    <Link
+                                        key={p.id}
+                                        href={`/blog/${p.slug}`}
+                                        className="block p-5 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-200 hover:shadow-sm"
+                                    >
+                                        <p className="font-semibold text-gray-900 dark:text-white mb-1">{p.title}</p>
+                                        <p className="text-sm text-gray-500 dark:text-gray-400">{p.readTime} · {new Date(p.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
+        </div>
+    );
+}
