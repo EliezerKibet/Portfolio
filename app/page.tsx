@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         description: 'Freelance developer in Berlin | React, Next.js, TypeScript, .NET | 100% Job Success',
     },
     alternates: {
-        canonical: 'https://eliezerkibet.vercel.app/',
+        canonical: 'https://eliezerkibet.dev/',
     },
 };
 
@@ -50,13 +50,13 @@ export default function Home() {
                         '@type': 'ProfilePage',
                         mainEntity: {
                             '@type': 'Person',
-                            '@id': 'https://eliezerkibet.vercel.app/#eliezer',
+                            '@id': 'https://eliezerkibet.dev/#eliezer',
                             name: 'Eliezer Kibet',
                             alternateName: 'Eliezer',
                             jobTitle: 'Freelance Full-Stack Developer',
                             description: 'Freelance full-stack developer specializing in React, Next.js, TypeScript, and .NET',
-                            url: 'https://eliezerkibet.vercel.app/',
-                            image: 'https://eliezerkibet.vercel.app//profile/profile.jpeg',
+                            url: 'https://eliezerkibet.dev/',
+                            image: 'https://eliezerkibet.dev//profile/profile.jpeg',
                             address: {
                                 '@type': 'PostalAddress',
                                 addressLocality: 'Berlin',

@@ -4,8 +4,18 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-    title: 'About Me | Full-Stack Developer',
-    description: 'Learn more about my journey as a full-stack developer, my experience, and my approach to building web applications',
+    title: 'About Eliezer Kibet | Full-Stack Developer',
+    description: 'Eliezer Kibet is a freelance full-stack developer specializing in React, Next.js, TypeScript, and .NET. Building web apps, booking systems, fintech platforms, and cybersecurity tools.',
+    keywords: ['Eliezer Kibet', 'full-stack developer', 'React developer', 'Next.js developer', '.NET developer', 'freelance developer', 'web developer'],
+    alternates: {
+        canonical: 'https://eliezerkibet.dev/about',
+    },
+    openGraph: {
+        title: 'About Eliezer Kibet | Full-Stack Developer',
+        description: 'Freelance full-stack developer specializing in React, Next.js, TypeScript, and .NET. Available for hire.',
+        url: 'https://eliezerkibet.dev/about',
+        type: 'profile',
+    },
 };
 
 export default function AboutPage() {

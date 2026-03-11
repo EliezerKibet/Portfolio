@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://eliezerkibet.vercel.app";
+  const baseUrl = "https://eliezerkibet.dev";
 
   if (process.env.VERCEL_ENV !== "production") {
     return {

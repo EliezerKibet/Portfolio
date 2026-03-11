@@ -53,7 +53,7 @@ export default function RootLayout({
                             '@type': 'Person',
                             name: 'Eliezer Kibet',
                             jobTitle: 'Full-Stack Developer',
-                            url: 'https://eliezerkibet.vercel.app/',
+                            url: 'https://eliezerkibet.dev/',
                             address: {
                                 '@type': 'PostalAddress',
                                 addressLocality: 'Berlin',

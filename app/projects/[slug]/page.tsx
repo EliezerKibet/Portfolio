@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import ProjectPageClient from './ProjectPageClient';
 
-const baseUrl = 'https://eliezerkibet.vercel.app';
+const baseUrl = 'https://eliezerkibet.dev';
 
 export async function generateStaticParams() {
     const projects = getAllProjects();
