@@ -3,8 +3,23 @@ import ContactInfo from '@/components/contact/ContactInfo';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Contact Me | Full-Stack Developer',
-    description: 'Get in touch with me for your next web development project. I specialize in React, Next.js, TypeScript, and .NET',
+    title: 'Contact | Eliezer Kibet - Freelance Full-Stack Developer',
+    description: 'Hire a freelance full-stack developer. I build web apps, booking systems, APIs, and dashboards using React, Next.js, TypeScript, and .NET. Available for projects in Europe and worldwide.',
+    keywords: ['hire freelance developer', 'freelance full-stack developer', 'React developer for hire', '.NET developer freelance', 'web development Berlin', 'Eliezer Kibet contact'],
+    alternates: {
+        canonical: 'https://eliezerkibet.dev/contact',
+    },
+    openGraph: {
+        title: 'Contact Eliezer Kibet | Freelance Full-Stack Developer',
+        description: 'Available for freelance web development projects. React, Next.js, TypeScript, .NET.',
+        url: 'https://eliezerkibet.dev/contact',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary',
+        title: 'Contact Eliezer Kibet | Freelance Full-Stack Developer',
+        description: 'Available for freelance web development projects. React, Next.js, TypeScript, .NET.',
+    },
 };
 
 export default function ContactPage() {

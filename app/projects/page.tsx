@@ -3,8 +3,23 @@ import ProjectsGrid from '@/components/projects/ProjectsGrid';
 import { getAllProjects } from '@/lib/projects';
 
 export const metadata: Metadata = {
-    title: 'My Projects | Full-Stack Developer',
-    description: 'Explore my portfolio of full-stack development projects using React, Next.js, TypeScript and .NET',
+    title: 'Projects | Eliezer Kibet - Full-Stack Developer Portfolio',
+    description: 'Full-stack web development projects by Eliezer Kibet — booking systems, event platforms, e-commerce, AI tools, and enterprise dashboards built with React, Next.js, TypeScript, C#, and .NET.',
+    keywords: ['full-stack developer portfolio', 'React projects', 'Next.js portfolio', '.NET projects', 'web development portfolio', 'Eliezer Kibet projects'],
+    alternates: {
+        canonical: 'https://eliezerkibet.dev/projects',
+    },
+    openGraph: {
+        title: 'Projects | Eliezer Kibet - Full-Stack Developer',
+        description: 'Booking systems, event platforms, e-commerce, and enterprise tools. Built with React, Next.js, and .NET.',
+        url: 'https://eliezerkibet.dev/projects',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary',
+        title: 'Projects | Eliezer Kibet - Full-Stack Developer',
+        description: 'Booking systems, event platforms, e-commerce, and enterprise tools. Built with React, Next.js, and .NET.',
+    },
 };
 
 export default function ProjectsPage() {

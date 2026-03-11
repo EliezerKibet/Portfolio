@@ -47,8 +47,37 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     const allPosts = getAllBlogPosts();
     const otherPosts = allPosts.filter((p) => p.slug !== post!.slug).slice(0, 2);
 
+    const articleSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: post!.title,
+        description: post!.excerpt,
+        author: {
+            '@type': 'Person',
+            name: 'Eliezer Kibet',
+            url: `${baseUrl}/about`,
+        },
+        publisher: {
+            '@type': 'Person',
+            name: 'Eliezer Kibet',
+            url: baseUrl,
+        },
+        datePublished: post!.date,
+        dateModified: post!.date,
+        url: `${baseUrl}/blog/${post!.slug}`,
+        keywords: post!.tags.join(', '),
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `${baseUrl}/blog/${post!.slug}`,
+        },
+    };
+
     return (
         <div className="min-h-screen bg-white dark:bg-gray-900">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
             {/* Header */}
             <section className="relative bg-gradient-to-b from-white via-gray-50/30 to-white dark:from-gray-900 dark:via-gray-900/95 dark:to-gray-900 pt-24 pb-12 md:pt-32 md:pb-16">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] opacity-40" />
