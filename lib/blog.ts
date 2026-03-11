@@ -63,49 +63,96 @@ const blogPosts: BlogPost[] = [
     },
     {
         id: '2',
-        slug: 'building-cybersecurity-platform-react-dotnet',
-        title: 'Building a Cybersecurity Platform with React and .NET',
-        excerpt: 'How I designed and built Redface — a cybersecurity monitoring platform with real-time threat dashboards, role-based access control, and a .NET backend API.',
-        date: '2025-07-15',
-        readTime: '5 min read',
-        tags: ['React', 'Next.js', 'TypeScript', '.NET', 'Cybersecurity', 'Case Study'],
+        slug: 'building-eventhub-event-ticketing-platform',
+        title: 'Building EventHub: A Production-Ready Event Ticketing Platform with .NET 9 and React',
+        excerpt: 'How I built EventHub — a full event ticketing platform with 24 passing tests, JWT authentication, real-time capacity management, QR code validation, analytics dashboards, and a CI/CD pipeline. Built with .NET 9, React, TypeScript, and SQL Server.',
+        date: '2025-05-02',
+        readTime: '8 min read',
+        tags: ['React', 'Next.js', 'TypeScript', '.NET 9', 'SQL Server', 'Case Study'],
         content: `
-<h2>Why Cybersecurity Software Is Different</h2>
-<p>Building software for cybersecurity teams is a unique challenge. The users are technical, the stakes are high, and the data being displayed — threat logs, vulnerability reports, system statuses — needs to be accurate and fast. There is zero margin for UI bugs when someone's infrastructure is on the line.</p>
-<p>Redface is a cybersecurity platform I built that brings together threat monitoring, user management, and real-time dashboards into a single interface.</p>
+<h2>What Is EventHub?</h2>
+<p>EventHub is a production-grade event ticketing platform that handles the full lifecycle of an event — from creation and ticket sales to QR code validation and post-event analytics. It's built for three distinct user types: event organizers, customers, and administrators — each with their own portal and permission set.</p>
+<p>The project runs on .NET 9 for the API and React with TypeScript for the frontend, with 24 comprehensive tests covering authentication, event management, ticket processing, and analytics.</p>
 
 <h2>Tech Stack</h2>
 <ul>
-  <li><strong>Frontend:</strong> React, Next.js, TypeScript</li>
-  <li><strong>Backend:</strong> .NET Web API with C#</li>
-  <li><strong>Auth:</strong> JWT with role-based access control</li>
-  <li><strong>Data viz:</strong> Custom charts for threat data</li>
+  <li><strong>Backend:</strong> ASP.NET Core Web API (.NET 9), Entity Framework Core, JWT authentication, Swagger/OpenAPI</li>
+  <li><strong>Frontend:</strong> Next.js, React, TypeScript, responsive mobile-first design</li>
+  <li><strong>Database:</strong> SQL Server with indexed queries and connection pooling</li>
+  <li><strong>Testing:</strong> xUnit with FluentAssertions — 24/24 tests passing</li>
+  <li><strong>DevOps:</strong> GitHub Actions CI/CD, Docker-ready, Azure/AWS deployment-ready</li>
 </ul>
 
-<h2>The Dashboard Challenge</h2>
-<p>The main dashboard needed to display threat data in real time without overwhelming the user. I designed a priority-based system where critical threats surface to the top, with color coding (red/amber/green) for instant status reading.</p>
-<p>The data pipeline flows from the .NET API to the React frontend using polling with a 30-second interval — fast enough for operational awareness without hammering the server.</p>
+<h2>Architecture: Three User Portals</h2>
+<p>The platform is structured around three distinct roles with strictly enforced permissions at the API layer — not just hidden in the UI.</p>
+<p><strong>Event Organizers</strong> can create events with multiple ticket tiers, set capacity limits per tier, configure promotional codes, and view real-time analytics on revenue, demographics, and remaining capacity. Creating a tiered event looks like this:</p>
+<pre><code>const event = await api.events.create({
+  name: "Tech Conference 2025",
+  capacity: 500,
+  ticketTypes: [
+    { name: "Early Bird", price: 299, limit: 100 },
+    { name: "Regular",    price: 399, limit: 300 },
+    { name: "VIP",        price: 599, limit: 50  }
+  ],
+  promotions: ["EARLY25", "GROUP10"]
+});</code></pre>
+<p><strong>Customers</strong> get a seamless booking experience — browse events, select ticket types, apply promo codes, pay via Stripe, and receive QR-coded tickets. They can track order history and manage bookings from their portal.</p>
+<p><strong>Administrators</strong> have full system oversight: all events, all transactions, user management, and business analytics.</p>
 
-<h2>Role-Based Access Control</h2>
-<p>Different team members need different views. Analysts need detailed threat data. Managers need summary reports. Admins need full system access. I implemented three-tier RBAC:</p>
+<h2>Real-Time Capacity Management</h2>
+<p>Overbooking is one of the hardest problems in ticketing systems. Two customers booking the last seat simultaneously is a classic race condition. I solved this using optimistic concurrency in Entity Framework Core — every capacity update includes a row version check, so if two requests try to claim the last ticket at the same time, one wins and one gets a clean conflict error with a prompt to retry.</p>
+<p>The capacity state is surfaced to the frontend in real time, so customers see live availability without polling aggressively.</p>
+
+<h2>Security-First Design</h2>
+<p>Security was designed into the system from day one, not added afterwards:</p>
 <ul>
-  <li><strong>Analyst:</strong> Read access to threat data and reports</li>
-  <li><strong>Manager:</strong> Analyst access + report generation + team management</li>
-  <li><strong>Admin:</strong> Full access including system configuration</li>
+  <li><strong>JWT with refresh token rotation</strong> — access tokens expire quickly; refresh tokens rotate on each use, making token theft ineffective</li>
+  <li><strong>Role-based authorization</strong> at the controller level — organizers cannot access admin endpoints even if they construct a valid request manually</li>
+  <li><strong>Input sanitization</strong> on all endpoints — preventing injection attacks at the API boundary</li>
+  <li><strong>Secure file upload</strong> with MIME type validation and size limits</li>
+  <li><strong>Audit logging</strong> — every sensitive action is logged with user ID and timestamp for compliance</li>
 </ul>
 
-<h2>TypeScript Was Essential</h2>
-<p>In a domain where data accuracy is critical, TypeScript's type system paid for itself many times over. Every API response is typed, every component prop is validated at compile time. This eliminated an entire class of runtime bugs before they could happen.</p>
+<h2>Test-Driven Development: 24 Tests</h2>
+<p>The test suite covers every critical path in the system:</p>
+<ul>
+  <li>Authentication and security — 6 tests covering JWT validation, password rules, and authorization boundaries</li>
+  <li>Event management — 5 tests covering creation, updates, capacity validation, and deletion</li>
+  <li>Ticket processing — 7 tests covering purchase flow, overbooking prevention, promo codes, and refunds</li>
+  <li>Analytics and reporting — 4 tests covering revenue calculation and demographic aggregation</li>
+  <li>Integration tests — 2 end-to-end workflow tests</li>
+</ul>
+<p>Writing tests first forced me to design clean, testable business logic. The booking service has no dependencies on the HTTP layer, which means it can be tested in isolation with no database or web server running.</p>
+
+<h2>QR Code Ticket Validation</h2>
+<p>Each purchased ticket generates a unique QR code containing a signed token. At the venue, staff scan the QR code which hits <code>POST /api/tickets/validate</code> — the API verifies the signature, checks the ticket hasn't been used, and marks it as validated. The entire validation flow completes in under 200ms, which matters when there's a queue at the door.</p>
+
+<h2>Analytics Dashboard</h2>
+<p>The analytics endpoints expose revenue breakdowns, ticket type distribution, demographic data, and capacity utilisation — all queryable by event, date range, or organizer. The frontend renders these as interactive charts, giving organizers actionable insights into what's selling and who's buying.</p>
+
+<h2>CI/CD With GitHub Actions</h2>
+<p>Every pull request runs the full test suite automatically. The pipeline builds the .NET API, runs all 24 tests, and blocks merges if any test fails. This means the main branch is always in a deployable state — a requirement I set from the start of the project.</p>
+
+<h2>Performance</h2>
+<ul>
+  <li>API throughput: 1000+ requests per second under load testing</li>
+  <li>Average database query time: under 50ms (achieved through proper indexing)</li>
+  <li>Page load time: under 2 seconds for the React frontend</li>
+  <li>Memory footprint: under 100MB under normal load</li>
+</ul>
 
 <h2>Key Lessons</h2>
 <ul>
-  <li>In high-stakes software, invest heavily in type safety — it prevents bugs in production</li>
-  <li>Real-time data doesn't always require WebSockets — polling works well for 30-second intervals</li>
-  <li>Design for the expert user first in technical software — they care about density and speed</li>
-  <li>.NET's performance for API-heavy applications is excellent and underrated</li>
+  <li>Optimistic concurrency in EF Core is the right tool for high-contention scenarios like ticket sales</li>
+  <li>JWT refresh token rotation is worth the added complexity — it significantly limits the blast radius of token theft</li>
+  <li>Writing tests first produces cleaner architecture — you can't write a unit test for code that has hidden dependencies</li>
+  <li>CI/CD is not optional for production systems — automated testing on every PR catches regressions before they ship</li>
+  <li>Swagger documentation is not just for external consumers — it's invaluable during development when the frontend and backend are built simultaneously</li>
 </ul>
 
-<p>Want to see the project? Check it out at <a href="/projects/redface-cybersecurity">eliezerkibet.dev/projects/redface-cybersecurity</a>. If you're building a security or monitoring platform, <a href="/contact">get in touch</a>.</p>
+<h2>Get the Code</h2>
+<p>The full source is on <a href="https://github.com/EliezerKibet/EventTicketingPlatform" target="_blank" rel="noopener noreferrer">GitHub</a>. Clone it, run <code>dotnet ef database update</code>, start the API and the Next.js frontend, and you'll have a working ticketing platform in minutes.</p>
+<p>If you need a ticketing system, booking platform, or similar event management solution built for your business, <a href="/contact">get in touch</a>.</p>
         `.trim(),
     },
     {
@@ -174,6 +221,91 @@ const blogPosts: BlogPost[] = [
 <h2>Get the Code</h2>
 <p>The full source code is open source on <a href="https://github.com/EliezerKibet/AI_based_garage" target="_blank" rel="noopener noreferrer">GitHub</a>. Clone it, run <code>dotnet ef database update</code>, and you'll have a working instance in minutes.</p>
 <p>If you need a custom management system built for your business — garage, clinic, service centre, or similar — <a href="/contact">get in touch</a>.</p>
+        `.trim(),
+    },
+    {
+        id: '4',
+        slug: 'building-ecommerce-platform-aspnet-core',
+        title: 'Building a Full-Stack E-Commerce Platform with ASP.NET Core: 60 Tests, 98% Coverage',
+        excerpt: 'How I built a production-ready e-commerce platform with ASP.NET Core, SQL Server, and a 60-test suite achieving 98% code coverage — covering cart operations, order processing, admin analytics, promotions, and a complete checkout flow.',
+        date: '2025-01-25',
+        readTime: '8 min read',
+        tags: ['ASP.NET Core', 'C#', '.NET', 'SQL Server', 'xUnit', 'Case Study'],
+        content: `
+<h2>What Is This Platform?</h2>
+<p>This is a full-stack e-commerce platform built with ASP.NET Core Web API on the backend and HTML/CSS/JavaScript on the frontend, using SQL Server for data and ASP.NET Core Identity for authentication. It covers the entire customer journey — product discovery, cart management, checkout, order tracking, reviews — as well as a full admin dashboard with analytics.</p>
+<p>What makes this project stand out is the testing infrastructure: 60 passing tests with 98% code coverage, automated CI/CD via GitHub Actions, and performance that holds under 100 concurrent users.</p>
+
+<h2>Tech Stack</h2>
+<ul>
+  <li><strong>Backend:</strong> ASP.NET Core Web API, MVC pattern, ASP.NET Core Identity</li>
+  <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+  <li><strong>Database:</strong> SQL Server with Entity Framework Core</li>
+  <li><strong>Testing:</strong> xUnit, FluentAssertions, Moq, Entity Framework In-Memory</li>
+  <li><strong>CI/CD:</strong> GitHub Actions — tests run on every PR, 95%+ coverage required to merge</li>
+</ul>
+
+<h2>Architecture: Clean Separation of Concerns</h2>
+<p>The project follows a layered architecture with strict separation between concerns:</p>
+<ul>
+  <li><strong>Controllers</strong> — handle HTTP requests and delegate to services</li>
+  <li><strong>Services</strong> — contain all business logic</li>
+  <li><strong>Repositories</strong> — handle data access via Entity Framework</li>
+  <li><strong>DTOs</strong> — decouple API contracts from internal models</li>
+  <li><strong>Interfaces</strong> — enable dependency injection and testability</li>
+</ul>
+<p>This structure is what makes 98% test coverage achievable — every layer can be tested in isolation using mocks and in-memory databases.</p>
+
+<h2>The Testing Strategy: 60 Tests, 98% Coverage</h2>
+<p>The test suite is the most comprehensive part of this project. Here's the full breakdown:</p>
+<ul>
+  <li><strong>CartService — 8 tests:</strong> cart creation for new users, adding items with validation, invalid product handling, cart clearing, guest cart operations</li>
+  <li><strong>OrderService — 6 tests:</strong> order creation from cart, empty cart validation, order retrieval, user order history, receipt generation, error handling</li>
+  <li><strong>ProductService — 6 tests:</strong> product retrieval and search, category filtering, visibility toggle, CRUD validation, invalid ID handling</li>
+  <li><strong>CartsController — 14 tests:</strong> all CRUD operations, guest vs authenticated scenarios, cart transfer, full error handling (404, 400, 500)</li>
+  <li><strong>CheckoutController — 5 tests:</strong> guest session creation, promotion calculations, receipt generation, order retrieval, checkout workflow</li>
+  <li><strong>ProductsController — 8 tests:</strong> product listing with favourites, promotions, search, cookie-based state, error scenarios</li>
+  <li><strong>AdminController — 4 tests:</strong> product management CRUD, admin-only operations, validation and authorization</li>
+  <li><strong>Model tests — 9 tests:</strong> property validation, price validation, stock quantity rules, cart calculations, date handling</li>
+</ul>
+<p>The entire suite runs in 3.2 seconds using Entity Framework's in-memory provider, which means developers get fast feedback without needing a real database running locally.</p>
+
+<h2>The Cart System</h2>
+<p>The cart handles both guest users (session-based) and authenticated users (database-persisted), with automatic migration when a guest checks out and creates an account. Cart items support gift wrapping options and messages — a small detail that significantly impacts conversion for gift-oriented products.</p>
+<p>The cart transfer endpoint (<code>POST /api/Carts/transfer</code>) moves a guest cart into the authenticated user's cart on login, merging quantities for any duplicate items.</p>
+
+<h2>Promotions and Coupons</h2>
+<p>The promotions system supports time-limited percentage discounts applied at the product level, and coupon codes applied at checkout. The two can stack under defined rules. The checkout endpoint calculates the final price after all applicable promotions before the order is confirmed — preventing any discrepancy between what the user saw and what they were charged.</p>
+<p>The admin can create promotions tied to specific product IDs or categories, set start and end dates, and monitor usage analytics in real time.</p>
+
+<h2>Admin Analytics Dashboard</h2>
+<p>The admin dashboard exposes a full analytics API covering sales summaries, revenue by product, customer growth, and promotion effectiveness. These endpoints power the admin frontend charts and are also queryable directly for reporting exports.</p>
+<p>The review moderation system lets admins approve or reject customer reviews before they go live, with bulk approval for high-volume periods.</p>
+
+<h2>Performance Benchmarks</h2>
+<ul>
+  <li>Average API response time: under 50ms for all standard endpoints</li>
+  <li>Average database query time: under 10ms</li>
+  <li>Tested under 100 concurrent users with stable memory usage</li>
+  <li>Page load time: under 2 seconds</li>
+</ul>
+<p>These numbers come from proper SQL Server indexing on the most queried columns — product category, user ID on cart items, and order date on the orders table.</p>
+
+<h2>CI/CD Pipeline</h2>
+<p>GitHub Actions runs the full 60-test suite on every pull request. Merges to main are blocked if any test fails or coverage drops below 95%. This means the main branch is always deployable — a hard requirement I set after experiencing the cost of broken production deployments firsthand.</p>
+
+<h2>Key Lessons</h2>
+<ul>
+  <li>In-memory EF Core databases make unit tests fast — 60 tests in 3.2 seconds is achievable</li>
+  <li>Interface-based design is not over-engineering — it's what makes mocking possible and test coverage meaningful</li>
+  <li>Guest-to-user cart migration needs to be tested explicitly — it's one of the most error-prone flows in any e-commerce system</li>
+  <li>CI/CD quality gates (coverage thresholds, required passing tests) enforce standards that code reviews alone cannot</li>
+  <li>FluentAssertions makes test assertions readable — <code>result.Items.Should().HaveCount(2)</code> is far clearer than <code>Assert.Equal(2, result.Items.Count)</code></li>
+</ul>
+
+<h2>Get the Code</h2>
+<p>The full source is on <a href="https://github.com/EliezerKibet/ECommerce-Platform" target="_blank" rel="noopener noreferrer">GitHub</a>. Clone it, run <code>dotnet ef database update</code>, and the application starts with pre-seeded test data including products, categories, and active promotions.</p>
+<p>If you need an e-commerce platform, product catalogue, or order management system built for your business, <a href="/contact">get in touch</a>.</p>
         `.trim(),
     },
 ];
