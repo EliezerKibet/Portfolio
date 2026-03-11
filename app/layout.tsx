@@ -15,6 +15,9 @@ export const metadata: Metadata = {
         template: '%s | Eliezer Kibet'
     },
     description: 'Freelance Full-Stack Developer in Berlin specializing in React, Next.js, TypeScript, and .NET. 100% Job Success Score on Upwork. Available for web development projects across Europe.',
+    verification: {
+        google: ['5fnk1OjhtBhyhZgMMgs7e_1MsIiJBLEqYe5RFSixHS0', 'BYS0L-p7neqvuYpQS23jAPclf81R9yi2yDJlDwccSUA'],
+    },
     // ... rest of your metadata
 };
 
