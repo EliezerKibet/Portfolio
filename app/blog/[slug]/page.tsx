@@ -16,6 +16,10 @@ export async function generateMetadata(
     const post = getBlogPostBySlug(params.slug);
     if (!post) return {};
 
+    const ogImage = post.image
+        ? `${baseUrl}${post.image}`
+        : `${baseUrl}/og-image.png`;
+
     return {
         title: `${post.title} | Eliezer Kibet`,
         description: post.excerpt,
@@ -29,13 +33,16 @@ export async function generateMetadata(
             url: `${baseUrl}/blog/${post.slug}`,
             type: 'article',
             publishedTime: post.date,
+            modifiedTime: post.dateModified ?? post.date,
             authors: ['Eliezer Kibet'],
             tags: post.tags,
+            images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
         },
         twitter: {
             card: 'summary_large_image',
             title: post.title,
             description: post.excerpt,
+            images: [ogImage],
         },
     };
 }
@@ -47,11 +54,16 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     const allPosts = getAllBlogPosts();
     const otherPosts = allPosts.filter((p) => p.slug !== post!.slug).slice(0, 2);
 
+    const ogImage = post!.image
+        ? `${baseUrl}${post!.image}`
+        : `${baseUrl}/og-image.png`;
+
     const articleSchema = {
         '@context': 'https://schema.org',
         '@type': 'Article',
         headline: post!.title,
         description: post!.excerpt,
+        image: ogImage,
         author: {
             '@type': 'Person',
             name: 'Eliezer Kibet',
@@ -63,7 +75,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             url: baseUrl,
         },
         datePublished: post!.date,
-        dateModified: post!.date,
+        dateModified: post!.dateModified ?? post!.date,
         url: `${baseUrl}/blog/${post!.slug}`,
         keywords: post!.tags.join(', '),
         mainEntityOfPage: {

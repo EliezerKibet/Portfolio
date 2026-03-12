@@ -5,8 +5,10 @@ export type BlogPost = {
     excerpt: string;
     content: string;
     date: string;
+    dateModified?: string;
     tags: string[];
     readTime: string;
+    image?: string;
 };
 
 const blogPosts: BlogPost[] = [
@@ -18,6 +20,7 @@ const blogPosts: BlogPost[] = [
         date: '2026-03-08',
         readTime: '6 min read',
         tags: ['React', 'C#', '.NET', 'SendGrid', 'Tailwind CSS', 'Case Study'],
+        image: '/projects/embassy_website_kenya.png',
         content: `
 <h2>The Project</h2>
 <p>I recently completed one of my most complex projects to date — a full web platform for an embassy. The requirements were demanding: 60 front-end pages, a secure appointment booking system, a media management backend, 2FA authentication, multi-user admin access, and automated email notifications via SendGrid.</p>
@@ -69,6 +72,7 @@ const blogPosts: BlogPost[] = [
         date: '2025-05-02',
         readTime: '8 min read',
         tags: ['React', 'Next.js', 'TypeScript', '.NET 9', 'SQL Server', 'Case Study'],
+        image: '/projects/Eventticketing.jpg',
         content: `
 <h2>What Is EventHub?</h2>
 <p>EventHub is a production-grade event ticketing platform that handles the full lifecycle of an event — from creation and ticket sales to QR code validation and post-event analytics. It's built for three distinct user types: event organizers, customers, and administrators — each with their own portal and permission set.</p>
@@ -163,6 +167,7 @@ const blogPosts: BlogPost[] = [
         date: '2024-01-25',
         readTime: '7 min read',
         tags: ['ASP.NET Core', 'C#', '.NET', 'SQL Server', 'AI', 'Case Study'],
+        image: '/projects/AImainpage.jpg',
         content: `
 <h2>The Problem With Traditional Garage Operations</h2>
 <p>Most auto garages run on a mix of phone calls, paper job cards, and spreadsheets. Customers have no visibility into their vehicle's service status. Mechanics get jobs via word of mouth. Managers have no real-time view of what's happening on the floor. This project was built to fix all of that in one platform.</p>
@@ -231,6 +236,7 @@ const blogPosts: BlogPost[] = [
         date: '2025-01-25',
         readTime: '8 min read',
         tags: ['ASP.NET Core', 'C#', '.NET', 'SQL Server', 'xUnit', 'Case Study'],
+        image: '/projects/ecommercemainpage.jpg',
         content: `
 <h2>What Is This Platform?</h2>
 <p>This is a full-stack e-commerce platform built with ASP.NET Core Web API on the backend and HTML/CSS/JavaScript on the frontend, using SQL Server for data and ASP.NET Core Identity for authentication. It covers the entire customer journey — product discovery, cart management, checkout, order tracking, reviews — as well as a full admin dashboard with analytics.</p>
@@ -316,6 +322,7 @@ const blogPosts: BlogPost[] = [
         date: '2026-03-11',
         readTime: '9 min read',
         tags: ['ASP.NET Core', 'React', 'TypeScript', 'PostgreSQL', 'Docker', 'Azure DevOps', 'Jira', 'Case Study'],
+        image: '/projects/flowlenzmainpage.png',
         content: `
 <h2>The Problem</h2>
 <p>Most engineering teams don't use a single issue tracker. They use two — or three. Jira for product, Azure DevOps for engineering, maybe GitHub Issues for open source. Context switching between platforms is constant, and the same issue often gets created in multiple systems without anyone realising it.</p>
