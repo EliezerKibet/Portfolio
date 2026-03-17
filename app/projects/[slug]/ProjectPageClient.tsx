@@ -4,7 +4,7 @@ import { Project } from '@/lib/projects';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, ExternalLink, Github, Calendar, Tag } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, Calendar, Tag, Target, TrendingUp, Clock } from 'lucide-react';
 
 export default function ProjectPageClient({ project }: { project: Project }) {
     return (
@@ -61,6 +61,40 @@ export default function ProjectPageClient({ project }: { project: Project }) {
                             <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
                                 {project.description}
                             </p>
+
+                            {/* Case Study: Problem → Outcome */}
+                            {(project.clientProblem || project.outcome || project.timeline) && (
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+                                    {project.clientProblem && (
+                                        <div className="bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-800/30 rounded-xl p-4">
+                                            <div className="flex items-center gap-2 mb-2 text-red-600 dark:text-red-400">
+                                                <Target size={16} />
+                                                <span className="text-xs font-semibold uppercase tracking-wide">The Problem</span>
+                                            </div>
+                                            <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{project.clientProblem}</p>
+                                        </div>
+                                    )}
+                                    {project.outcome && (
+                                        <div className="bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800/30 rounded-xl p-4">
+                                            <div className="flex items-center gap-2 mb-2 text-green-600 dark:text-green-400">
+                                                <TrendingUp size={16} />
+                                                <span className="text-xs font-semibold uppercase tracking-wide">The Outcome</span>
+                                            </div>
+                                            <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{project.outcome}</p>
+                                        </div>
+                                    )}
+                                    {project.timeline && (
+                                        <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/30 rounded-xl p-4">
+                                            <div className="flex items-center gap-2 mb-2 text-blue-600 dark:text-blue-400">
+                                                <Clock size={16} />
+                                                <span className="text-xs font-semibold uppercase tracking-wide">Timeline</span>
+                                            </div>
+                                            <p className="text-2xl font-bold text-gray-900 dark:text-white">{project.timeline}</p>
+                                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">from kickoff to delivery</p>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
 
                             {/* Action Buttons */}
                             <div className="flex flex-wrap gap-4 mt-8">
@@ -198,6 +232,23 @@ export default function ProjectPageClient({ project }: { project: Project }) {
                                     <span className="text-gray-500 dark:text-gray-400">Features:</span>
                                     <span className="font-semibold">{project.features.filter(Boolean).length} key features</span>
                                 </div>
+                                {project.timeline && (
+                                    <div className="flex items-center justify-between text-sm">
+                                        <span className="text-gray-500 dark:text-gray-400">Timeline:</span>
+                                        <span className="font-semibold">{project.timeline}</span>
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Hire CTA */}
+                            <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                                <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Need something similar built?</p>
+                                <Link
+                                    href="/contact"
+                                    className="block w-full text-center px-4 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold text-sm transition-all duration-200 hover:scale-105"
+                                >
+                                    Hire Me for This
+                                </Link>
                             </div>
                         </motion.div>
                     </div>

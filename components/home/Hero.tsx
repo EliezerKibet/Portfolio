@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useScroll, useTransform, useSpring } from 'framer-motion';
 
 export default function Hero() {
@@ -123,12 +124,41 @@ export default function Hero() {
                                 I create responsive, user-friendly web applications. Expect clean and well functioning applications tailored specifically to your requirements.
                             </motion.p>
 
-                            {/* SEO IMPROVEMENT: Added "Available for Hire" badge */}
-                            <motion.div variants={itemVariants} className="flex items-center gap-3 pt-2">
-
-                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                    Available for projects
+                            {/* Availability badge */}
+                            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3 pt-2">
+                                <span className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-sm font-semibold">
+                                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                                    Available for projects — March 2026
                                 </span>
+                            </motion.div>
+
+                            {/* Social proof */}
+                            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-1">
+                                <a
+                                    href="https://www.upwork.com/freelancers/~0190e3e5eaf9b0fdb1"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-700 dark:text-gray-300 hover:border-primary-500 transition-colors"
+                                >
+                                    <span className="font-bold text-green-600">★ 100%</span>
+                                    <span>Job Success · Top Rated on Upwork</span>
+                                </a>
+                            </motion.div>
+
+                            {/* CTA buttons */}
+                            <motion.div variants={itemVariants} className="flex flex-wrap gap-3 pt-2">
+                                <Link
+                                    href="/contact"
+                                    className="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow transition-all duration-200 hover:scale-105"
+                                >
+                                    Hire Me
+                                </Link>
+                                <Link
+                                    href="/projects"
+                                    className="px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white font-semibold rounded-lg hover:border-primary-500 transition-colors"
+                                >
+                                    View Work
+                                </Link>
                             </motion.div>
 
                         </motion.div>

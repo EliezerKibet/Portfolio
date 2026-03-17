@@ -8,6 +8,9 @@ export type Project = {
   technologies: string[];
   features: string[];
   challenges: string;
+  clientProblem?: string;
+  outcome?: string;
+  timeline?: string;
   demoUrl?: string;
   githubUrl?: string;
   featured: boolean;
@@ -52,6 +55,9 @@ const projects: Project[] = [
     ],
     challenges:
       "The main challenge was implementing complex animations while maintaining performance. I utilized Framer Motion with optimized configurations and lazy-loaded video backgrounds to ensure smooth performance across devices. ",
+    clientProblem: "The client had a Figma design for a high-end cybersecurity company website but no developer capable of translating the complex animations and video backgrounds into a performant Next.js build.",
+    outcome: "Delivered a pixel-perfect implementation of the Figma design with smooth GSAP and Framer Motion animations, Stripe payment integration, and a Supabase-backed certificate management system — live at redfacers.com.",
+    timeline: "6 weeks",
     demoUrl: "https://redfacers.com/",
     githubUrl: "https://github.com/EliezerKibet",
     featured: true,
@@ -90,6 +96,9 @@ const projects: Project[] = [
     ],
     challenges:
       "Integrating with different API structures (Jira and Azure DevOps) required creating a unified data model while preserving platform-specific features. I implemented adapter patterns and a robust caching system to ensure seamless operations.At first the Jira and Azure API were working as intended. After some time the Jira API was deprecated and could only scrape 100 tickets instead of the full ticket amount. ",
+    clientProblem: "The engineering team was context-switching between Jira and Azure DevOps constantly, duplicating tickets across both systems and losing visibility into cross-platform work.",
+    outcome: "Built a unified dashboard that scrapes both platforms every 30 seconds, deduplicates tickets with AI similarity scoring, and surfaces assignee recommendations — reducing context-switching overhead for the team.",
+    timeline: "8 weeks",
     demoUrl: "https://github.com/EliezerKibet",
     githubUrl: "https://github.com/EliezerKibet",
     featured: true,
@@ -122,6 +131,9 @@ const projects: Project[] = [
     ],
     challenges:
       "Ensuring data accuracy and real-time updates while maintaining security was crucial. I implemented WebSockets for live data and JWT authentication with refresh token rotation for enhanced security.",
+    clientProblem: "The client needed a personal finance dashboard to track investment portfolio performance across multiple holdings with real-time P&L visibility.",
+    outcome: "Delivered a live dashboard with Stripe API integration, real-time portfolio P&L tracking, transaction management, and secure JWT authentication with refresh token rotation.",
+    timeline: "4 weeks",
     demoUrl: "https://github.com/EliezerKibet",
     githubUrl: "https://github.com/EliezerKibet",
     featured: false,
@@ -155,6 +167,9 @@ const projects: Project[] = [
     ],
     challenges:
       "Creating a seamless user experience from browsing to checkout while handling various edge cases (inventory changes, session management) required careful state management and optimistic UI updates.",
+    clientProblem: "The client needed a production-ready e-commerce platform with a robust test suite and CI/CD pipeline to ensure reliability before launch.",
+    outcome: "Shipped a full e-commerce platform with 60 passing tests at 98% code coverage, automated GitHub Actions CI/CD, and sub-50ms API response times under 100 concurrent users.",
+    timeline: "6 weeks",
     demoUrl: "https://github.com/EliezerKibet",
     githubUrl: "https://github.com/EliezerKibet/ecommerce-platform",
     featured: false,
@@ -188,6 +203,9 @@ const projects: Project[] = [
     ],
     challenges:
       "Creating a seamless user experience from browsing to checkout while handling various edge cases (inventory changes, session management) required careful state management and optimistic UI updates.",
+    clientProblem: "The client needed a multi-tier event ticketing platform with real-time capacity management to prevent overbooking and QR code validation at the venue door.",
+    outcome: "Delivered a full ticketing platform with 24 passing tests, JWT + refresh token auth, real-time capacity management using optimistic concurrency, QR code validation completing in under 200ms, and a GitHub Actions CI/CD pipeline.",
+    timeline: "7 weeks",
     demoUrl: "https://github.com/EliezerKibet",
     githubUrl: "https://github.com/EliezerKibet/EventTicketingPlatform",
     featured: false,
@@ -214,6 +232,9 @@ const projects: Project[] = [
     ],
     challenges:
       "Creating responses for chatbot AI to handle diverse customer queries while ensuring accurate and context-aware interactions required extensive training data and fine-tuning of the language model.",
+    clientProblem: "A garage business was running entirely on phone calls, paper job cards, and spreadsheets — mechanics had no digital job queue, customers had no visibility into service status, and managers had no real-time floor overview.",
+    outcome: "Built a three-portal platform (admin, customer, mechanic) with an AI chatbot grounded to live database data, smart scheduling with conflict detection, and predictive maintenance alerts — eliminating the paper-based workflow entirely.",
+    timeline: "8 weeks",
     demoUrl: "https://github.com/EliezerKibet",
     githubUrl: "https://github.com/EliezerKibet/AI_based_garage",
     featured: false,
@@ -238,6 +259,9 @@ const projects: Project[] = [
     ],
     challenges:
       "Managing a large number of pages while keeping content consistent and maintainable required a well-structured component architecture. Implementing 2FA alongside multi-user role management added complexity to the authentication flow, which was resolved using a layered middleware approach in the .NET backend.",
+    clientProblem: "The Embassy of Kenya needed a full official web presence with 60 pages, a public appointment booking system, and a secure multi-user admin backend — built to government-grade security standards.",
+    outcome: "Delivered 60 fully responsive pages, a slot-based appointment booking system with SendGrid email confirmations, a media management backend, and 2FA-secured multi-role admin access — live at embassydemo.netlify.app.",
+    timeline: "10 weeks",
     demoUrl: "https://embassydemo.netlify.app/",
     featured: true,
     date: "2026-03-08",

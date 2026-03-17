@@ -69,6 +69,24 @@ export default function ContactInfo() {
 
     return (
         <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700">
+            {/* Book a call CTA */}
+            <div className="mb-6 p-4 bg-primary-50 dark:bg-primary-900/20 border border-primary-100 dark:border-primary-800/30 rounded-xl">
+                <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">Prefer to talk first?</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400 mb-3">Book a free 30-minute discovery call — no commitment.</p>
+                <a
+                    href="https://calendly.com/elieserkibet/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold rounded-lg transition-all duration-200 hover:scale-105 w-full justify-center"
+                    onClick={() => track('calendly_click', { location: 'contact_info' })}
+                >
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    Book a Discovery Call
+                </a>
+            </div>
+
             <div className="space-y-6">
                 {contacts.map((contact, index) => (
                     <motion.div

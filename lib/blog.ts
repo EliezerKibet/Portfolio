@@ -420,6 +420,205 @@ const blogPosts: BlogPost[] = [
 <p>If you're building a tool that integrates across multiple project management platforms, or need a custom aggregation layer for your engineering workflow, <a href="/contact">get in touch</a>.</p>
         `.trim(),
     },
+    {
+        id: '6',
+        slug: 'how-much-does-a-freelance-web-developer-cost-in-germany-2026',
+        title: 'How Much Does a Freelance Web Developer Cost in Germany? (2026)',
+        excerpt: 'A straight answer on freelance web developer rates in Germany — what affects pricing, what to expect for React, Next.js, and .NET work, and how to get accurate quotes for your project.',
+        date: '2026-03-17',
+        readTime: '5 min read',
+        tags: ['Freelance', 'Hiring', 'Web Development', 'Pricing', 'Germany'],
+        content: `
+<h2>The Short Answer</h2>
+<p>Freelance web developer rates in Germany in 2026 typically range from <strong>€50–€130/hour</strong>, depending on specialisation, seniority, and project type. For fixed-price projects, a standard business website runs €2,000–€8,000, while complex web applications range from €8,000–€40,000+.</p>
+<p>Here's what actually drives the number — and how to get an accurate quote for your specific project.</p>
+
+<h2>What Affects the Rate</h2>
+<h3>Technology Stack</h3>
+<p>React, Next.js, and TypeScript developers typically command higher rates than developers working with older stacks. .NET backend developers are similarly positioned. Rates reflect market demand — and both are in high demand across European enterprises and startups.</p>
+
+<h3>Project Complexity</h3>
+<p>A five-page marketing website and a multi-tenant SaaS platform both involve "web development" — but they're completely different scopes. Authentication, third-party integrations, real-time data, and payment processing each add to complexity and cost.</p>
+
+<h3>Seniority and Track Record</h3>
+<p>A developer with a documented track record (verifiable projects, client reviews, test suites with 90%+ coverage) costs more than one without. This difference usually pays for itself — experienced developers move faster, produce fewer bugs, and require less hand-holding.</p>
+
+<h3>Location</h3>
+<p>Berlin-based developers typically charge €70–€120/hour. Rates are similar in Munich and Hamburg. Remote developers based outside Germany may charge less, but verify their track record carefully.</p>
+
+<h2>Typical Project Price Ranges (Germany, 2026)</h2>
+<ul>
+  <li><strong>Landing page / brochure site:</strong> €1,500–€4,000</li>
+  <li><strong>Business website (5–15 pages):</strong> €3,000–€8,000</li>
+  <li><strong>Booking or appointment system:</strong> €5,000–€15,000</li>
+  <li><strong>E-commerce store:</strong> €6,000–€20,000</li>
+  <li><strong>Web application / SaaS MVP:</strong> €12,000–€40,000+</li>
+  <li><strong>Enterprise platform (complex integrations, multi-user, 2FA):</strong> €25,000+</li>
+</ul>
+<p>These are ranges, not quotes. Your actual cost depends entirely on scope.</p>
+
+<h2>Fixed Price vs. Hourly: Which Is Better?</h2>
+<p><strong>Fixed price</strong> works well when the scope is clear and unlikely to change — a marketing site, a specific feature, a Figma-to-code implementation. You know what you're paying upfront.</p>
+<p><strong>Hourly</strong> works better for ongoing work, projects with evolving requirements, or when you want flexibility to pivot. The risk is scope creep if requirements change frequently.</p>
+<p>Most experienced freelancers will help you choose the right model for your project during the initial call.</p>
+
+<h2>What You Should Always Ask For</h2>
+<p>Before signing anything, get clarity on:</p>
+<ul>
+  <li>What's explicitly included in the scope (and what isn't)</li>
+  <li>Who owns the code after delivery</li>
+  <li>How revisions and change requests are handled</li>
+  <li>What the handover looks like — documentation, deployment, knowledge transfer</li>
+  <li>Whether the developer is available for support after launch</li>
+</ul>
+
+<h2>How to Get an Accurate Quote</h2>
+<p>The more detail you provide upfront, the more accurate the quote. Useful things to share:</p>
+<ul>
+  <li>What the product does and who uses it</li>
+  <li>Any designs or wireframes you have</li>
+  <li>Whether you need a backend/API or just a frontend</li>
+  <li>Integrations required (payment, email, CRM, etc.)</li>
+  <li>Your target timeline</li>
+</ul>
+<p>If you're not sure about some of these, a good developer will help you define scope on a short discovery call — usually free, no commitment.</p>
+
+<h2>What I Charge</h2>
+<p>I'm Eliezer Kibet, a freelance full-stack developer based in Berlin with a 100% Job Success Score on Upwork. I work on React, Next.js, TypeScript, and .NET projects. My rates are competitive for the Berlin market and reflect the quality and reliability I deliver.</p>
+<p>If you have a project in mind, <a href="/contact">get in touch</a> and I'll give you an honest, detailed quote — usually within 24 hours.</p>
+        `.trim(),
+    },
+    {
+        id: '7',
+        slug: 'nextjs-vs-wordpress-which-is-better-for-your-business-website',
+        title: 'Next.js vs WordPress: Which Is Better for Your Business Website?',
+        excerpt: 'A practical comparison for business owners — when WordPress makes sense, when Next.js is the better choice, and how to decide which one is right for your project without getting lost in technical jargon.',
+        date: '2026-03-12',
+        readTime: '6 min read',
+        tags: ['Next.js', 'WordPress', 'Web Development', 'Business', 'Hiring'],
+        content: `
+<h2>The Real Question</h2>
+<p>Most comparisons between Next.js and WordPress are written by developers for developers. This one is written for the person who needs to decide — a business owner, a founder, or a marketing manager who just wants to know what will actually work best for their situation.</p>
+<p>Short answer: <strong>WordPress is better if you need non-technical staff to manage content. Next.js is better if you need performance, custom functionality, or a web application.</strong> Here's the full picture.</p>
+
+<h2>What WordPress Is Good At</h2>
+<ul>
+  <li>Content-heavy sites where non-technical staff need to update pages, blog posts, or products without developer help</li>
+  <li>Quick setup with themes and plugins — a basic site can be live in days, not weeks</li>
+  <li>E-commerce via WooCommerce if your needs are straightforward</li>
+  <li>Budget-conscious projects where the main constraint is cost, not performance</li>
+</ul>
+<p>WordPress powers roughly 43% of the web for a reason. For many businesses — especially content-focused ones — it's the right tool.</p>
+
+<h2>Where WordPress Falls Short</h2>
+<ul>
+  <li><strong>Performance:</strong> A default WordPress site is slow. Plugins add weight. Achieving good Core Web Vitals scores requires significant effort and often specialist knowledge.</li>
+  <li><strong>Security:</strong> WordPress is the most targeted CMS in the world. Keeping a WordPress site secure requires constant plugin updates, a good host, and vigilance.</li>
+  <li><strong>Custom functionality:</strong> If your site needs to do something beyond what a plugin covers — custom booking logic, integrations with internal systems, complex user flows — WordPress becomes a constraint, not a tool.</li>
+  <li><strong>Scaling:</strong> High-traffic WordPress sites require managed hosting that costs significantly more than hosting a static Next.js site on Vercel.</li>
+</ul>
+
+<h2>What Next.js Is Good At</h2>
+<ul>
+  <li><strong>Performance:</strong> Next.js sites are fast by default. Static generation means pages load from a CDN edge node near the user — typical load times under 1 second.</li>
+  <li><strong>SEO:</strong> Server-side rendering means search engines see the full page content immediately. Core Web Vitals are much easier to optimise than in WordPress.</li>
+  <li><strong>Custom functionality:</strong> If you need a booking system, a client portal, a dashboard, or any non-standard user flow built into your site — Next.js gives you complete control.</li>
+  <li><strong>Security:</strong> A statically generated Next.js site has almost no attack surface. There's no database exposed, no login page to brute-force, no plugin vulnerabilities.</li>
+  <li><strong>Cost at scale:</strong> Hosting on Vercel is free or very cheap at low-to-medium traffic, and scales gracefully without expensive managed hosting plans.</li>
+</ul>
+
+<h2>Where Next.js Falls Short</h2>
+<ul>
+  <li><strong>Content editing:</strong> Non-technical staff cannot edit a Next.js site without a CMS layer (like Sanity, Contentful, or similar). This adds complexity and sometimes cost.</li>
+  <li><strong>Upfront cost:</strong> A custom Next.js site costs more to build than a WordPress site using a theme. You're paying for something built specifically for you.</li>
+  <li><strong>Time to launch:</strong> A custom build takes longer than installing a theme. If you need something live in two weeks, WordPress may be the pragmatic choice.</li>
+</ul>
+
+<h2>How to Decide</h2>
+<p>Ask yourself these questions:</p>
+<ol>
+  <li><strong>Does non-technical staff need to edit the site regularly?</strong> If yes, you need a CMS — either WordPress or a headless CMS paired with Next.js.</li>
+  <li><strong>Does the site need custom functionality?</strong> Booking systems, client portals, integrations, dashboards — these are Next.js territory.</li>
+  <li><strong>How important is performance and SEO?</strong> If organic search is a key acquisition channel, Next.js gives you a meaningful edge.</li>
+  <li><strong>What's your timeline and budget?</strong> Faster and cheaper favours WordPress. Better performance, more flexibility, and custom features favour Next.js.</li>
+</ol>
+
+<h2>The Middle Ground: Headless CMS + Next.js</h2>
+<p>A growing number of businesses use the best of both: Next.js for the frontend (fast, custom, SEO-optimised) paired with a headless CMS like Sanity or Contentful for content management (non-technical editing without WordPress's limitations). This approach costs more upfront but is often the right long-term choice for businesses that need both flexibility and content management.</p>
+
+<h2>My Recommendation</h2>
+<p>If you're a business with a content team that needs to publish frequently and doesn't require custom functionality — WordPress is fine. If you need performance, custom features, or a web application — Next.js is the better investment.</p>
+<p>Not sure which applies to your situation? <a href="/contact">Get in touch</a> and I'll give you an honest recommendation based on your specific requirements — no obligation.</p>
+        `.trim(),
+    },
+    {
+        id: '8',
+        slug: 'how-to-hire-a-freelance-developer-in-europe-clients-guide',
+        title: 'How to Hire a Freelance Developer in Europe: A Client\'s Guide',
+        excerpt: 'A practical guide for businesses and founders hiring a freelance web developer in Europe — where to find developers, what to look for, how to structure the engagement, and how to avoid the common mistakes.',
+        date: '2026-03-05',
+        readTime: '7 min read',
+        tags: ['Freelance', 'Hiring', 'Web Development', 'Europe', 'Guide'],
+        content: `
+<h2>Why This Guide Exists</h2>
+<p>Hiring a freelance developer for the first time — or after a bad experience — is stressful. There's a wide range of quality, unclear pricing, and no standard way to evaluate who's actually good. This guide gives you a clear process for finding, vetting, and working with a freelance developer in Europe.</p>
+
+<h2>Where to Find Freelance Developers in Europe</h2>
+<h3>Upwork</h3>
+<p>The largest freelance platform globally. The key metric to look for is <strong>Job Success Score</strong> — anything above 90% on a developer with multiple completed contracts is a meaningful signal. Look for Top Rated or Expert Vetted badges. The profile will show past projects, client feedback, and earnings history.</p>
+
+<h3>LinkedIn</h3>
+<p>Good for finding developers who work independently or through small agencies. Search for job titles like "Freelance React Developer" or "Independent .NET Developer" filtered to your target country. Check their actual portfolio — not just endorsements.</p>
+
+<h3>Referrals</h3>
+<p>The highest-quality hires usually come from referrals. Ask your network — other founders, your tech contacts, even your existing developers — if they know someone good. A referred developer comes with a real track record you can verify.</p>
+
+<h3>GitHub</h3>
+<p>For technical roles, looking at a developer's GitHub profile tells you a lot. Active repositories, clean commit history, and open source contributions show you how someone actually works — not just what they say about themselves.</p>
+
+<h2>What to Look For</h2>
+<h3>Verifiable Work</h3>
+<p>Can they show you live projects? Public GitHub repos? Client reviews you can read? A developer who can't point to concrete, verifiable work is a risk. The best developers have a portfolio of real things they've built and deployed.</p>
+
+<h3>Communication</h3>
+<p>How someone communicates before they're hired tells you exactly how they'll communicate during the project. Do they ask clarifying questions? Do they respond promptly? Do they explain technical things clearly? These signals matter more than their CV.</p>
+
+<h3>Testing and Code Quality</h3>
+<p>For anything more complex than a marketing site, ask: <em>do you write tests?</em> A developer who writes tests is a developer who thinks about edge cases, designs their code for maintainability, and cares about what happens after they hand over the project. This is one of the most reliable quality signals available.</p>
+
+<h3>Relevant Experience</h3>
+<p>Have they built something similar to what you need? A developer who has built a booking system before will build yours faster and with fewer surprises than one doing it for the first time. Ask specifically about relevant past projects, not just general experience.</p>
+
+<h2>How to Structure the Engagement</h2>
+<h3>Start With a Clear Scope</h3>
+<p>The most common reason freelance projects fail is scope creep — requirements that expand without budget or timeline adjusting. Before work starts, agree in writing on exactly what's included. Be specific: "a booking system" is not a scope; "a booking system where users can select a date, choose a service type, enter their details, and receive an email confirmation" is a scope.</p>
+
+<h3>Choose the Right Contract Type</h3>
+<ul>
+  <li><strong>Fixed price:</strong> Best when scope is fully defined and unlikely to change. You know the total cost upfront.</li>
+  <li><strong>Time and materials (hourly):</strong> Best when requirements may evolve, or for ongoing work. Requires trust and regular check-ins.</li>
+  <li><strong>Milestone-based:</strong> A good middle ground — fixed price per milestone, with payment tied to delivery. Reduces risk on both sides.</li>
+</ul>
+
+<h3>Set Up Regular Check-ins</h3>
+<p>A weekly update (even just a short message or a 15-minute call) is worth far more than a big reveal at the end. It lets you course-correct early, ask questions, and stay informed. Good developers will do this proactively; if yours doesn't, ask for it.</p>
+
+<h3>Plan the Handover</h3>
+<p>Before the project ends, agree on what handover looks like. At minimum: access to all accounts and repositories, basic documentation on how to make common changes, and a brief support period for questions after launch. Many clients don't think about this until it's too late.</p>
+
+<h2>Common Mistakes to Avoid</h2>
+<ul>
+  <li><strong>Choosing on price alone:</strong> The cheapest quote is almost never the best value. A developer who charges less but takes twice as long, delivers bugs, or disappears after handover costs more in the end.</li>
+  <li><strong>Skipping the discovery call:</strong> Always talk to a developer before hiring them. A 30-minute call tells you more than a portfolio ever will.</li>
+  <li><strong>No written scope:</strong> Verbal agreements about scope don't hold when requirements shift. Get it in writing — even a detailed email is better than nothing.</li>
+  <li><strong>Not asking about post-launch support:</strong> Who do you call when something breaks after launch? Agree on this before work starts.</li>
+</ul>
+
+<h2>Working With Me</h2>
+<p>I'm Eliezer Kibet — a freelance full-stack developer based in Berlin with a 100% Job Success Score on Upwork. I work with React, Next.js, TypeScript, and .NET. Past projects include a 60-page embassy platform, a cybersecurity company website, a fintech dashboard, and enterprise API integration tools.</p>
+<p>If you're looking for a developer and want to talk through your project before committing to anything, <a href="/contact">get in touch</a>. I'll give you an honest assessment of what you need and what it would cost — usually within 24 hours.</p>
+        `.trim(),
+    },
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
