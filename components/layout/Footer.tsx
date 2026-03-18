@@ -23,7 +23,7 @@ export default function Footer() {
                                 </svg>
                             </a>
                             <a
-                                href="https://linkedin.com/in/"
+                                href="https://www.linkedin.com/in/eliezer-kibet-80217a301/?skipRedirect=true"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-500 hover:text-primary-600 transition duration-200"
