@@ -22,6 +22,7 @@ import nextjsVsWordpress from './posts/nextjs-vs-wordpress-which-is-better-for-y
 import hireFreelancer from './posts/how-to-hire-a-freelance-developer-in-europe-clients-guide';
 import lighthouseScores from './posts/why-lighthouse-scores-matter-before-your-website-goes-live';
 import dotnetMigrations from './posts/dotnet-migrations-framework-to-modern-dotnet';
+import baseEntitiesControllers from './posts/base-entities-and-base-controllers-csharp-dotnet';
 
 const blogPosts: BlogPost[] = [
     embassyBooking,
@@ -34,6 +35,7 @@ const blogPosts: BlogPost[] = [
     hireFreelancer,
     lighthouseScores,
     dotnetMigrations,
+    baseEntitiesControllers,
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
