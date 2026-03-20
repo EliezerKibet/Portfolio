@@ -96,7 +96,7 @@ export default function ServicesPage() {
                     </h1>
                     <p className="text-xl text-gray-600 dark:text-gray-300">
                         Freelance development services for startups, agencies, and businesses across Europe and worldwide.
-                        100% Job Success Score on Upwork · Top Rated.
+                        Verified track record delivering projects for startups, agencies, and businesses across Europe.
                     </p>
                     <div className="flex flex-wrap gap-3 mt-6">
                         <Link

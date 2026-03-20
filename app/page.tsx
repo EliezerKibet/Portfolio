@@ -8,7 +8,7 @@ import ContactCTA from '@/components/home/ContactCTA';
 // SEO IMPROVEMENT: Much more detailed and keyword-rich metadata
 export const metadata: Metadata = {
     title: 'Eliezer Kibet - Freelance Full-Stack Developer | React, Next.js, TypeScript, .NET',
-    description: 'Freelance full-stack developer in Berlin, Germany. Specializing in React, Next.js, TypeScript, and .NET development. 100% Job Success Score on Upwork. Available for web development projects across Europe.',
+    description: 'Freelance full-stack developer in Berlin, Germany. Specializing in React, Next.js, TypeScript, and .NET development. Verified track record delivering projects across Europe.',
     keywords: [
         'freelance developer Berlin',
         'React developer Germany',
@@ -107,7 +107,6 @@ export default function Home() {
                             sameAs: [
                                 'https://github.com/EliezerKibet',
                                 'https://www.linkedin.com/in/eliezer-kibet-80217a301/',
-                                'https://www.upwork.com/freelancers/~0190e3e5eaf9b0fdb1'
                             ],
                             knowsAbout: [
                                 'React Development',

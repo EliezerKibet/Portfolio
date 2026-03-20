@@ -79,7 +79,7 @@ export default function ReactNextjsServicePage() {
                     <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Why hire me for React & Next.js work?</h2>
                     <ul className="space-y-3">
                         {[
-                            '100% Job Success Score and Top Rated on Upwork — track record of delivering on spec and on time.',
+                            'Verified 100% Job Success Score — track record of delivering on spec and on time.',
                             '4+ years building production React and Next.js applications across fintech, government, and enterprise.',
                             'I write TypeScript by default — no loose JavaScript that becomes unmaintainable after handover.',
                             'I handle SEO from the start: proper metadata, canonical URLs, structured data, and Core Web Vitals.',

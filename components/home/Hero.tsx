@@ -134,15 +134,10 @@ export default function Hero() {
 
                             {/* Social proof */}
                             <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-1">
-                                <a
-                                    href="https://www.upwork.com/freelancers/~0190e3e5eaf9b0fdb1"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-700 dark:text-gray-300 hover:border-primary-500 transition-colors"
-                                >
+                                <span className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-700 dark:text-gray-300">
                                     <span className="font-bold text-green-600">★ 100%</span>
-                                    <span>Job Success · Top Rated on Upwork</span>
-                                </a>
+                                    <span>Job Success · Verified Track Record</span>
+                                </span>
                             </motion.div>
 
                             {/* CTA buttons */}

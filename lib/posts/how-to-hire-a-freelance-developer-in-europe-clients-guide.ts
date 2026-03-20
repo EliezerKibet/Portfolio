@@ -13,8 +13,8 @@ const post: BlogPost = {
 <p>Hiring a freelance developer for the first time — or after a bad experience — is stressful. There's a wide range of quality, unclear pricing, and no standard way to evaluate who's actually good. This guide gives you a clear process for finding, vetting, and working with a freelance developer in Europe.</p>
 
 <h2>Where to Find Freelance Developers in Europe</h2>
-<h3>Upwork</h3>
-<p>The largest freelance platform globally. The key metric to look for is <strong>Job Success Score</strong> — anything above 90% on a developer with multiple completed contracts is a meaningful signal. Look for Top Rated or Expert Vetted badges. The profile will show past projects, client feedback, and earnings history.</p>
+<h3>Freelance Platforms</h3>
+<p>Platforms like Contra, Toptal, and Gun.io vet developers before listing them. The key metric to look for is a verifiable <strong>Job Success Score</strong> or equivalent rating — anything above 90% on a developer with multiple completed contracts is a meaningful signal. Check for badges that confirm a track record. The profile should show past projects, client feedback, and relevant experience.</p>
 
 <h3>LinkedIn</h3>
 <p>Good for finding developers who work independently or through small agencies. Search for job titles like "Freelance React Developer" or "Independent .NET Developer" filtered to your target country. Check their actual portfolio — not just endorsements.</p>
@@ -64,7 +64,7 @@ const post: BlogPost = {
 </ul>
 
 <h2>Working With Me</h2>
-<p>I'm Eliezer Kibet — a freelance full-stack developer based in Berlin with a 100% Job Success Score on Upwork. I work with React, Next.js, TypeScript, and .NET. Past projects include a 60-page embassy platform, a cybersecurity company website, a fintech dashboard, and enterprise API integration tools.</p>
+<p>I'm Eliezer Kibet — a freelance full-stack developer based in Berlin with a verified 100% Job Success Score. I work with React, Next.js, TypeScript, and .NET. Past projects include a 60-page embassy platform, a cybersecurity company website, a fintech dashboard, and enterprise API integration tools.</p>
 <p>If you're looking for a developer and want to talk through your project before committing to anything, <a href="/contact">get in touch</a>. I'll give you an honest assessment of what you need and what it would cost — usually within 24 hours.</p>
     `.trim(),
 };

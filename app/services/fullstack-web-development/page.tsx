@@ -84,7 +84,7 @@ export default function FullstackServicePage() {
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
                     {[
-                        { value: '100%', label: 'Job Success Score', sub: 'on Upwork' },
+                        { value: '100%', label: 'Job Success Score', sub: 'verified' },
                         { value: '4+', label: 'Years Experience', sub: 'full-stack dev' },
                         { value: '20+', label: 'Projects Delivered', sub: 'on time' },
                         { value: '10 wks', label: 'Longest Project', sub: 'Embassy of Kenya' },

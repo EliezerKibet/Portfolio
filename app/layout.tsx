@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         default: 'Eliezer Kibet - Full-Stack Developer | React, Next.js, TypeScript, .NET',
         template: '%s | Eliezer Kibet'
     },
-    description: 'Freelance Full-Stack Developer in Berlin specializing in React, Next.js, TypeScript, and .NET. 100% Job Success Score on Upwork. Available for web development projects across Europe.',
+    description: 'Freelance Full-Stack Developer in Berlin specializing in React, Next.js, TypeScript, and .NET. Verified track record delivering projects across Europe. Available for web development projects.',
     verification: {
         google: ['5fnk1OjhtBhyhZgMMgs7e_1MsIiJBLEqYe5RFSixHS0', 'BYS0L-p7neqvuYpQS23jAPclf81R9yi2yDJlDwccSUA'],
     },
@@ -65,7 +65,6 @@ export default function RootLayout({
                             sameAs: [
                                 'https://github.com/EliezerKibet',
                                 'https://www.linkedin.com/in/eliezer-kibet-80217a301/',
-                                'https://www.upwork.com/freelancers/~0190e3e5eaf9b0fdb1'
                             ],
                             knowsAbout: [
                                 'React',

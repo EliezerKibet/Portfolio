@@ -64,7 +64,7 @@ const post: BlogPost = {
 <p>If you're not sure about some of these, a good developer will help you define scope on a short discovery call — usually free, no commitment.</p>
 
 <h2>What I Charge</h2>
-<p>I'm Eliezer Kibet, a freelance full-stack developer based in Berlin with a 100% Job Success Score on Upwork. I work on React, Next.js, TypeScript, and .NET projects. My rates are competitive for the Berlin market and reflect the quality and reliability I deliver.</p>
+<p>I'm Eliezer Kibet, a freelance full-stack developer based in Berlin with a verified 100% Job Success Score. I work on React, Next.js, TypeScript, and .NET projects. My rates are competitive for the Berlin market and reflect the quality and reliability I deliver.</p>
 <p>If you have a project in mind, <a href="/contact">get in touch</a> and I'll give you an honest, detailed quote — usually within 24 hours.</p>
     `.trim(),
 };

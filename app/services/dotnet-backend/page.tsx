@@ -79,7 +79,7 @@ export default function DotnetBackendServicePage() {
                     <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Why hire me for .NET backend work?</h2>
                     <ul className="space-y-3">
                         {[
-                            '100% Job Success Score on Upwork — consistent delivery of backend systems that work reliably in production.',
+                            'Verified 100% Job Success Score — consistent delivery of backend systems that work reliably in production.',
                             'I write tests by default — past projects include 24 and 60-test suites with 98% code coverage.',
                             'Security is built in from the start: JWT refresh rotation, RBAC at the controller layer, input sanitisation.',
                             'I document APIs with Swagger/OpenAPI so your frontend team or future developers aren\'t guessing.',
