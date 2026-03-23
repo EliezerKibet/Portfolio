@@ -24,6 +24,7 @@ import lighthouseScores from './posts/why-lighthouse-scores-matter-before-your-w
 import dotnetMigrations from './posts/dotnet-migrations-framework-to-modern-dotnet';
 import baseEntitiesControllers from './posts/base-entities-and-base-controllers-csharp-dotnet';
 import reusableComponents from './posts/building-reusable-components-nextjs';
+import jwtAuthentication from './posts/jwt-authentication-csharp-dotnet-security';
 
 const blogPosts: BlogPost[] = [
     embassyBooking,
@@ -38,6 +39,7 @@ const blogPosts: BlogPost[] = [
     dotnetMigrations,
     baseEntitiesControllers,
     reusableComponents,
+    jwtAuthentication,
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
