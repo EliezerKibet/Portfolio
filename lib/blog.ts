@@ -25,6 +25,7 @@ import dotnetMigrations from './posts/dotnet-migrations-framework-to-modern-dotn
 import baseEntitiesControllers from './posts/base-entities-and-base-controllers-csharp-dotnet';
 import reusableComponents from './posts/building-reusable-components-nextjs';
 import jwtAuthentication from './posts/jwt-authentication-csharp-dotnet-security';
+import hcaptchaForms from './posts/hcaptcha-protect-contact-forms-email-services';
 
 const blogPosts: BlogPost[] = [
     embassyBooking,
@@ -40,6 +41,7 @@ const blogPosts: BlogPost[] = [
     baseEntitiesControllers,
     reusableComponents,
     jwtAuthentication,
+    hcaptchaForms,
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
