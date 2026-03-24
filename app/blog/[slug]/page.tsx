@@ -159,10 +159,28 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 </div>
             </section>
 
-            {/* Author card */}
+            {/* Share + Author card */}
             <section className="py-12 border-t border-gray-200 dark:border-gray-700">
                 <div className="container-custom">
-                    <div className="max-w-3xl mx-auto">
+                    <div className="max-w-3xl mx-auto space-y-6">
+
+                        {/* Share */}
+                        <div className="flex items-center gap-3">
+                            <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Share this article</span>
+                            <a
+                                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${baseUrl}/blog/${post!.slug}`)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-4 py-2 bg-[#0A66C2] hover:bg-[#004182] text-white text-sm font-medium rounded-lg transition-all duration-200 hover:scale-105"
+                            >
+                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                                Share on LinkedIn
+                            </a>
+                        </div>
+
+                        {/* Author */}
                         <div className="flex items-start gap-4 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
                             <div className="flex-1">
                                 <p className="font-bold text-gray-900 dark:text-white mb-1">Eliezer Kibet</p>
@@ -177,6 +195,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                                 </Link>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
