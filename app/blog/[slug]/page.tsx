@@ -52,7 +52,17 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     if (!post) notFound();
 
     const allPosts = getAllBlogPosts();
-    const otherPosts = allPosts.filter((p) => p.slug !== post!.slug).slice(0, 2);
+
+    // Score posts by number of shared tags, fall back to recency
+    const relatedPosts = allPosts
+        .filter((p) => p.slug !== post!.slug)
+        .map((p) => ({
+            post: p,
+            score: p.tags.filter((t) => post!.tags.includes(t)).length,
+        }))
+        .sort((a, b) => b.score - a.score || new Date(b.post.date).getTime() - new Date(a.post.date).getTime())
+        .slice(0, 3)
+        .map((r) => r.post);
 
     const ogImage = post!.image
         ? `${baseUrl}${post!.image}`
@@ -171,23 +181,63 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 </div>
             </section>
 
-            {/* More posts */}
-            {otherPosts.length > 0 && (
+            {/* Related posts */}
+            {relatedPosts.length > 0 && (
                 <section className="py-12 bg-gray-50 dark:bg-gray-800/30">
                     <div className="container-custom">
-                        <div className="max-w-3xl mx-auto">
-                            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">More Articles</h2>
-                            <div className="space-y-4">
-                                {otherPosts.map((p) => (
+                        <div className="max-w-5xl mx-auto">
+                            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Related Articles</h2>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">More on the same topics</p>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {relatedPosts.map((p) => (
                                     <Link
                                         key={p.id}
                                         href={`/blog/${p.slug}`}
-                                        className="block p-5 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-200 hover:shadow-sm"
+                                        className="group flex flex-col p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-md transition-all duration-200"
                                     >
-                                        <p className="font-semibold text-gray-900 dark:text-white mb-1">{p.title}</p>
-                                        <p className="text-sm text-gray-500 dark:text-gray-400">{p.readTime} · {new Date(p.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
+                                        <div className="flex flex-wrap gap-1.5 mb-3">
+                                            {p.tags.slice(0, 2).map((tag) => (
+                                                <span
+                                                    key={tag}
+                                                    className={`px-2 py-0.5 text-xs font-medium rounded ${
+                                                        post!.tags.includes(tag)
+                                                            ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400'
+                                                            : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400'
+                                                    }`}
+                                                >
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+
+                                        <h3 className="font-bold text-gray-900 dark:text-white group-hover:text-primary-600 transition-colors text-sm leading-snug mb-2 flex-1">
+                                            {p.title}
+                                        </h3>
+
+                                        <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 mb-4 flex-1">
+                                            {p.excerpt}
+                                        </p>
+
+                                        <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-gray-700 mt-auto">
+                                            <span className="text-xs text-gray-400 dark:text-gray-500">{p.readTime}</span>
+                                            <span className="text-xs font-medium text-primary-600 group-hover:text-primary-700 transition-colors">
+                                                Read →
+                                            </span>
+                                        </div>
                                     </Link>
                                 ))}
+                            </div>
+
+                            <div className="text-center mt-8">
+                                <Link
+                                    href="/blog"
+                                    className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                                >
+                                    View all articles
+                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </Link>
                             </div>
                         </div>
                     </div>
