@@ -1,6 +1,57 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
+const baseUrl = 'https://eliezerkibet.dev';
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'What .NET version do you use?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'I work with modern .NET — primarily .NET 8 and .NET 9 with ASP.NET Core. I also have experience migrating legacy .NET Framework projects to the modern unified runtime.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Do you write tests for .NET backend projects?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Yes. I write unit and integration tests with xUnit by default. Past projects include test suites with 60+ tests and 98% code coverage.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Can you build a secure authentication system with .NET?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Yes. I implement JWT authentication with refresh token rotation, role-based access control (RBAC), and 2FA. Security is built in from the start, not bolted on later.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Which databases do you work with?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Primarily PostgreSQL and SQL Server via Entity Framework Core. I handle schema design, migrations, and query optimisation as part of the engagement.',
+            },
+        },
+    ],
+};
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: baseUrl },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${baseUrl}/services` },
+        { '@type': 'ListItem', position: 3, name: '.NET Backend Development', item: `${baseUrl}/services/dotnet-backend` },
+    ],
+};
+
 export const metadata: Metadata = {
     title: '.NET Backend Development Services | Freelance C# Developer Berlin',
     description: 'Hire a freelance .NET and C# backend developer based in Berlin. I build REST APIs, background services, and data layers with ASP.NET Core, Entity Framework, and PostgreSQL or SQL Server.',
@@ -19,6 +70,8 @@ export const metadata: Metadata = {
 export default function DotnetBackendServicePage() {
     return (
         <div className="min-h-screen bg-white dark:bg-gray-900 py-16 md:py-24">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="container-custom max-w-4xl">
                 {/* Breadcrumb */}
                 <nav className="text-sm text-gray-500 dark:text-gray-400 mb-8">
@@ -109,6 +162,24 @@ export default function DotnetBackendServicePage() {
                             >
                                 {title} →
                             </Link>
+                        ))}
+                    </div>
+                </div>
+
+                {/* FAQ */}
+                <div className="mb-12">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Frequently Asked Questions</h2>
+                    <div className="space-y-4">
+                        {[
+                            { q: 'What .NET version do you use?', a: 'I work with modern .NET — primarily .NET 8 and .NET 9 with ASP.NET Core. I also have experience migrating legacy .NET Framework projects to the modern unified runtime.' },
+                            { q: 'Do you write tests for .NET backend projects?', a: 'Yes. I write unit and integration tests with xUnit by default. Past projects include test suites with 60+ tests and 98% code coverage.' },
+                            { q: 'Can you build a secure authentication system with .NET?', a: 'Yes. I implement JWT authentication with refresh token rotation, role-based access control (RBAC), and 2FA. Security is built in from the start, not bolted on later.' },
+                            { q: 'Which databases do you work with?', a: 'Primarily PostgreSQL and SQL Server via Entity Framework Core. I handle schema design, migrations, and query optimisation as part of the engagement.' },
+                        ].map(({ q, a }) => (
+                            <div key={q} className="p-5 border border-gray-200 dark:border-gray-700 rounded-xl">
+                                <p className="font-semibold text-gray-900 dark:text-white mb-2">{q}</p>
+                                <p className="text-sm text-gray-600 dark:text-gray-300">{a}</p>
+                            </div>
                         ))}
                     </div>
                 </div>

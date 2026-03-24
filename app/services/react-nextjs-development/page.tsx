@@ -1,6 +1,57 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
+const baseUrl = 'https://eliezerkibet.dev';
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'Do you build React apps from scratch or only work on existing projects?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Both. I take projects from initial design to production, and I also join existing codebases to add features, fix bugs, or improve performance.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Do you use TypeScript for React projects?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Yes, TypeScript by default. It prevents entire classes of bugs at compile time and makes handover far cleaner for your internal team.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Can you handle SEO as part of a Next.js project?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Yes. I handle metadata, canonical URLs, Open Graph tags, structured data (JSON-LD), sitemap generation, and Core Web Vitals as standard parts of every Next.js project — not add-ons.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'What is your availability for React / Next.js projects?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'I am based in Berlin (CET/CEST) and available for new projects. Get in touch via the contact page and I will respond within 24 hours with availability details.',
+            },
+        },
+    ],
+};
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: baseUrl },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${baseUrl}/services` },
+        { '@type': 'ListItem', position: 3, name: 'React & Next.js Development', item: `${baseUrl}/services/react-nextjs-development` },
+    ],
+};
+
 export const metadata: Metadata = {
     title: 'React & Next.js Development Services | Freelance Developer Berlin',
     description: 'Hire a freelance React and Next.js developer based in Berlin. I build fast, SEO-friendly web apps with TypeScript and Tailwind CSS. Available for projects across Europe and worldwide.',
@@ -19,6 +70,8 @@ export const metadata: Metadata = {
 export default function ReactNextjsServicePage() {
     return (
         <div className="min-h-screen bg-white dark:bg-gray-900 py-16 md:py-24">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="container-custom max-w-4xl">
                 {/* Breadcrumb */}
                 <nav className="text-sm text-gray-500 dark:text-gray-400 mb-8">
@@ -109,6 +162,24 @@ export default function ReactNextjsServicePage() {
                             >
                                 {title} →
                             </Link>
+                        ))}
+                    </div>
+                </div>
+
+                {/* FAQ */}
+                <div className="mb-12">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Frequently Asked Questions</h2>
+                    <div className="space-y-4">
+                        {[
+                            { q: 'Do you build React apps from scratch or only work on existing projects?', a: 'Both. I take projects from initial design to production, and I also join existing codebases to add features, fix bugs, or improve performance.' },
+                            { q: 'Do you use TypeScript for React projects?', a: 'Yes, TypeScript by default. It prevents entire classes of bugs at compile time and makes handover far cleaner for your internal team.' },
+                            { q: 'Can you handle SEO as part of a Next.js project?', a: 'Yes. I handle metadata, canonical URLs, Open Graph tags, structured data (JSON-LD), sitemap generation, and Core Web Vitals as standard parts of every Next.js project — not add-ons.' },
+                            { q: 'What is your availability for React / Next.js projects?', a: 'I am based in Berlin (CET/CEST) and available for new projects. Get in touch via the contact page and I will respond within 24 hours with availability details.' },
+                        ].map(({ q, a }) => (
+                            <div key={q} className="p-5 border border-gray-200 dark:border-gray-700 rounded-xl">
+                                <p className="font-semibold text-gray-900 dark:text-white mb-2">{q}</p>
+                                <p className="text-sm text-gray-600 dark:text-gray-300">{a}</p>
+                            </div>
                         ))}
                     </div>
                 </div>

@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 export const metadata: Metadata = {
     title: 'About Eliezer Kibet | Full-Stack Developer',
-    description: 'Eliezer Kibet is a freelance full-stack developer specializing in React, Next.js, TypeScript, and .NET. Building web apps, booking systems, fintech platforms, and cybersecurity tools.',
-    keywords: ['Eliezer Kibet', 'full-stack developer', 'React developer', 'Next.js developer', '.NET developer', 'freelance developer', 'web developer'],
+    description: 'Eliezer Kibet is a freelance full-stack developer based in Berlin, Germany, specializing in React, Next.js, TypeScript, and .NET. Building web apps, booking systems, fintech platforms, and cybersecurity tools for clients across Europe.',
+    keywords: ['Eliezer Kibet', 'full-stack developer Berlin', 'React developer Berlin', 'Next.js developer Germany', '.NET developer Berlin', 'freelance developer Berlin', 'web developer Germany'],
     alternates: {
         canonical: 'https://eliezerkibet.dev/about',
     },

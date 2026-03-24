@@ -145,6 +145,23 @@ export default function ServicesPage() {
                     ))}
                 </div>
 
+                {/* Location Pages */}
+                <div className="mb-16">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Based in Germany</h2>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-6">Looking for a developer local to your region? These pages cover location-specific details, rates, and availability.</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {[
+                            { href: '/services/freelance-developer-berlin', title: 'Freelance Developer Berlin', desc: 'Projects in Berlin — remote or on-site. CET/CEST time zone, GDPR-aware, English-speaking.' },
+                            { href: '/services/freelance-developer-germany', desc: 'Available for projects across Germany. Same time zone, no contractor complexity.', title: 'Freelance Developer Germany' },
+                        ].map(({ href, title, desc }) => (
+                            <Link key={href} href={href} className="flex flex-col p-5 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-primary-500 transition-colors group">
+                                <p className="font-semibold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors mb-1">{title} →</p>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">{desc}</p>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+
                 {/* How I Work */}
                 <div className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-8 md:p-12 mb-16">
                     <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">How I Work</h2>
