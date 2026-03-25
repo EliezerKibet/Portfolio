@@ -27,6 +27,7 @@ import reusableComponents from './posts/building-reusable-components-nextjs';
 import jwtAuthentication from './posts/jwt-authentication-csharp-dotnet-security';
 import hcaptchaForms from './posts/hcaptcha-protect-contact-forms-email-services';
 import apiKeySecurity from './posts/api-keys-environment-variables-security';
+import swaggerUnitTesting from './posts/swagger-unit-testing-bearer-token-csharp-dotnet';
 
 const blogPosts: BlogPost[] = [
     embassyBooking,
@@ -44,6 +45,7 @@ const blogPosts: BlogPost[] = [
     jwtAuthentication,
     hcaptchaForms,
     apiKeySecurity,
+    swaggerUnitTesting,
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
