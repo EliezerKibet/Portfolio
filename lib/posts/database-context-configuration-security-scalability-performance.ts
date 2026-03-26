@@ -313,7 +313,7 @@ LIMIT 20;</code></pre>
 <h2>The Foundation Everything Else Depends On</h2>
 <p>Every layer of a web application — the API, the business logic, the UI — ultimately depends on the database being fast, available, and correct. The decisions covered in this post are not advanced optimisation techniques. They are baseline configuration that prevents the most common, most painful production problems: credential leaks, connection exhaustion under load, and query timeouts as data volume grows.</p>
 <p>Getting these right at the start of a project is a fraction of the effort it takes to fix them later, when data is live, users are affected, and the system is under pressure.</p>
-<p>If you are setting up a new backend and want the database layer configured correctly from the start, <a href="/contact">get in touch</a>.</p>
+<p>If you are setting up a new backend and want the database layer configured correctly from the start, see my <a href="/services/dotnet-backend">.NET backend development services</a> or <a href="/services/fullstack-web-development">full-stack web development services</a>. <a href="/contact">Get in touch</a> to discuss your project.</p>
     `.trim(),
 };
 

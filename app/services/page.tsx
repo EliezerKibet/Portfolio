@@ -1,6 +1,17 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
+const baseUrl = 'https://eliezerkibet.dev';
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: baseUrl },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${baseUrl}/services` },
+    ],
+};
+
 export const metadata: Metadata = {
     title: 'Services | Freelance Web Development — React, Next.js, .NET',
     description: 'Freelance web development services by Eliezer Kibet. React & Next.js frontend development, .NET backend APIs, and full-stack web applications. Based in Berlin, available worldwide.',
@@ -88,6 +99,7 @@ const colorMap: Record<string, string> = {
 export default function ServicesPage() {
     return (
         <div className="min-h-screen bg-white dark:bg-gray-900 py-16 md:py-24">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="container-custom">
                 {/* Header */}
                 <div className="max-w-2xl mb-16">

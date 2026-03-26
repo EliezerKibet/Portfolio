@@ -339,7 +339,7 @@ app.Run();</code></pre>
   <li><strong>Maintainability:</strong> When requirements change, you update the interface and its implementation. Everything that depends on the interface — including tests — still compiles cleanly.</li>
 </ul>
 <p>I apply this setup on every .NET backend project I take on. If you are starting a new ASP.NET Core API or inheriting one that does not have this structure yet, these are the three things worth setting up first.</p>
-<p>If you have questions about the setup or want a second pair of eyes on a backend project, <a href="/contact">get in touch</a>.</p>
+<p>If you are setting up a new ASP.NET Core project, see the full list of <a href="/services/dotnet-backend">.NET backend development services</a> I offer, or <a href="/contact">get in touch</a> directly.</p>
     `.trim(),
 };
 

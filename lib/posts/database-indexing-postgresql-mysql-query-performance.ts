@@ -205,7 +205,7 @@ dotnet ef database update</code></pre>
 
 <h2>The Impact on Application Performance</h2>
 <p>Indexing is one of the highest-leverage optimisations available in backend development. It requires no application code changes, no infrastructure upgrades, and no architectural decisions. A single index on the right column can reduce a query from 800ms to under 5ms — a 160x improvement that directly translates to faster page loads, lower server load, and an application that remains responsive as data volume grows.</p>
-<p>If you are building a .NET or Node.js backend and want to ensure the database layer is set up correctly from the start, <a href="/contact">get in touch</a>.</p>
+<p>If you are building a .NET backend and want the database layer set up correctly from the start, see my <a href="/services/dotnet-backend">.NET backend development services</a> or <a href="/services/fullstack-web-development">full-stack web development services</a>. <a href="/contact">Get in touch</a> to discuss your project.</p>
     `.trim(),
 };
 

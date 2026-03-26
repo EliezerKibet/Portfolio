@@ -1,6 +1,57 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
+const baseUrl = 'https://eliezerkibet.dev';
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'Do you handle both frontend and backend on the same project?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Yes. Full-stack means full ownership — React or Next.js on the frontend, ASP.NET Core or Node.js on the backend, database design, and deployment. You deal with one developer, not a handoff chain.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'What is your typical project timeline for a full-stack web application?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'It depends on scope. A booking system or business portal typically takes 4–8 weeks. A SaaS platform or multi-role application takes longer. I send a detailed timeline estimate with every proposal.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Which deployment platforms do you use?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Vercel for Next.js frontends, Azure App Service or Docker-based deployments for .NET backends, and managed PostgreSQL or SQL Server for databases. I match the deployment stack to your infrastructure requirements.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Can you take over an existing project rather than starting from scratch?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Yes. I regularly join existing codebases to add features, refactor problem areas, or stabilise a system before launch. An initial code review is part of the onboarding for inherited projects.',
+            },
+        },
+    ],
+};
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: baseUrl },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${baseUrl}/services` },
+        { '@type': 'ListItem', position: 3, name: 'Full-Stack Web Development', item: `${baseUrl}/services/fullstack-web-development` },
+    ],
+};
+
 export const metadata: Metadata = {
     title: 'Full-Stack Web Development Services | Freelance Developer Berlin',
     description: 'Hire a freelance full-stack web developer based in Berlin. I build complete web applications — React/Next.js frontend, .NET or Node.js backend, database design, and Vercel or Azure deployment.',
@@ -19,6 +70,8 @@ export const metadata: Metadata = {
 export default function FullstackServicePage() {
     return (
         <div className="min-h-screen bg-white dark:bg-gray-900 py-16 md:py-24">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="container-custom max-w-4xl">
                 <nav className="text-sm text-gray-500 dark:text-gray-400 mb-8">
                     <Link href="/services" className="hover:text-primary-600">Services</Link>
@@ -113,6 +166,45 @@ export default function FullstackServicePage() {
                             >
                                 {title} →
                             </Link>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Related reading */}
+                <div className="mb-12">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Related Reading</h2>
+                    <div className="flex flex-wrap gap-3">
+                        {[
+                            { title: 'JWT Authentication in C# — How to Do It Correctly', slug: 'jwt-authentication-csharp-dotnet-security' },
+                            { title: 'Swagger, Unit Tests, and Bearer Tokens in .NET', slug: 'swagger-unit-testing-bearer-token-csharp-dotnet' },
+                            { title: 'Database Indexing in PostgreSQL and MySQL', slug: 'database-indexing-postgresql-mysql-query-performance' },
+                            { title: 'Building Reusable Components in Next.js', slug: 'building-reusable-components-nextjs' },
+                        ].map(({ title, slug }) => (
+                            <Link
+                                key={slug}
+                                href={`/blog/${slug}`}
+                                className="px-4 py-2 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-sm hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                            >
+                                {title} →
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+
+                {/* FAQ */}
+                <div className="mb-12">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Frequently Asked Questions</h2>
+                    <div className="space-y-4">
+                        {[
+                            { q: 'Do you handle both frontend and backend on the same project?', a: 'Yes. Full-stack means full ownership — React or Next.js on the frontend, ASP.NET Core or Node.js on the backend, database design, and deployment. You deal with one developer, not a handoff chain.' },
+                            { q: 'What is your typical project timeline for a full-stack web application?', a: 'It depends on scope. A booking system or business portal typically takes 4–8 weeks. A SaaS platform or multi-role application takes longer. I send a detailed timeline estimate with every proposal.' },
+                            { q: 'Which deployment platforms do you use?', a: 'Vercel for Next.js frontends, Azure App Service or Docker-based deployments for .NET backends, and managed PostgreSQL or SQL Server for databases. I match the deployment stack to your infrastructure requirements.' },
+                            { q: 'Can you take over an existing project rather than starting from scratch?', a: 'Yes. I regularly join existing codebases to add features, refactor problem areas, or stabilise a system before launch. An initial code review is part of the onboarding for inherited projects.' },
+                        ].map(({ q, a }) => (
+                            <div key={q} className="p-5 border border-gray-200 dark:border-gray-700 rounded-xl">
+                                <p className="font-semibold text-gray-900 dark:text-white mb-2">{q}</p>
+                                <p className="text-sm text-gray-600 dark:text-gray-300">{a}</p>
+                            </div>
                         ))}
                     </div>
                 </div>

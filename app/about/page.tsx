@@ -15,6 +15,13 @@ export const metadata: Metadata = {
         description: 'Freelance full-stack developer specializing in React, Next.js, TypeScript, and .NET. Available for hire.',
         url: 'https://eliezerkibet.dev/about',
         type: 'profile',
+        images: [{ url: 'https://eliezerkibet.dev/og-image.png', width: 1200, height: 630, alt: 'Eliezer Kibet — Full-Stack Developer Berlin' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'About Eliezer Kibet | Full-Stack Developer Berlin',
+        description: 'Freelance full-stack developer based in Berlin, specializing in React, Next.js, TypeScript, and .NET. Available for hire across Europe.',
+        images: ['https://eliezerkibet.dev/og-image.png'],
     },
 };
 
