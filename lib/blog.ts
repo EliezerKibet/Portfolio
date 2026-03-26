@@ -29,6 +29,7 @@ import hcaptchaForms from './posts/hcaptcha-protect-contact-forms-email-services
 import apiKeySecurity from './posts/api-keys-environment-variables-security';
 import swaggerUnitTesting from './posts/swagger-unit-testing-bearer-token-csharp-dotnet';
 import databaseIndexing from './posts/database-indexing-postgresql-mysql-query-performance';
+import databaseConfig from './posts/database-context-configuration-security-scalability-performance';
 
 const blogPosts: BlogPost[] = [
     embassyBooking,
@@ -48,6 +49,7 @@ const blogPosts: BlogPost[] = [
     apiKeySecurity,
     swaggerUnitTesting,
     databaseIndexing,
+    databaseConfig,
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
