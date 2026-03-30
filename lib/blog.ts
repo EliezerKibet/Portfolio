@@ -31,6 +31,7 @@ import swaggerUnitTesting from './posts/swagger-unit-testing-bearer-token-csharp
 import databaseIndexing from './posts/database-indexing-postgresql-mysql-query-performance';
 import databaseConfig from './posts/database-context-configuration-security-scalability-performance';
 import twoFactorAuth from './posts/2fa-qr-code-totp-aspnetcore-csharp';
+import multiUserRoles from './posts/multi-user-role-authorization-enums-aspnetcore';
 
 const blogPosts: BlogPost[] = [
     embassyBooking,
@@ -52,6 +53,7 @@ const blogPosts: BlogPost[] = [
     databaseIndexing,
     databaseConfig,
     twoFactorAuth,
+    multiUserRoles,
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
