@@ -32,6 +32,7 @@ import databaseIndexing from './posts/database-indexing-postgresql-mysql-query-p
 import databaseConfig from './posts/database-context-configuration-security-scalability-performance';
 import twoFactorAuth from './posts/2fa-qr-code-totp-aspnetcore-csharp';
 import multiUserRoles from './posts/multi-user-role-authorization-enums-aspnetcore';
+import tailwindVsGlobalCss from './posts/tailwind-css-vs-global-css-scalability-maintenance';
 
 const blogPosts: BlogPost[] = [
     embassyBooking,
@@ -54,6 +55,7 @@ const blogPosts: BlogPost[] = [
     databaseConfig,
     twoFactorAuth,
     multiUserRoles,
+    tailwindVsGlobalCss,
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
