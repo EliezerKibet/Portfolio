@@ -44,7 +44,7 @@ interface CardProps {
 
 export function Card({ children, className = '' }: CardProps) {
     return (
-        &lt;div className={`p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm ${className}`}&gt;
+        &lt;div className={\`p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm \${className}\`}&gt;
             {children}
         &lt;/div&gt;
     );
@@ -117,7 +117,7 @@ export function AlertBanner({ message, type }: AlertBannerProps) {
     };
 
     return (
-        &lt;div className={`px-4 py-3 rounded-lg border text-sm font-medium ${styles[type]}`}&gt;
+        &lt;div className={\`px-4 py-3 rounded-lg border text-sm font-medium \${styles[type]}\`}&gt;
             {message}
         &lt;/div&gt;
     );
