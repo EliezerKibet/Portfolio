@@ -33,6 +33,7 @@ import databaseConfig from './posts/database-context-configuration-security-scal
 import twoFactorAuth from './posts/2fa-qr-code-totp-aspnetcore-csharp';
 import multiUserRoles from './posts/multi-user-role-authorization-enums-aspnetcore';
 import tailwindVsGlobalCss from './posts/tailwind-css-vs-global-css-scalability-maintenance';
+import dataInLibFolder from './posts/data-in-lib-folder-vs-components-nextjs-react';
 
 const blogPosts: BlogPost[] = [
     embassyBooking,
@@ -56,6 +57,7 @@ const blogPosts: BlogPost[] = [
     twoFactorAuth,
     multiUserRoles,
     tailwindVsGlobalCss,
+    dataInLibFolder,
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
