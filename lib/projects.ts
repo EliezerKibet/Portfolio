@@ -55,8 +55,10 @@ const projects: Project[] = [
     ],
     challenges:
       "The main challenge was implementing complex animations while maintaining performance. I utilized Framer Motion with optimized configurations and lazy-loaded video backgrounds to ensure smooth performance across devices. ",
-    clientProblem: "The client had a Figma design for a high-end cybersecurity company website but no developer capable of translating the complex animations and video backgrounds into a performant Next.js build.",
-    outcome: "Delivered a pixel-perfect implementation of the Figma design with smooth GSAP and Framer Motion animations, Stripe payment integration, and a Supabase-backed certificate management system — live at redfacers.com.",
+    clientProblem:
+      "The client had a Figma design for a high-end cybersecurity company website but no developer capable of translating the complex animations and video backgrounds into a performant Next.js build.",
+    outcome:
+      "Delivered a pixel-perfect implementation of the Figma design with smooth GSAP and Framer Motion animations, Stripe payment integration, and a Supabase-backed certificate management system — live at redfacers.com.",
     timeline: "6 weeks",
     demoUrl: "https://redfacers.com/",
     githubUrl: "https://github.com/EliezerKibet",
@@ -96,8 +98,10 @@ const projects: Project[] = [
     ],
     challenges:
       "Integrating with different API structures (Jira and Azure DevOps) required creating a unified data model while preserving platform-specific features. I implemented adapter patterns and a robust caching system to ensure seamless operations.At first the Jira and Azure API were working as intended. After some time the Jira API was deprecated and could only scrape 100 tickets instead of the full ticket amount. ",
-    clientProblem: "The engineering team was context-switching between Jira and Azure DevOps constantly, duplicating tickets across both systems and losing visibility into cross-platform work.",
-    outcome: "Built a unified dashboard that scrapes both platforms every 30 seconds, deduplicates tickets with AI similarity scoring, and surfaces assignee recommendations — reducing context-switching overhead for the team.",
+    clientProblem:
+      "The engineering team was context-switching between Jira and Azure DevOps constantly, duplicating tickets across both systems and losing visibility into cross-platform work.",
+    outcome:
+      "Built a unified dashboard that scrapes both platforms every 30 seconds, deduplicates tickets with AI similarity scoring, and surfaces assignee recommendations — reducing context-switching overhead for the team.",
     timeline: "8 weeks",
     demoUrl: "https://github.com/EliezerKibet",
     githubUrl: "https://github.com/EliezerKibet",
@@ -131,8 +135,10 @@ const projects: Project[] = [
     ],
     challenges:
       "Ensuring data accuracy and real-time updates while maintaining security was crucial. I implemented WebSockets for live data and JWT authentication with refresh token rotation for enhanced security.",
-    clientProblem: "The client needed a personal finance dashboard to track investment portfolio performance across multiple holdings with real-time P&L visibility.",
-    outcome: "Delivered a live dashboard with Stripe API integration, real-time portfolio P&L tracking, transaction management, and secure JWT authentication with refresh token rotation.",
+    clientProblem:
+      "The client needed a personal finance dashboard to track investment portfolio performance across multiple holdings with real-time P&L visibility.",
+    outcome:
+      "Delivered a live dashboard with Stripe API integration, real-time portfolio P&L tracking, transaction management, and secure JWT authentication with refresh token rotation.",
     timeline: "4 weeks",
     demoUrl: "https://github.com/EliezerKibet",
     githubUrl: "https://github.com/EliezerKibet",
@@ -167,8 +173,10 @@ const projects: Project[] = [
     ],
     challenges:
       "Creating a seamless user experience from browsing to checkout while handling various edge cases (inventory changes, session management) required careful state management and optimistic UI updates.",
-    clientProblem: "The client needed a production-ready e-commerce platform with a robust test suite and CI/CD pipeline to ensure reliability before launch.",
-    outcome: "Shipped a full e-commerce platform with 60 passing tests at 98% code coverage, automated GitHub Actions CI/CD, and sub-50ms API response times under 100 concurrent users.",
+    clientProblem:
+      "The client needed a production-ready e-commerce platform with a robust test suite and CI/CD pipeline to ensure reliability before launch.",
+    outcome:
+      "Shipped a full e-commerce platform with 60 passing tests at 98% code coverage, automated GitHub Actions CI/CD, and sub-50ms API response times under 100 concurrent users.",
     timeline: "6 weeks",
     demoUrl: "https://github.com/EliezerKibet",
     githubUrl: "https://github.com/EliezerKibet/ecommerce-platform",
@@ -203,8 +211,10 @@ const projects: Project[] = [
     ],
     challenges:
       "Creating a seamless user experience from browsing to checkout while handling various edge cases (inventory changes, session management) required careful state management and optimistic UI updates.",
-    clientProblem: "The client needed a multi-tier event ticketing platform with real-time capacity management to prevent overbooking and QR code validation at the venue door.",
-    outcome: "Delivered a full ticketing platform with 24 passing tests, JWT + refresh token auth, real-time capacity management using optimistic concurrency, QR code validation completing in under 200ms, and a GitHub Actions CI/CD pipeline.",
+    clientProblem:
+      "The client needed a multi-tier event ticketing platform with real-time capacity management to prevent overbooking and QR code validation at the venue door.",
+    outcome:
+      "Delivered a full ticketing platform with 24 passing tests, JWT + refresh token auth, real-time capacity management using optimistic concurrency, QR code validation completing in under 200ms, and a GitHub Actions CI/CD pipeline.",
     timeline: "7 weeks",
     demoUrl: "https://github.com/EliezerKibet",
     githubUrl: "https://github.com/EliezerKibet/EventTicketingPlatform",
@@ -232,13 +242,57 @@ const projects: Project[] = [
     ],
     challenges:
       "Creating responses for chatbot AI to handle diverse customer queries while ensuring accurate and context-aware interactions required extensive training data and fine-tuning of the language model.",
-    clientProblem: "A garage business was running entirely on phone calls, paper job cards, and spreadsheets — mechanics had no digital job queue, customers had no visibility into service status, and managers had no real-time floor overview.",
-    outcome: "Built a three-portal platform (admin, customer, mechanic) with an AI chatbot grounded to live database data, smart scheduling with conflict detection, and predictive maintenance alerts — eliminating the paper-based workflow entirely.",
+    clientProblem:
+      "A garage business was running entirely on phone calls, paper job cards, and spreadsheets — mechanics had no digital job queue, customers had no visibility into service status, and managers had no real-time floor overview.",
+    outcome:
+      "Built a three-portal platform (admin, customer, mechanic) with an AI chatbot grounded to live database data, smart scheduling with conflict detection, and predictive maintenance alerts — eliminating the paper-based workflow entirely.",
     timeline: "8 weeks",
     demoUrl: "https://github.com/EliezerKibet",
     githubUrl: "https://github.com/EliezerKibet/AI_based_garage",
     featured: false,
     date: "2024-01-25",
+  },
+  {
+    id: "8",
+    slug: "propertiesonline-listing-platform",
+    title: "PropertiesOnline Listing Platform",
+    description:
+      "A large-scale multi-tenant real estate listing platform serving thousands of property listings across the US. The system spans multiple web applications — including a public listing server, agent/client portals, a media uploader, and an admin toolbox — all built on ASP.NET with a shared VB.NET framework library.",
+    image: "/projects/propertiesonline.png",
+    additionalImages: ["/projects/listing-project.png"],
+    technologies: [
+      "ASP.NET WebForms",
+      "VB.NET",
+      ".NET Framework",
+      "SQL Server",
+      "AWS S3",
+      "Mailgun",
+      "RestSharp",
+      "Google Maps API",
+      "reCAPTCHA",
+    ],
+    features: [
+      "Public listing server rendering fully responsive property pages with photos, virtual tours, embedded video, open house schedules, and downloadable documents",
+      "Mobile-optimised listing pages with swipe photo gallery, Google Maps embed, and guestbook lead-capture system with optional/required registration modes",
+      "Agent and client portals (POClients, Clients, Accounts, POClientsV2) with role-based access for managing listings, leads, and account settings",
+      "Media uploader application allowing agents to upload, manage, and publish property photos stored on AWS S3",
+      "Admin Toolbox with email template management supporting multiple Mailgun sending domains (PropertiesOnline, UniquePropertySites, RealEstateSites)",
+      "Mailgun HTTP API integration via RestSharp for transactional email delivery across three branded domains with authenticated sender identities",
+      "reCAPTCHA v2 verification on public-facing forms to prevent spam lead submissions",
+      "Flyer/PDF generation with multiple master-page layouts for printable property marketing materials",
+      "Shared POFramework library providing database management, email helpers, tracing, and security utilities across all web applications",
+      "DNS and multi-domain routing supporting custom agent domains mapped to individual listing pages",
+    ],
+    challenges:
+      "Coordinating a shared compiled library (POFramework.dll) across six independently deployed web applications required strict versioning discipline. Ensuring TLS compatibility after Mailgun deprecated older cipher suites meant auditing all application startup paths and enforcing TLS 1.2 at the process level in each host app, since the framework DLL itself targets .NET 3.5 and cannot set the protocol directly.",
+    clientProblem:
+      "The client needed a production-grade multi-application real estate platform capable of serving public property listing pages, supporting agent self-service portals, handling media uploads to cloud storage, and sending transactional emails at scale — all under multiple branded domains.",
+    outcome:
+      "Delivered and maintained a live multi-tenant listing platform with six deployed web applications, AWS S3-backed media storage, Mailgun transactional email across three branded domains, reCAPTCHA-protected lead capture, and PDF flyer generation — with TLS 1.2 enforced across all applications for ongoing Mailgun API compatibility.",
+    timeline: "Ongoing",
+    demoUrl: "https://www.propertiesonline.com/",
+    featured: true,
+    date: "2026-04-08",
   },
   {
     id: "7",
@@ -259,8 +313,10 @@ const projects: Project[] = [
     ],
     challenges:
       "Managing a large number of pages while keeping content consistent and maintainable required a well-structured component architecture. Implementing 2FA alongside multi-user role management added complexity to the authentication flow, which was resolved using a layered middleware approach in the .NET backend.",
-    clientProblem: "The Embassy of Kenya needed a full official web presence with 60 pages, a public appointment booking system, and a secure multi-user admin backend — built to government-grade security standards.",
-    outcome: "Delivered 60 fully responsive pages, a slot-based appointment booking system with SendGrid email confirmations, a media management backend, and 2FA-secured multi-role admin access — live at embassydemo.netlify.app.",
+    clientProblem:
+      "The Embassy of Kenya needed a full official web presence with 60 pages, a public appointment booking system, and a secure multi-user admin backend — built to government-grade security standards.",
+    outcome:
+      "Delivered 60 fully responsive pages, a slot-based appointment booking system with SendGrid email confirmations, a media management backend, and 2FA-secured multi-role admin access — live at embassydemo.netlify.app.",
     timeline: "10 weeks",
     demoUrl: "https://embassydemo.netlify.app/",
     featured: true,
