@@ -36,6 +36,7 @@ import tailwindVsGlobalCss from './posts/tailwind-css-vs-global-css-scalability-
 import dataInLibFolder from './posts/data-in-lib-folder-vs-components-nextjs-react';
 import serverManagement from './posts/organised-server-management-rdp-iis-github-staging';
 import rcsiBlocking from './posts/rcsi-sql-server-blocking-read-committed-snapshot';
+import sqlVideoCleanup from './posts/sql-video-cleanup-property-listing-xml-database';
 
 const blogPosts: BlogPost[] = [
     embassyBooking,
@@ -62,6 +63,7 @@ const blogPosts: BlogPost[] = [
     dataInLibFolder,
     serverManagement,
     rcsiBlocking,
+    sqlVideoCleanup,
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
