@@ -3,7 +3,6 @@ import Hero from '@/components/home/Hero';
 import ProjectsPreview from '@/components/home/ProjectsPreview';
 import ContactSection from '@/components/home/ContactSection';
 
-// SEO IMPROVEMENT: Much more detailed and keyword-rich metadata
 export const metadata: Metadata = {
     title: 'Hire a Freelance React & .NET Developer | Berlin — Eliezer Kibet',
     description: 'Freelance full-stack developer based in Berlin. I build web applications for businesses using React, Next.js, TypeScript, and .NET. 100% Job Success. Responds within 24h.',
@@ -40,7 +39,6 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <>
-            {/* SEO IMPROVEMENT: Add structured data for better rich snippets */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{

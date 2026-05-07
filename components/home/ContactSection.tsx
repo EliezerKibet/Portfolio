@@ -16,7 +16,7 @@ export default function ContactSection() {
                 >
                     <div className="space-y-4 max-w-lg">
                         <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white leading-tight tracking-tight">
-                            Have a question or want to work together?.
+                            Have a question or want to work together?
                         </h2>
 
                     </div>
