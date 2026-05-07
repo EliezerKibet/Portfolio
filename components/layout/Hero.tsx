@@ -73,7 +73,7 @@ export default function Hero() {
                             custom={0}
                             className="space-y-6"
                         >
-                            <h1 className="text-4xl md:text-5xl font-bold">
+                            <h1 className="text-3xl md:text-4xl font-bold">
                                 Hello, I'm a <br />
                                 <span ref={typedTextRef} className="text-primary-600"></span>
                             </h1>

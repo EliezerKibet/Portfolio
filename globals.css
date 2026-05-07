@@ -2,29 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 249, 250, 251;
-  --background-end-rgb: 255, 255, 255;
+/* Cursor spotlight effect — CSS variables set via JS on mousemove */
+.hero-spotlight {
+    --x: 50%;
+    --y: 50%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 10, 10, 20;
-    --background-end-rgb: 20, 20, 35;
-  }
+.dark .hero-spotlight-glow {
+    background: radial-gradient(
+        600px circle at var(--x) var(--y),
+        rgba(99, 102, 241, 0.08),
+        transparent 60%
+    );
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
   min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.dark body {
+  background-color: #000000;
 }
 
 html {
@@ -118,6 +116,15 @@ html {
   .dark .blog-content code {
     @apply bg-gray-800 text-primary-400;
   }
+
+.project-title {
+    font-size: clamp(2rem, 4.5vw, 4rem);
+}
+
+.spinning-badge-text {
+    font-size: 10.5px;
+    letter-spacing: 1.5px;
+}
 
 @layer utilities {
   .perspective-1000 {

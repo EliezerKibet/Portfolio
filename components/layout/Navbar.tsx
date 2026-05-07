@@ -5,49 +5,62 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import ThemeToggle from '@/components/ui/ThemeToggle';
+import { FiGithub } from 'react-icons/fi';
 
 type NavItem = {
     label: string;
     href: string;
+    section: string | null;
 };
 
 const navItems: NavItem[] = [
-    { label: 'Home', href: '/' },
-    { label: 'Services', href: '/services' },
-    { label: 'Projects', href: '/projects' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'About', href: '/about' },
-    { label: 'Contact', href: '/contact' },
-
+    { label: 'Projects', href: '/#projects', section: 'projects' },
+    { label: 'Contact',  href: '/#contact',  section: 'contact'  },
+    { label: 'Blog',     href: '/blog',      section: null       },
 ];
 
 export default function Navbar() {
     const pathname = usePathname();
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [activeSection, setActiveSection] = useState('hero');
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+    // IntersectionObserver — only wires up on the homepage
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10);
-        };
+        if (pathname !== '/') return;
+        const ids = ['hero', 'projects', 'contact'];
+        const observers = ids.map((id) => {
+            const el = document.getElementById(id);
+            if (!el) return null;
+            const obs = new IntersectionObserver(
+                ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
+                { threshold: 0.35 }
+            );
+            obs.observe(el);
+            return obs;
+        });
+        return () => observers.forEach((o) => o?.disconnect());
+    }, [pathname]);
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    const isActive = (item: NavItem) => {
+        if (item.section === null) return pathname.startsWith('/blog');
+        if (pathname === '/') return activeSection === item.section;
+        return false;
+    };
+
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, item: NavItem) => {
+        if (item.section && pathname === '/') {
+            e.preventDefault();
+            document.getElementById(item.section)?.scrollIntoView({ behavior: 'smooth' });
+        }
+        setIsMobileMenuOpen(false);
+    };
 
     return (
-        <header
-            className={cn(
-                'fixed top-0 w-full z-50 transition-all duration-300',
-                isScrolled
-                    ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-sm py-4'
-                    : 'bg-transparent py-6'
-            )}
-        >
+        <header className="w-full py-6 bg-white dark:bg-black transition-colors duration-200">
             <div className="container-custom">
                 <div className="flex items-center justify-between">
-                    <Link href="/" className="text-2xl font-bold">
-                        <span className="text-primary-600">Eliezer</span>
+                    {/* Desktop Navigation */} <Link href="/" className="text-base md:text-lg text-gray-500 dark:text-gray-400 tracking-widest uppercase font-medium">
+                        Eliezer Kibet
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -56,9 +69,10 @@ export default function Navbar() {
                             <Link
                                 key={item.href}
                                 href={item.href}
+                                onClick={(e) => handleClick(e, item)}
                                 className={cn(
                                     'text-base font-medium transition-colors duration-200 hover:text-primary-600',
-                                    pathname === item.href
+                                    isActive(item)
                                         ? 'text-primary-600'
                                         : 'text-gray-700 dark:text-gray-200'
                                 )}
@@ -71,11 +85,11 @@ export default function Navbar() {
                             href="https://github.com/EliezerKibet"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="ml-2 px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition duration-200"
+                            aria-label="GitHub"
+                            className="text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white transition-colors duration-200"
                         >
-                            GitHub
+                            <FiGithub className="w-5 h-5" />
                         </a>
-                        {/* Right side: Theme Toggle + Mobile Menu */}
                         <div className="flex items-center space-x-4">
                             <ThemeToggle />
                         </div>
@@ -83,6 +97,7 @@ export default function Navbar() {
 
                     {/* Mobile Menu Button */}
                     <button
+                        type="button"
                         className="md:hidden text-gray-700 dark:text-gray-200"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
@@ -106,25 +121,26 @@ export default function Navbar() {
                                 <Link
                                     key={item.href}
                                     href={item.href}
+                                    onClick={(e) => handleClick(e, item)}
                                     className={cn(
                                         'text-base font-medium transition-colors duration-200 hover:text-primary-600 py-2',
-                                        pathname === item.href
+                                        isActive(item)
                                             ? 'text-primary-600'
                                             : 'text-gray-700 dark:text-gray-200'
                                     )}
-                                    onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     {item.label}
                                 </Link>
                             ))}
-
                             <a
                                 href="https://github.com/EliezerKibet"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-block px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition duration-200"
+                                aria-label="GitHub"
+                                className="flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white transition-colors duration-200 py-2"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
+                                <FiGithub className="w-5 h-5" />
                                 GitHub
                             </a>
                         </nav>

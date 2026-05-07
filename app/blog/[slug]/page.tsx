@@ -105,174 +105,70 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     };
 
     return (
-        <div className="min-h-screen bg-white dark:bg-gray-900">
+        <div className="relative z-10 bg-white dark:bg-black">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-            />
-            {/* Header */}
-            <section className="relative bg-gradient-to-b from-white via-gray-50/30 to-white dark:from-gray-900 dark:via-gray-900/95 dark:to-gray-900 pt-24 pb-12 md:pt-32 md:pb-16">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] opacity-40" />
-                <div className="container-custom relative z-10">
-                    <div className="max-w-3xl mx-auto">
-                        <Link
-                            href="/blog"
-                            className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-primary-600 transition-colors mb-6"
-                        >
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                            </svg>
-                            Back to Blog
-                        </Link>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
-                        <div className="flex flex-wrap gap-2 mb-4">
-                            {post!.tags.map((tag) => (
-                                <span
-                                    key={tag}
-                                    className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs font-medium rounded"
-                                >
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
+            <div className="container-custom pt-16 pb-32">
 
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                            {post!.title}
-                        </h1>
+                {/* Back */}
+                <Link href="/blog"
+                    className="inline-flex items-center gap-2 text-sm text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white transition-colors duration-200 mb-12">
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    Blog
+                </Link>
 
-                        <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-                            <span>Eliezer Kibet</span>
-                            <span>·</span>
-                            <time dateTime={post!.date}>
-                                {new Date(post!.date).toLocaleDateString('en-US', {
-                                    year: 'numeric',
-                                    month: 'long',
-                                    day: 'numeric',
-                                })}
-                            </time>
-                            <span>·</span>
-                            <span>{post!.readTime}</span>
-                        </div>
-                    </div>
+                {/* Header */}
+                <div className="space-y-4 mb-12">
+                    <p className="text-xs text-gray-400 dark:text-gray-500 tracking-widest uppercase">
+                        {new Date(post!.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} · {post!.readTime}
+                    </p>
+                    <h1 className="text-3xl md:text-4xl font-bold text-black dark:text-white leading-tight">
+                        {post!.title}
+                    </h1>
+                    <p className="text-gray-500 dark:text-gray-400 leading-relaxed">{post!.excerpt}</p>
                 </div>
-            </section>
 
-            {/* Content */}
-            <section className="py-12 md:py-16">
-                <div className="container-custom">
-                    <div className="max-w-3xl mx-auto">
-                        <div
-                            className="blog-content"
-                            dangerouslySetInnerHTML={{ __html: post!.content }}
-                        />
-                    </div>
+                {/* Content */}
+                <div className="blog-content" dangerouslySetInnerHTML={{ __html: post!.content }} />
+
+                {/* Share */}
+                <div className="mt-16 pt-8 border-t border-gray-100 dark:border-white/10 flex items-center gap-3">
+                    <span className="text-xs text-gray-400 dark:text-gray-500">Share</span>
+                    <a
+                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${baseUrl}/blog/${post!.slug}`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
+                    >
+                        LinkedIn →
+                    </a>
                 </div>
-            </section>
 
-            {/* Share + Author card */}
-            <section className="py-12 border-t border-gray-200 dark:border-gray-700">
-                <div className="container-custom">
-                    <div className="max-w-3xl mx-auto space-y-6">
-
-                        {/* Share */}
-                        <div className="flex items-center gap-3">
-                            <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Share this article</span>
-                            <a
-                                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${baseUrl}/blog/${post!.slug}`)}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-4 py-2 bg-[#0A66C2] hover:bg-[#004182] text-white text-sm font-medium rounded-lg transition-all duration-200 hover:scale-105"
-                            >
-                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                </svg>
-                                Share on LinkedIn
-                            </a>
-                        </div>
-
-                        {/* Author */}
-                        <div className="flex items-start gap-4 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
-                            <div className="flex-1">
-                                <p className="font-bold text-gray-900 dark:text-white mb-1">Eliezer Kibet</p>
-                                <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
-                                    Freelance Full-Stack Developer specializing in React, Next.js, TypeScript, and .NET. Building web applications, booking systems, fintech platforms, and cybersecurity tools.
-                                </p>
-                                <Link
-                                    href="/contact"
-                                    className="inline-flex items-center gap-1 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
-                                >
-                                    Work with me →
-                                </Link>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            {/* Related posts */}
-            {relatedPosts.length > 0 && (
-                <section className="py-12 bg-gray-50 dark:bg-gray-800/30">
-                    <div className="container-custom">
-                        <div className="max-w-5xl mx-auto">
-                            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Related Articles</h2>
-                            <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">More on the same topics</p>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {relatedPosts.map((p) => (
-                                    <Link
-                                        key={p.id}
-                                        href={`/blog/${p.slug}`}
-                                        className="group flex flex-col p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-md transition-all duration-200"
-                                    >
-                                        <div className="flex flex-wrap gap-1.5 mb-3">
-                                            {p.tags.slice(0, 2).map((tag) => (
-                                                <span
-                                                    key={tag}
-                                                    className={`px-2 py-0.5 text-xs font-medium rounded ${
-                                                        post!.tags.includes(tag)
-                                                            ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400'
-                                                            : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400'
-                                                    }`}
-                                                >
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
-
-                                        <h3 className="font-bold text-gray-900 dark:text-white group-hover:text-primary-600 transition-colors text-sm leading-snug mb-2 flex-1">
-                                            {p.title}
-                                        </h3>
-
-                                        <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 mb-4 flex-1">
-                                            {p.excerpt}
-                                        </p>
-
-                                        <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-gray-700 mt-auto">
-                                            <span className="text-xs text-gray-400 dark:text-gray-500">{p.readTime}</span>
-                                            <span className="text-xs font-medium text-primary-600 group-hover:text-primary-700 transition-colors">
-                                                Read →
-                                            </span>
-                                        </div>
-                                    </Link>
-                                ))}
-                            </div>
-
-                            <div className="text-center mt-8">
-                                <Link
-                                    href="/blog"
-                                    className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                                >
-                                    View all articles
-                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                {/* Related */}
+                {relatedPosts.length > 0 && (
+                    <div className="mt-16 space-y-4">
+                        <h2 className="text-sm font-semibold text-black dark:text-white tracking-wide">Related</h2>
+                        <div className="divide-y divide-gray-100 dark:divide-white/10">
+                            {relatedPosts.map((p) => (
+                                <Link key={p.id} href={`/blog/${p.slug}`}
+                                    className="flex items-center justify-between gap-4 py-4 group hover:opacity-70 transition-opacity duration-200">
+                                    <div>
+                                        <p className="text-sm font-medium text-black dark:text-white leading-snug">{p.title}</p>
+                                        <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">{p.readTime}</p>
+                                    </div>
+                                    <svg className="w-3.5 h-3.5 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
                                     </svg>
                                 </Link>
-                            </div>
+                            ))}
                         </div>
                     </div>
-                </section>
-            )}
+                )}
+
+            </div>
         </div>
     );
 }

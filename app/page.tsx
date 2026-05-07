@@ -1,14 +1,12 @@
 import { Metadata } from 'next';
 import Hero from '@/components/home/Hero';
 import ProjectsPreview from '@/components/home/ProjectsPreview';
-import SkillsSection from '@/components/home/SkillsSection';
-import AboutPreview from '@/components/home/AboutPreview';
-import ContactCTA from '@/components/home/ContactCTA';
+import ContactSection from '@/components/home/ContactSection';
 
 // SEO IMPROVEMENT: Much more detailed and keyword-rich metadata
 export const metadata: Metadata = {
-    title: 'Eliezer Kibet - Freelance Full-Stack Developer | React, Next.js, TypeScript, .NET',
-    description: 'Freelance full-stack developer in Berlin, Germany. Specializing in React, Next.js, TypeScript, and .NET development. Verified track record delivering projects across Europe.',
+    title: 'Hire a Freelance React & .NET Developer | Berlin — Eliezer Kibet',
+    description: 'Freelance full-stack developer based in Berlin. I build web applications for businesses using React, Next.js, TypeScript, and .NET. 100% Job Success. Responds within 24h.',
     keywords: [
         'freelance developer Berlin',
         'React developer Germany',
@@ -26,12 +24,13 @@ export const metadata: Metadata = {
         description: 'Freelance full-stack developer in Berlin specializing in React, Next.js, TypeScript, and .NET. Available for hire.',
         type: 'website',
         locale: 'en_US',
-        images: ['/og-image.png'],
+        images: [{ url: 'https://eliezerkibet.dev/og-image.png', width: 1200, height: 630, alt: 'Eliezer Kibet — Full-Stack Developer' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Eliezer Kibet - Freelance Full-Stack Developer',
         description: 'Freelance developer in Berlin | React, Next.js, TypeScript, .NET | 100% Job Success',
+        images: ['https://eliezerkibet.dev/og-image.png'],
     },
     alternates: {
         canonical: 'https://eliezerkibet.dev/',
@@ -56,7 +55,7 @@ export default function Home() {
                             jobTitle: 'Freelance Full-Stack Developer',
                             description: 'Freelance full-stack developer specializing in React, Next.js, TypeScript, and .NET',
                             url: 'https://eliezerkibet.dev/',
-                            image: 'https://eliezerkibet.dev//profile/profile.jpeg',
+                            image: 'https://eliezerkibet.dev/profile/profile.jpeg',
                             address: {
                                 '@type': 'PostalAddress',
                                 addressLocality: 'Berlin',
@@ -128,11 +127,9 @@ export default function Home() {
             />
 
             <div className="animate-fade-in">
-                <Hero />
-                <ProjectsPreview />
-                <SkillsSection />
-                <AboutPreview />
-                <ContactCTA />
+                <section id="hero"><Hero /></section>
+                <section id="projects"><ProjectsPreview /></section>
+                <ContactSection />
             </div>
         </>
     );

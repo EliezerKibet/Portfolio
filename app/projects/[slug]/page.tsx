@@ -48,5 +48,37 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     const project = getProjectBySlug(params.slug);
     if (!project) notFound();
 
-    return <ProjectPageClient project={project!} />;
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: baseUrl },
+            { '@type': 'ListItem', position: 2, name: 'Projects', item: `${baseUrl}/#projects` },
+            { '@type': 'ListItem', position: 3, name: project!.title, item: `${baseUrl}/projects/${project!.slug}` },
+        ],
+    };
+
+    const softwareSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: project!.title,
+        description: project!.description,
+        url: `${baseUrl}/projects/${project!.slug}`,
+        applicationCategory: 'WebApplication',
+        author: {
+            '@type': 'Person',
+            name: 'Eliezer Kibet',
+            url: baseUrl,
+        },
+        datePublished: project!.date,
+        ...(project!.demoUrl ? { sameAs: project!.demoUrl } : {}),
+    };
+
+    return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
+            <ProjectPageClient project={project!} />
+        </>
+    );
 }

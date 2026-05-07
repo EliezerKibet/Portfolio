@@ -3,6 +3,9 @@ import { Inter } from 'next/font/google';
 import '@/globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import CustomCursor from '@/components/ui/CustomCursor';
+import ElectricEffect from '@/components/ui/ElectricEffect';
+import SpinningBadge from '@/components/ui/SpinningBadge';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ThemeProvider } from '@/app/contexts/ThemeContext';
@@ -79,7 +82,12 @@ export default function RootLayout({
                     }}
                 />
             </head>
-            <body className={`${inter.className} transition-colors duration-200`}>
+            <body className={`${inter.className} transition-colors duration-200 cursor-none`}>
+                <CustomCursor />
+                <ElectricEffect />
+                <div className="fixed bottom-8 right-8 z-50 hidden md:block bg-white dark:bg-black rounded-full">
+                    <SpinningBadge />
+                </div>
                 <Analytics />
                 <SpeedInsights />
                 <ThemeProvider>

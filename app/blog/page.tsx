@@ -40,9 +40,9 @@ export default function BlogPage() {
     const posts = getAllBlogPosts();
 
     return (
-        <div className="min-h-screen bg-white dark:bg-gray-900">
+        <div className="min-h-screen bg-white dark:bg-black">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-            {/* Hero */}
+            {/* Hero 
             <section className="relative bg-gradient-to-b from-white via-gray-50/30 to-white dark:from-gray-900 dark:via-gray-900/95 dark:to-gray-900 py-16 md:py-20">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] opacity-40" />
                 <div className="container-custom relative z-10">
@@ -58,12 +58,12 @@ export default function BlogPage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>*/}
 
             {/* Posts — client component handles filtering, search, pagination */}
             <BlogPageClient posts={posts} />
 
-            {/* CTA */}
+            {/* CTA 
             <section className="py-16 bg-gray-50 dark:bg-gray-800/30">
                 <div className="container-custom text-center">
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
@@ -82,7 +82,7 @@ export default function BlogPage() {
                         </svg>
                     </Link>
                 </div>
-            </section>
+            </section>*/}
         </div>
     );
 }
