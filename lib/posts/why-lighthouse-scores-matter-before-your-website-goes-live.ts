@@ -4,7 +4,7 @@ const post: BlogPost = {
     id: '9',
     slug: 'why-lighthouse-scores-matter-before-your-website-goes-live',
     title: 'Why Lighthouse Scores Matter Before Your Website Goes Live',
-    excerpt: 'Most clients have never heard of Lighthouse — but its scores determine whether Google ranks your site, whether users stay or leave, and whether your investment in a new website actually pays off.',
+    excerpt: 'Lighthouse scores affect your Google ranking, bounce rate, and ROI — before your site goes live. Here\'s what each score means and what to fix first.',
     date: '2026-03-17',
     readTime: '5 min read',
     tags: ['Web Performance', 'SEO', 'Lighthouse', 'Web Development', 'Client Guide'],

@@ -4,7 +4,7 @@ const post: BlogPost = {
     id: '8',
     slug: 'how-to-hire-a-freelance-developer-in-europe-clients-guide',
     title: "How to Hire a Freelance Developer in Europe: A Client's Guide",
-    excerpt: 'A practical guide for businesses and founders hiring a freelance web developer in Europe — where to find developers, what to look for, how to structure the engagement, and how to avoid the common mistakes.',
+    excerpt: 'Where to find freelance web developers in Europe, what to look for, how to structure the engagement, and the common mistakes businesses make when hiring.',
     date: '2026-03-05',
     readTime: '7 min read',
     tags: ['Freelance', 'Hiring', 'Web Development', 'Europe', 'Guide'],

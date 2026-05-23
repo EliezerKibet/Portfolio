@@ -4,7 +4,7 @@ const post: BlogPost = {
     id: '7',
     slug: 'nextjs-vs-wordpress-which-is-better-for-your-business-website',
     title: 'Next.js vs WordPress: Which Is Better for Your Business Website?',
-    excerpt: 'A practical comparison for business owners — when WordPress makes sense, when Next.js is the better choice, and how to decide which one is right for your project without getting lost in technical jargon.',
+    excerpt: 'Next.js vs WordPress for business websites — a jargon-free comparison covering speed, cost, SEO, and maintenance to help you pick the right platform.',
     date: '2026-03-12',
     readTime: '6 min read',
     tags: ['Next.js', 'WordPress', 'Web Development', 'Business', 'Hiring'],

@@ -4,7 +4,7 @@ const post: BlogPost = {
     id: '6',
     slug: 'how-much-does-a-freelance-web-developer-cost-in-germany-2026',
     title: 'How Much Does a Freelance Web Developer Cost in Germany? (2026)',
-    excerpt: 'A straight answer on freelance web developer rates in Germany — what affects pricing, what to expect for React, Next.js, and .NET work, and how to get accurate quotes for your project.',
+    excerpt: 'Freelance web developer rates in Germany for 2026 — React, Next.js, and .NET pricing explained. What to budget and how to get an accurate quote.',
     date: '2026-03-17',
     readTime: '5 min read',
     tags: ['Freelance', 'Hiring', 'Web Development', 'Pricing', 'Germany'],

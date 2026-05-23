@@ -20,16 +20,20 @@ export async function generateMetadata(
         ? `${baseUrl}${post.image}`
         : `${baseUrl}/og-image.png`;
 
+    const metaDescription = post.excerpt.length > 155
+        ? post.excerpt.slice(0, 152) + '...'
+        : post.excerpt;
+
     return {
         title: `${post.title} | Eliezer Kibet`,
-        description: post.excerpt,
+        description: metaDescription,
         keywords: post.tags,
         alternates: {
             canonical: `${baseUrl}/blog/${post.slug}`,
         },
         openGraph: {
             title: post.title,
-            description: post.excerpt,
+            description: metaDescription,
             url: `${baseUrl}/blog/${post.slug}`,
             type: 'article',
             publishedTime: post.date,
@@ -41,7 +45,7 @@ export async function generateMetadata(
         twitter: {
             card: 'summary_large_image',
             title: post.title,
-            description: post.excerpt,
+            description: metaDescription,
             images: [ogImage],
         },
     };
