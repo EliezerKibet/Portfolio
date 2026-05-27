@@ -3,9 +3,8 @@ import type { BlogPost } from "../blog";
 const post: BlogPost = {
     id: "17",
     slug: "database-indexing-postgresql-mysql-query-performance",
-    title: "Database Indexing in PostgreSQL and MySQL — Why It Matters and How to Do It Right",
-    excerpt:
-        "A query that takes 800ms in production with 500,000 rows often takes 2ms with the right index in place. Here is a practical guide to indexing in PostgreSQL and MySQL and how to verify it is working.",
+    title: "How to Fix Slow Database Queries with Indexing in PostgreSQL and MySQL",
+    excerpt: "A query taking 800ms in production with 500,000 rows often takes 2ms with one index added. Here is exactly how to identify which queries need indexes and how to verify they are working.",
     date: "2026-03-25",
     readTime: "9 min read",
     tags: ["Database", "PostgreSQL", "MySQL", "SQL", "Performance", "Backend"],

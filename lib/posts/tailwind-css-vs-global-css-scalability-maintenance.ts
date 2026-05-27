@@ -3,9 +3,8 @@ import type { BlogPost } from "../blog";
 const post: BlogPost = {
     id: "21",
     slug: "tailwind-css-vs-global-css-scalability-maintenance",
-    title: "Tailwind CSS vs Global CSS — Why Utility-First Wins at Scale",
-    excerpt:
-        "Global CSS works fine for small projects. As a codebase grows, shared stylesheets become a maintenance liability. Here is why Tailwind's utility-first model is a better long-term choice for React and Next.js applications.",
+    title: "Tailwind CSS vs Global CSS — Which Should You Use for a React or Next.js Project?",
+    excerpt: "Global CSS works fine until your project grows — then one style change breaks three pages you didn't know were sharing a class. Here is when Tailwind fixes this and when it doesn't.",
     date: "2026-03-30",
     readTime: "7 min read",
     tags: ["Tailwind CSS", "CSS", "React", "Next.js", "Frontend", "Architecture"],

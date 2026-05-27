@@ -3,9 +3,8 @@ import type { BlogPost } from "../blog";
 const post: BlogPost = {
     id: "22",
     slug: "data-in-lib-folder-vs-components-nextjs-react",
-    title: "Why Your Data Belongs in lib/ Not in Your Components",
-    excerpt:
-        "A component that owns its own data is a component you cannot reuse. Separating data into a lib/ folder keeps components pure, makes data accessible anywhere, and makes both independently testable.",
+    title: "How to Structure Data in a Next.js Project — Why lib/ Beats Keeping It in Components",
+    excerpt: "A component that owns its own data is a component you cannot reuse anywhere else. One folder change fixes this — and it makes your entire Next.js project easier to test and maintain.",
     date: "2026-04-02",
     readTime: "7 min read",
     tags: ["React", "Next.js", "TypeScript", "Architecture", "Frontend"],

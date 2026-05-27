@@ -3,9 +3,8 @@ import type { BlogPost } from "../blog";
 const post: BlogPost = {
     id: "16",
     slug: "swagger-unit-testing-bearer-token-csharp-dotnet",
-    title: "Swagger, Unit Tests, and Bearer Tokens — The .NET Backend Setup That Actually Works",
-    excerpt:
-        "Adding Swagger is easy. Adding it correctly — with Bearer token support, interface-driven services, and a test suite that can actually run — takes a bit more thought. Here is the full setup.",
+    title: "How to Set Up Swagger with JWT Bearer Tokens and Unit Tests in .NET",
+    excerpt: "Swagger works out of the box until you add JWT authentication — then every request returns 401 and the test suite can't run. Here is the full setup that handles both correctly.",
     date: "2026-03-25",
     readTime: "8 min read",
     tags: [".NET", "C#", "ASP.NET Core", "Swagger", "Unit Testing", "JWT", "Backend"],

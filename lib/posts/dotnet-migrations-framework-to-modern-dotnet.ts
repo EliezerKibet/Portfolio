@@ -3,10 +3,8 @@ import type { BlogPost } from "../blog";
 const post: BlogPost = {
   id: "10",
   slug: "dotnet-migrations-framework-to-modern-dotnet",
-  title:
-    "The .NET Timeline: From Framework to Modern .NET and How I've Used It in Production",
-  excerpt:
-    "A clear breakdown of the .NET evolution — from .NET Framework to .NET Core to the unified .NET 5–9 platform — and how I've applied each in real projects including FlowLenz and the Embassy of Kenya platform.",
+  title: "How to Choose the Right .NET Version for Your Project — Framework, Core, and Modern .NET Explained",
+  excerpt: "Starting a new .NET project and unsure which version to target? The wrong choice means hitting missing APIs mid-build. Here is a clear breakdown of every version and which one to use.",
   date: "2026-03-18",
   readTime: "7 min read",
   tags: [".NET", "C#", "ASP.NET Core", "Backend", "Web Development"],

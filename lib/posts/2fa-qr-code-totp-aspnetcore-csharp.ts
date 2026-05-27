@@ -3,9 +3,8 @@ import type { BlogPost } from "../blog";
 const post: BlogPost = {
     id: "19",
     slug: "2fa-qr-code-totp-aspnetcore-csharp",
-    title: "Implementing 2FA with QR Code in ASP.NET Core — A Step-by-Step Guide",
-    excerpt:
-        "Password-only login is insufficient for any system handling sensitive data. Here is a complete walkthrough of adding TOTP-based two-factor authentication with QR code setup to an ASP.NET Core application.",
+    title: "How to Add Two-Factor Authentication with QR Codes to an ASP.NET Core App",
+    excerpt: "A leaked password alone should not be enough to access a system handling sensitive data. Here is a complete, copy-paste walkthrough for adding TOTP-based 2FA with QR code setup to ASP.NET Core.",
     date: "2026-03-27",
     readTime: "10 min read",
     tags: [".NET", "C#", "ASP.NET Core", "Security", "Authentication", "JWT", "Backend"],

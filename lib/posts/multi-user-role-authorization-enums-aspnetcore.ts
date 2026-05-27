@@ -3,9 +3,8 @@ import type { BlogPost } from "../blog";
 const post: BlogPost = {
     id: "20",
     slug: "multi-user-role-authorization-enums-aspnetcore",
-    title: "Multi-User Role Authorization with Enums in ASP.NET Core — Security and Scale by Design",
-    excerpt:
-        "When a system has multiple user types and access rules are scattered across if statements and magic strings, nobody is confident about who can do what. Here is how to design role-based authorization correctly from the start.",
+    title: "How to Implement Role-Based Authorization in ASP.NET Core with Enums",
+    excerpt: "When access rules are scattered across if statements and magic strings, nobody is confident about who can do what — and bugs get pushed to production. Here is how to do it correctly from the start.",
     date: "2026-03-30",
     readTime: "8 min read",
     tags: [".NET", "C#", "ASP.NET Core", "Security", "Authorization", "Backend", "Architecture"],

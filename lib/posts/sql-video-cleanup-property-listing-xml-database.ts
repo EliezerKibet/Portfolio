@@ -3,9 +3,8 @@ import type { BlogPost } from "../blog";
 const post: BlogPost = {
     id: "25",
     slug: "sql-video-cleanup-property-listing-xml-database",
-    title: "SQL Queries for Video Cleanup on a Property Listing Platform — Deleting Old Records Safely",
-    excerpt:
-        "A property listing platform storing XML-generated videos accumulates gigabytes of data for clients and listings that no longer exist. Here is the SQL approach to identifying, backing up, and safely deleting old video records without touching live data.",
+    title: "How to Safely Delete Old Records in SQL Server Without Touching Live Data",
+    excerpt: "Deleting old records from a live database without a clear strategy is how you accidentally remove data that is still referenced — and spend the weekend restoring backups. Here is the safe approach.",
     date: "2026-04-28",
     readTime: "9 min read",
     tags: ["Database", "SQL Server", "Performance", "Backend", ".NET", "Architecture"],

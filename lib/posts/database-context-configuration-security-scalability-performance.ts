@@ -3,9 +3,8 @@ import type { BlogPost } from "../blog";
 const post: BlogPost = {
     id: "18",
     slug: "database-context-configuration-security-scalability-performance",
-    title: "Database Configuration Done Right — Security, Scalability, and Performance from Day One",
-    excerpt:
-        "The database is the foundation every other layer of your application depends on. Get the configuration wrong and no amount of clean code compensates for it. Here is the complete Do's and Don'ts guide.",
+    title: "How to Configure a Database Context in .NET for Security, Performance, and Scale",
+    excerpt: "Most database performance problems are not query problems — they are configuration problems set up on day one and never revisited. Here is the complete Do's and Don'ts guide.",
     date: "2026-03-26",
     readTime: "10 min read",
     tags: ["Database", "PostgreSQL", "MySQL", "Security", "Performance", "Backend", ".NET", "Architecture"],

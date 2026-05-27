@@ -3,9 +3,8 @@ import type { BlogPost } from "../blog";
 const post: BlogPost = {
     id: "23",
     slug: "organised-server-management-rdp-iis-github-staging",
-    title: "Organised Server Management on RDP — Git Repos, IIS App Pools, and Staging Environments",
-    excerpt:
-        "Running multiple applications on a Windows Server via RDP without a clear structure is how deployments break each other, live databases get touched during testing, and iisreset takes down every application on the server at once. Here is the setup that prevents all of it.",
+    title: "How to Manage Multiple .NET Applications on a Windows Server Without Breaking Things",
+    excerpt: "One careless iisreset takes down every application on the server at once. One developer testing against the wrong database corrupts live data. Here is the structure that makes both impossible.",
     date: "2026-04-26",
     readTime: "10 min read",
     tags: ["DevOps", "IIS", "Windows Server", "Git", "Backend", "Deployment", ".NET"],
