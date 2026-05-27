@@ -39,6 +39,7 @@ import rcsiBlocking from './posts/rcsi-sql-server-blocking-read-committed-snapsh
 import sqlVideoCleanup from './posts/sql-video-cleanup-property-listing-xml-database';
 import awsDedicatedMigration from './posts/aws-to-dedicated-server-migration-windows-registry-keys';
 import twilioPostman from './posts/testing-twilio-api-postman-without-us-phone-number';
+import rapidApiMigration from './posts/rapidapi-property-listing-migration-quota-fix';
 
 const blogPosts: BlogPost[] = [
     embassyBooking,
@@ -68,6 +69,7 @@ const blogPosts: BlogPost[] = [
     sqlVideoCleanup,
     awsDedicatedMigration,
     twilioPostman,
+    rapidApiMigration,
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
