@@ -40,6 +40,7 @@ import sqlVideoCleanup from './posts/sql-video-cleanup-property-listing-xml-data
 import awsDedicatedMigration from './posts/aws-to-dedicated-server-migration-windows-registry-keys';
 import twilioPostman from './posts/testing-twilio-api-postman-without-us-phone-number';
 import rapidApiMigration from './posts/rapidapi-property-listing-migration-quota-fix';
+import reactNativeComponents from './posts/reusable-components-react-native-typescript';
 
 const blogPosts: BlogPost[] = [
     embassyBooking,
@@ -70,6 +71,7 @@ const blogPosts: BlogPost[] = [
     awsDedicatedMigration,
     twilioPostman,
     rapidApiMigration,
+    reactNativeComponents,
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
