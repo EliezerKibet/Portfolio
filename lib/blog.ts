@@ -41,6 +41,7 @@ import awsDedicatedMigration from './posts/aws-to-dedicated-server-migration-win
 import twilioPostman from './posts/testing-twilio-api-postman-without-us-phone-number';
 import rapidApiMigration from './posts/rapidapi-property-listing-migration-quota-fix';
 import reactNativeComponents from './posts/reusable-components-react-native-typescript';
+import localDevBeforeShipping from './posts/local-development-visual-studio-before-shipping-live-server';
 
 const blogPosts: BlogPost[] = [
     embassyBooking,
@@ -72,6 +73,7 @@ const blogPosts: BlogPost[] = [
     twilioPostman,
     rapidApiMigration,
     reactNativeComponents,
+    localDevBeforeShipping,
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
