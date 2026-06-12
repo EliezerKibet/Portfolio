@@ -42,6 +42,7 @@ import twilioPostman from './posts/testing-twilio-api-postman-without-us-phone-n
 import rapidApiMigration from './posts/rapidapi-property-listing-migration-quota-fix';
 import reactNativeComponents from './posts/reusable-components-react-native-typescript';
 import localDevBeforeShipping from './posts/local-development-visual-studio-before-shipping-live-server';
+import dllLoadBalancerSsl from './posts/dll-deployment-failed-ssl-certificate-load-balancer';
 
 const blogPosts: BlogPost[] = [
     embassyBooking,
@@ -74,6 +75,7 @@ const blogPosts: BlogPost[] = [
     rapidApiMigration,
     reactNativeComponents,
     localDevBeforeShipping,
+    dllLoadBalancerSsl,
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
