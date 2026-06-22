@@ -2,6 +2,14 @@ import { MetadataRoute } from "next";
 import { getAllProjects } from "@/lib/projects";
 import { getAllBlogPosts } from "@/lib/blog";
 
+const servicePages = [
+  'freelance-developer-berlin',
+  'freelance-developer-germany',
+  'react-nextjs-development',
+  'dotnet-backend',
+  'fullstack-web-development',
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://eliezerkibet.dev";
 
@@ -19,6 +27,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const serviceRoutes = servicePages.map((slug) => ({
+    url: `${baseUrl}/services/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
+  }));
+
   return [
     {
       url: `${baseUrl}/`,
@@ -32,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
+    ...serviceRoutes,
     ...projectRoutes,
     ...blogRoutes,
   ];

@@ -36,9 +36,60 @@ export const metadata: Metadata = {
     },
 };
 
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'How much does it cost to hire a freelance web developer in Germany?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Freelance web developers in Germany typically charge between €60 and €150 per hour depending on experience and specialisation. For full-stack developers with React and .NET expertise, rates of €80–€120/hr are common. Project-based pricing is also available depending on scope.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Do you take on remote freelance projects outside Germany?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Yes. I work fully remotely with clients across Europe and internationally. All communication, code reviews, and delivery happen asynchronously or via video call. Time zone is CET (Berlin).',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'What is your tech stack?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Frontend: React, Next.js, TypeScript, Tailwind CSS. Backend: ASP.NET Core, C#, .NET 8/9, Entity Framework Core. Databases: PostgreSQL, SQL Server. Deployment: Vercel, Azure, IIS on Windows Server.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'How long does a web development project take?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'A typical landing page or small web app takes 2–4 weeks. A full-stack application with authentication, a database, and an admin dashboard takes 6–12 weeks depending on scope. I provide a timeline estimate after an initial scoping call.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Are you available for long-term contracts or employment?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Yes. I am open to ongoing retainer contracts, part-time engagements, and full-time employment contracts. I am based in Berlin and can work on-site or remotely.',
+            },
+        },
+    ],
+};
+
 export default function Home() {
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{

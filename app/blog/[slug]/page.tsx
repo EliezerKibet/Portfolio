@@ -82,16 +82,22 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         ],
     };
 
+    const wordCount = post!.content.replace(/<[^>]+>/g, '').trim().split(/\s+/).length;
+
     const articleSchema = {
         '@context': 'https://schema.org',
-        '@type': 'Article',
+        '@type': 'TechArticle',
         headline: post!.title,
         description: post!.excerpt,
         image: ogImage,
         author: {
             '@type': 'Person',
             name: 'Eliezer Kibet',
-            url: `${baseUrl}/about`,
+            url: baseUrl,
+            sameAs: [
+                'https://github.com/EliezerKibet',
+                'https://www.linkedin.com/in/eliezer-kibet-80217a301/',
+            ],
         },
         publisher: {
             '@type': 'Person',
@@ -102,6 +108,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         dateModified: post!.dateModified ?? post!.date,
         url: `${baseUrl}/blog/${post!.slug}`,
         keywords: post!.tags.join(', '),
+        wordCount,
+        inLanguage: 'en-US',
         mainEntityOfPage: {
             '@type': 'WebPage',
             '@id': `${baseUrl}/blog/${post!.slug}`,

@@ -50,37 +50,6 @@ export default function RootLayout({
                     }}
                 />
 
-                {/* JSON-LD Schema */}
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
-                            '@context': 'https://schema.org',
-                            '@type': 'Person',
-                            name: 'Eliezer Kibet',
-                            jobTitle: 'Full-Stack Developer',
-                            url: 'https://eliezerkibet.dev/',
-                            address: {
-                                '@type': 'PostalAddress',
-                                addressLocality: 'Berlin',
-                                addressCountry: 'Germany'
-                            },
-                            sameAs: [
-                                'https://github.com/EliezerKibet',
-                                'https://www.linkedin.com/in/eliezer-kibet-80217a301/',
-                            ],
-                            knowsAbout: [
-                                'React',
-                                'Next.js',
-                                'TypeScript',
-                                '.NET',
-                                'Node.js',
-                                'Web Development',
-                                'Full-Stack Development'
-                            ]
-                        })
-                    }}
-                />
             </head>
             <body className={`${inter.className} transition-colors duration-200 cursor-none`}>
                 <CustomCursor />
