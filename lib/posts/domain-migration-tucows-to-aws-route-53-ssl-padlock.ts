@@ -6,7 +6,7 @@ const post: BlogPost = {
     title: 'Migrating a Domain from Tucows to AWS Route 53 to Fix a Missing SSL Padlock',
     excerpt: 'A domain registered through Tucows kept showing without the padlock in the browser bar, and it was making clients hesitate at checkout. Moving registration and DNS over to AWS Route 53 fixed the trust chain for good.',
     date: '2026-07-20',
-    readTime: '6 min read',
+    readTime: '7 min read',
     tags: ['AWS', 'Route 53', 'DNS', 'SSL', 'Domain Migration', 'DevOps', 'Security', 'E-commerce'],
     content: `
 <h2>The Problem</h2>
@@ -60,9 +60,34 @@ aws route53 change-resource-record-sets \\
 <pre><code># Check propagation from multiple locations after updating NS records
 dig NS yourdomain.com +short
 dig NS yourdomain.com @8.8.8.8 +short</code></pre>
-<p>DNS propagation is typically visible within a few hours but can take up to 24-48 hours globally, depending on the previous TTL values on the Tucows-hosted records.</p>
+<p>DNS propagation is typically visible within a few hours but can take up to 24-48 hours globally, depending on the previous TTL values on the Tucows-hosted records. Checking that by hand every so often is easy to forget and easy to get wrong — you end up either declaring victory too early because one resolver already updated, or sitting there refreshing <code>dig</code> for no reason.</p>
 
-<h3>Step 6 — Verify the padlock is fixed everywhere</h3>
+<h3>Step 6 — Automating the propagation check instead of polling by hand</h3>
+<p>Rather than manually re-running <code>dig</code> against a handful of resolvers every so often, I built a small console app and scheduled it as a Windows task to run every 3 minutes for the duration of the cutover window. Three minutes was short enough to catch the change soon after it actually happened, but not so aggressive that it hammered public resolvers or generated noise while nothing had changed yet.</p>
+<p>The task queried the domain's NS records against several public resolvers (Google, Cloudflare, plus the registrar's own resolver) and compared the results against the four Route 53 name servers from Step 2. It only logged and alerted once every resolver checked returned the new Route 53 name servers consistently — a single matching resolver isn't propagation, it just means that one resolver's cache expired first.</p>
+<pre><code>// Simplified check run by the scheduled task
+var resolvers = new[] { "8.8.8.8", "1.1.1.1", "your-old-registrar-resolver" };
+var expectedNs = new[] { "ns-1.awsdns-00.com", "ns-2.awsdns-00.net", "ns-3.awsdns-00.org", "ns-4.awsdns-00.co.uk" };
+
+bool allPropagated = resolvers.All(resolver =>
+{
+    var actualNs = QueryNameServers("yourdomain.com", resolver);
+    return expectedNs.All(ns => actualNs.Contains(ns, StringComparer.OrdinalIgnoreCase));
+});
+
+if (allPropagated)
+{
+    LogAndNotify("Propagation complete across all checked resolvers — safe to proceed to cert/padlock verification.");
+}</code></pre>
+<p>Compiled to a single executable, the task was registered with Task Scheduler to run unattended on a 3-minute interval:</p>
+<pre><code># Register the task to run every 3 minutes
+schtasks /create /tn "Route53PropagationCheck" /tr "C:\tools\propagation-check.exe" /sc minute /mo 3 /f
+
+# Confirm it's scheduled and check the last run result
+schtasks /query /tn "Route53PropagationCheck" /v /fo list</code></pre>
+<p>This turned "is it safe to move to the next step yet" from a manual guess into a log entry with a timestamp — the task recorded exactly when every resolver checked had picked up the new name servers, which is also the moment it's safe to move on to certificate verification without wondering if you're looking at a stale cache.</p>
+
+<h3>Step 7 — Verify the padlock is fixed everywhere</h3>
 <p>Once propagation completes, verify the certificate chain resolves cleanly rather than just checking that the padlock icon appears in one browser on one machine.</p>
 <pre><code># Command line check of the full chain
 openssl s_client -connect yourdomain.com:443 -servername yourdomain.com
@@ -72,7 +97,7 @@ openssl s_client -connect yourdomain.com:443 -servername yourdomain.com
 <p>An SSL Labs grade of A with no chain trust warnings is the real confirmation — a padlock showing in one browser on one device does not rule out mixed trust behavior on older browsers or systems with different root certificate bundles.</p>
 
 <h2>The Result</h2>
-<p>Once the name servers cut over and ACM's certificate replaced the old one, the padlock showed consistently across every browser tested, with no chain warnings. DNS management, hosting, and certificate issuance all sitting inside the same AWS account also meant future changes — adding a subdomain, rotating a certificate, adjusting a record — happen in one place instead of coordinating between a registrar's DNS panel and the hosting provider separately.</p>
+<p>Once the name servers cut over and ACM's certificate replaced the old one, the padlock showed consistently across every browser tested, with no chain warnings. The scheduled propagation check meant that transition point wasn't a guess — the task's log showed the exact 3-minute window every checked resolver agreed on the new name servers, which is also exactly when it made sense to move on to the SSL Labs and browser verification instead of checking too early against a resolver still serving a cached answer. DNS management, hosting, and certificate issuance all sitting inside the same AWS account also meant future changes — adding a subdomain, rotating a certificate, adjusting a record — happen in one place instead of coordinating between a registrar's DNS panel and the hosting provider separately.</p>
 <p>For clients, the fix was invisible in the best way — the padlock just worked, and the hesitation at checkout that came from seeing "Not Secure" in the address bar went away.</p>
 
 <h2>The Broader Lesson</h2>
