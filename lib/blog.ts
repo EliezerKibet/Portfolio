@@ -43,6 +43,7 @@ import rapidApiMigration from './posts/rapidapi-property-listing-migration-quota
 import reactNativeComponents from './posts/reusable-components-react-native-typescript';
 import localDevBeforeShipping from './posts/local-development-visual-studio-before-shipping-live-server';
 import dllLoadBalancerSsl from './posts/dll-deployment-failed-ssl-certificate-load-balancer';
+import domainMigrationTucowsRoute53 from './posts/domain-migration-tucows-to-aws-route-53-ssl-padlock';
 
 const blogPosts: BlogPost[] = [
     embassyBooking,
@@ -76,6 +77,7 @@ const blogPosts: BlogPost[] = [
     reactNativeComponents,
     localDevBeforeShipping,
     dllLoadBalancerSsl,
+    domainMigrationTucowsRoute53,
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
