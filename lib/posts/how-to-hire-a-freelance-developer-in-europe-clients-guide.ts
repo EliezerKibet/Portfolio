@@ -65,7 +65,7 @@ const post: BlogPost = {
 
 <h2>Working With Me</h2>
 <p>I'm Eliezer Kibet — a freelance full-stack developer based in Berlin with a verified 100% Job Success Score. I work with React, Next.js, TypeScript, and .NET. Past projects include a 60-page embassy platform, a cybersecurity company website, a fintech dashboard, and enterprise API integration tools.</p>
-<p>If you're looking for a developer and want to talk through your project before committing to anything, <a href="/contact">get in touch</a>. I'll give you an honest assessment of what you need and what it would cost — usually within 24 hours.</p>
+<p>To see rates, FAQs, and how engagements are structured, visit the <a href="/services/freelance-developer-berlin">freelance developer Berlin</a> or <a href="/services/freelance-developer-germany">freelance developer Germany</a> pages. If you're looking for a developer and want to talk through your project before committing to anything, <a href="/contact">get in touch</a>. I'll give you an honest assessment of what you need and what it would cost — usually within 24 hours.</p>
     `.trim(),
 };
 

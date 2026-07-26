@@ -103,7 +103,7 @@ const post: BlogPost = {
 
 <h2>What's Next</h2>
 <p>The POC validates the core architecture. The natural next steps are: plugging in the AI generation pipeline, adding authentication so teams can manage their own API credentials, building the similarity computation engine, and scaling the sync frequency based on project activity levels.</p>
-<p>If you're building a tool that integrates across multiple project management platforms, or need a custom aggregation layer for your engineering workflow, <a href="/contact">get in touch</a>.</p>
+<p>If you're building a tool that integrates across multiple project management platforms, or need a custom aggregation layer for your engineering workflow, see the <a href="/services/fullstack-web-development">full-stack web development services</a> page or <a href="/contact">get in touch</a>.</p>
     `.trim(),
 };
 

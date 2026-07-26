@@ -92,7 +92,7 @@ const post: BlogPost = {
 
 <h2>Get the Code</h2>
 <p>The full source is on <a href="https://github.com/EliezerKibet/EventTicketingPlatform" target="_blank" rel="noopener noreferrer">GitHub</a>. Clone it, run <code>dotnet ef database update</code>, start the API and the Next.js frontend, and you'll have a working ticketing platform in minutes.</p>
-<p>If you need a ticketing system, booking platform, or similar event management solution built for your business, <a href="/contact">get in touch</a>.</p>
+<p>If you need a ticketing system, booking platform, or similar full-stack event management solution built for your business, see the <a href="/services/fullstack-web-development">full-stack web development services</a> page or <a href="/contact">get in touch</a>.</p>
     `.trim(),
 };
 

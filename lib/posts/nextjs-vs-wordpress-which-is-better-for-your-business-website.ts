@@ -60,7 +60,7 @@ const post: BlogPost = {
 
 <h2>My Recommendation</h2>
 <p>If you're a business with a content team that needs to publish frequently and doesn't require custom functionality — WordPress is fine. If you need performance, custom features, or a web application — Next.js is the better investment.</p>
-<p>Not sure which applies to your situation? <a href="/contact">Get in touch</a> and I'll give you an honest recommendation based on your specific requirements — no obligation.</p>
+<p>If Next.js is the right fit, see the <a href="/services/react-nextjs-development">React and Next.js development services</a> page for how these projects are typically scoped and delivered. Not sure which applies to your situation? <a href="/contact">Get in touch</a> and I'll give you an honest recommendation based on your specific requirements — no obligation.</p>
     `.trim(),
 };
 

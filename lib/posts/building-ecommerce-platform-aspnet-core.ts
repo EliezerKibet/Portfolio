@@ -83,7 +83,7 @@ const post: BlogPost = {
 
 <h2>Get the Code</h2>
 <p>The full source is on <a href="https://github.com/EliezerKibet/ECommerce-Platform" target="_blank" rel="noopener noreferrer">GitHub</a>. Clone it, run <code>dotnet ef database update</code>, and the application starts with pre-seeded test data including products, categories, and active promotions.</p>
-<p>If you need an e-commerce platform, product catalogue, or order management system built for your business, <a href="/contact">get in touch</a>.</p>
+<p>If you need an e-commerce platform, product catalogue, or order management system built for your business, see the <a href="/services/fullstack-web-development">full-stack web development services</a> page or <a href="/contact">get in touch</a>.</p>
     `.trim(),
 };
 

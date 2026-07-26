@@ -131,7 +131,7 @@ export function BlogCard({ title, excerpt, date, slug, tags }: BlogCardProps) {
 <p>You need to add a loading state to a card. In a well-structured project, you add it to <code>Card.tsx</code> and every card in the application gets it. In an unstructured project, you add it to the three different inline card implementations and forget the fourth.</p>
 <p>Build components like you're building a library — even when you're the only one using it. Future you, six months from now, will thank you.</p>
 
-<p>If you're building a Next.js application and want to talk through the architecture before you start, <a href="/contact">get in touch</a>. Getting the structure right at the start is far cheaper than refactoring it later.</p>
+<p>If you're building a Next.js application and want to talk through the architecture before you start, see the <a href="/services/react-nextjs-development">React and Next.js development services</a> page or <a href="/contact">get in touch</a>. Getting the structure right at the start is far cheaper than refactoring it later.</p>
     `.trim(),
 };
 

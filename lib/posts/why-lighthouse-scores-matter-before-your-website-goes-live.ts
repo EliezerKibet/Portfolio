@@ -70,7 +70,7 @@ const post: BlogPost = {
 <h2>What I Do Before Every Launch</h2>
 <p>On every project I deliver, Lighthouse audits are run on all key pages before handover. Performance, Accessibility, Best Practices, and SEO all need to hit target scores. It's not optional — it's part of the build.</p>
 <p>If you're planning a new website or questioning why your existing site isn't generating traffic, the Lighthouse scores are usually the first place to look. They tell you, clearly and objectively, what's working and what isn't.</p>
-<p>If you'd like a free audit of your current site or want to discuss a new build, <a href="/contact">get in touch</a> — I'm happy to take a look.</p>
+<p>If you're building or rebuilding a site and want performance handled correctly from the start, see the <a href="/services/react-nextjs-development">React and Next.js development services</a> page. If you'd like a free audit of your current site or want to discuss a new build, <a href="/contact">get in touch</a> — I'm happy to take a look.</p>
     `.trim(),
 };
 

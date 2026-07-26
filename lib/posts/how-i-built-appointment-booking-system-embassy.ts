@@ -49,7 +49,7 @@ const post: BlogPost = {
 
 <h2>Result</h2>
 <p>The platform went live with 60 pages, a fully functional booking system, and a secure admin backend. You can see the demo at <a href="https://embassydemo.netlify.app/" target="_blank" rel="noopener noreferrer">embassydemo.netlify.app</a>.</p>
-<p>If you need a similar system built — a booking platform, government portal, or secure multi-user backend — <a href="/contact">let's talk</a>.</p>
+<p>If you need a similar system built — a booking platform, government portal, or secure multi-user backend — see the <a href="/services/fullstack-web-development">full-stack web development services</a> page or <a href="/contact">let's talk</a>.</p>
     `.trim(),
 };
 

@@ -66,7 +66,7 @@ const post: BlogPost = {
 
 <h2>Get the Code</h2>
 <p>The full source code is open source on <a href="https://github.com/EliezerKibet/AI_based_garage" target="_blank" rel="noopener noreferrer">GitHub</a>. Clone it, run <code>dotnet ef database update</code>, and you'll have a working instance in minutes.</p>
-<p>If you need a custom management system built for your business — garage, clinic, service centre, or similar — <a href="/contact">get in touch</a>.</p>
+<p>If you need a custom management system built for your business — garage, clinic, service centre, or similar — see the <a href="/services/fullstack-web-development">full-stack web development services</a> page or <a href="/contact">get in touch</a>.</p>
     `.trim(),
 };
 
