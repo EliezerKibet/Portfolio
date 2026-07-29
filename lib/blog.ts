@@ -44,6 +44,7 @@ import reactNativeComponents from './posts/reusable-components-react-native-type
 import localDevBeforeShipping from './posts/local-development-visual-studio-before-shipping-live-server';
 import dllLoadBalancerSsl from './posts/dll-deployment-failed-ssl-certificate-load-balancer';
 import domainMigrationTucowsRoute53 from './posts/domain-migration-tucows-to-aws-route-53-ssl-padlock';
+import aspnetWebFormsColorPicker from './posts/aspnet-web-forms-listing-style-color-picker-master-page';
 
 const blogPosts: BlogPost[] = [
     embassyBooking,
@@ -78,6 +79,7 @@ const blogPosts: BlogPost[] = [
     localDevBeforeShipping,
     dllLoadBalancerSsl,
     domainMigrationTucowsRoute53,
+    aspnetWebFormsColorPicker,
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
